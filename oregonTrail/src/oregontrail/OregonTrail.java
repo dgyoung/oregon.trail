@@ -17,7 +17,7 @@ public class OregonTrail {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        //just to show how it works
+        //just to show how it works https://github.com/dgyoung/oregon.trail.git
     }
     
 }
