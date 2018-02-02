@@ -26,9 +26,7 @@ public class Game implements Serializable
 
     public void setPlayer(Player player) {
         this.player = player;
-    }
-    
-    
+    }    
     
     public int getElapsedDays() {
         return elapsedDays;
@@ -66,8 +64,6 @@ public class Game implements Serializable
     {
     
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -110,9 +106,5 @@ public class Game implements Serializable
     public String toString() {
         return "Game{" + "elapsedDays=" + elapsedDays + ", startMonth=" + startMonth + ", noAlive=" + noAlive + ", gameFilePath=" + gameFilePath + '}';
     }
-    
-    
-    
-    
     
 }
