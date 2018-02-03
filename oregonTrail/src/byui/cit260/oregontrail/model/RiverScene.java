@@ -5,6 +5,8 @@
  */
 package byui.cit260.oregontrail.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author davey
@@ -18,10 +20,33 @@ public enum RiverScene {
     Missouri(50, 44, 18, "Missouri River");    
     
     
-    public int ferryCost;
-    public int depth;
-    public int width;
-    public String name;
+    private int ferryCost;
+    private int depth;
+    private int width;
+    private String name;  
+    private ArrayList<SceneDescription> description = new ArrayList<SceneDescription>(1);
+  
+
+    public static RiverScene getSouthPlate() {
+        return SouthPlate;
+    }
+
+    public static RiverScene getSnake() {
+        return Snake;
+    }
+
+    public static RiverScene getColumbia() {
+        return Columbia;
+    }
+
+    public static RiverScene getMissouri() {
+        return Missouri;
+    }
+
+    public ArrayList<SceneDescription> getDescription() {
+        return description;
+    }
+    
 
     public int getFerryCost() {
         return ferryCost;

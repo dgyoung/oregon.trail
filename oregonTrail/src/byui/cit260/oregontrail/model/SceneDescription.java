@@ -1,0 +1,53 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package byui.cit260.oregontrail.model;
+
+import java.util.ArrayList;
+
+/**
+ *
+ * @author davey
+ */
+public enum SceneDescription {
+    storeScene(""),
+    riverScene(""),
+    huntingScene("");
+    
+    private String description;
+    private ArrayList<Location> location = new ArrayList<Location>();
+
+
+    private SceneDescription(String description) {
+        this.description = description;
+    }
+
+    public static SceneDescription getStoreScene() {
+        return storeScene;
+    }
+
+    public static SceneDescription getRiverScene() {
+        return riverScene;
+    }
+
+    public static SceneDescription getHuntingScene() {
+        return huntingScene;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public ArrayList<Location> getLocation() {
+        return location;
+    }
+
+    @Override
+    public String toString() {
+        return "SceneDescription{" + "description=" + description + '}';
+    }
+    
+    
+}
