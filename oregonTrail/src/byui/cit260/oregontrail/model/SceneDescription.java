@@ -12,9 +12,9 @@ import java.util.ArrayList;
  * @author davey
  */
 public enum SceneDescription {
-    storeScene(""),
-    riverScene(""),
-    huntingScene("");
+    storeScene("This is how store scene works"),
+    riverScene("This is how river scene works"),
+    huntingScene("This is how hunting scene works");
     
     private String description;
     private ArrayList<Location> location = new ArrayList<Location>();

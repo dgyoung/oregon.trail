@@ -6,7 +6,10 @@
 package oregontrail;
 
 import byui.cit260.oregontrail.model.Game;
+import byui.cit260.oregontrail.model.HuntingScene;
 import byui.cit260.oregontrail.model.RiverScene;
+import byui.cit260.oregontrail.model.SceneDescription;
+import byui.cit260.oregontrail.model.StoreScene;
 
 /**
  *
@@ -28,6 +31,20 @@ public class OregonTrail {
          RiverScene.Columbia.getFerryCost();
          System.out.print(RiverScene.Columbia.getDepth() + " $");
          System.out.println(RiverScene.Columbia.getFerryCost());
+         System.out.println(HuntingScene.bear.toString() + " \n" + 
+                 HuntingScene.elk.toString() + " \n" + 
+                 HuntingScene.squirrel.toString() + " \n" + 
+                 HuntingScene.buffalo.toString() + " \n" + 
+                 HuntingScene.rabbit.toString() + " \n" + 
+                 HuntingScene.deer.toString());
+         System.out.println(SceneDescription.huntingScene.toString() + " \n" +
+                 SceneDescription.riverScene.toString() + " \n" +
+                 SceneDescription.storeScene.toString());
+         System.out.println(StoreScene.store1.toString() + " \n" +
+                 StoreScene.store2.toString() + " \n" +
+                 StoreScene.store3.toString() + " \n" +
+                 StoreScene.store4.toString() + " \n" +
+                 StoreScene.store5.toString());
     }
     
 }
