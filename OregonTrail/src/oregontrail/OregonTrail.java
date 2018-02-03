@@ -17,10 +17,12 @@ public class OregonTrail {
     public static void main(String[] args) {
         Player playerOne = new Player();
         playerOne.setName("Jim Brider");
-        playerOne.setOccupation("Banker");
-        // need to create an enum class to choose category from
+        playerOne.setOccupation(OccupationType.Carpenter);
         System.out.println(playerOne.toString());
         
+        Wagon wagonOne = new Wagon();
+        System.out.println(wagonOne.toString());
+  
         Game currentGame = new Game();
         currentGame.setElapsedDays(0);
         //temp path for testing
@@ -36,6 +38,9 @@ public class OregonTrail {
         Actor.BigLouie.getDescription();
         Actor.BigLouie.getLandmark();
         System.out.println(Actor.BigLouie.toString());
+        System.out.println(RationsType.BareBones.toString());
+        System.out.println(PaceType.Grueling.toString());
+        System.out.println(OccupationType.Farmer.toString());
     }
     
 }

@@ -17,23 +17,31 @@ public class Player implements Serializable
 {
     //class instance variables
     private String name;
-    private String occupation;
+    OccupationType occupation; //this will get set after object is created
     private ArrayList<Game> games = new ArrayList<Game>();
-    
+    private Wagon wagon;
+
+    public Wagon getWagon() {
+        return wagon;
+    }
+
+    public void setWagon(Wagon wagon) {
+        this.wagon = wagon;
+    }
     
     public String getName() {
         return name;
     }
-
+    
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getOccupation() {
+    public OccupationType getOccupation() {
         return occupation;
     }
 
-    public void setOccupation(String occupation) {
+    public void setOccupation(OccupationType occupation) {
         this.occupation = occupation;
     }
 

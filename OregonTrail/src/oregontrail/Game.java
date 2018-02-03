@@ -19,6 +19,8 @@ public class Game implements Serializable
     private int noAlive;
     private String gameFilePath;
     private Player player;
+    
+    enum Month {March, April, May, June, July;}
 
     public Player getPlayer() {
         return player;
