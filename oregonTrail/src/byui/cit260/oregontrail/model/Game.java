@@ -12,6 +12,7 @@ package byui.cit260.oregontrail.model;
 public class Game {
     private int noPeople;
     private int totalDays;
+    private Player player;
 
     public int getNoPeople() {
         return noPeople;
@@ -28,6 +29,16 @@ public class Game {
     public void setTotalDays(int totalDays) {
         this.totalDays = totalDays;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
+    
 
     public Game() {
     }

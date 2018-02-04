@@ -10,10 +10,12 @@ import byui.cit260.oregontrail.model.HuntingScene;
 import byui.cit260.oregontrail.model.RiverScene;
 import byui.cit260.oregontrail.model.SceneDescription;
 import byui.cit260.oregontrail.model.StoreScene;
+import byui.cit260.oregontrail.model.Character;
+import byui.cit260.oregontrail.model.Wagon;
 
 /**
  *
- * @author davey
+ * @author davey, allie, &
  */
 public class OregonTrail {
 
@@ -45,6 +47,18 @@ public class OregonTrail {
                  StoreScene.store3.toString() + " \n" +
                  StoreScene.store4.toString() + " \n" +
                  StoreScene.store5.toString());
+        
+        Character character1 = new Character();
+        character1.setName("Kolob");
+        character1.setAffliction("Cholera");
+        System.out.println(character1.toString());
+        
+        Wagon wagon1 = new Wagon();
+        wagon1.setPace(3);
+        wagon1.setRations("Meager");
+        System.out.println(wagon1.toString());
+        
+        
     }
     
 }

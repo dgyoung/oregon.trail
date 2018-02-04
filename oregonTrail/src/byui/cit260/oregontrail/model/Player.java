@@ -16,16 +16,9 @@ public class Player {
     private String name;
     private int score;
     private ArrayList<Game> games = new ArrayList<Game>();
+    private ArrayList<Wagon> wagons = new ArrayList<Wagon>();
 
-    public ArrayList<Game> getGames() {
-        return games;
-    }
-
-    public void setGames(ArrayList<Game> games) {
-        this.games = games;
-    }
-
-    public String getName() {
+      public String getName() {
         return name;
     }
 
@@ -39,6 +32,22 @@ public class Player {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public ArrayList<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(ArrayList<Game> games) {
+        this.games = games;
+    }
+    
+    public ArrayList<Wagon> getWagonss() {
+        return wagons;
+    }
+
+    public void setWagons(ArrayList<Wagon> wagons) {
+        this.wagons = wagons;
     }
 
     public Player() {
