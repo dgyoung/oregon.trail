@@ -7,7 +7,7 @@ package byui.cit260.oregontrail.model;
 
 /**
  *
- * @author davey
+ * @author team
  */
 public class Game {
     private int noPeople;

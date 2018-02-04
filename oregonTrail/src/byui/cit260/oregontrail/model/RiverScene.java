@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author davey
+ * @author team
  */
 public enum RiverScene {
     

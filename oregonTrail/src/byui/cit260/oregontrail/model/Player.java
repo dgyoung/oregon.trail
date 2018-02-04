@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author davey
+ * @author team
  */
 public class Player {
     private String name;

@@ -7,7 +7,7 @@ package byui.cit260.oregontrail.model;
 
 /**
  *
- * @author davey
+ * @author lane
  */
 class Location {
     
