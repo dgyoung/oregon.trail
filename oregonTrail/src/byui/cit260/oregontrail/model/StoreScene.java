@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.model;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author davey
  */
-public enum StoreScene{
+public enum StoreScene implements Serializable{
     
     store1(20, 20, 20, 2, 10, 100, 5, ""),
     store2(25, 25, 25, 2, 12, 130, 5, ""),

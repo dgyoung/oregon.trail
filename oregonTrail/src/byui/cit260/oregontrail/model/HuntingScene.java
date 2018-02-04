@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.model;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author davey
  */
-public enum HuntingScene{
+public enum HuntingScene implements Serializable{
    
     squirrel(2500, "Squirrel", 5, 10),
     buffalo(4000, "Buffalo", 5, 10),

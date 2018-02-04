@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.model;
-
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Allie
  */
-public class Wagon{
+public class Wagon implements Serializable{
     
     private int pace;
     private String rations;

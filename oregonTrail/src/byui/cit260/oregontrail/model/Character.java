@@ -6,12 +6,13 @@
 package byui.cit260.oregontrail.model;
 
 import java.util.Objects;
+import java.io.Serializable;
 
 /**
  *
  * @author Alexandra
  */
-public class Character{
+public class Character implements Serializable{
     
     private String name;
     private String affliction;

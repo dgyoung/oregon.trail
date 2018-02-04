@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.model;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author team
  */
-public enum RiverScene {
+public enum RiverScene implements Serializable{
     
     
     SouthPlate(50, 3, 10, "South Plate River"),

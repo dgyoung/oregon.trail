@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.model;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author team
  */
-public class Player {
+public class Player implements Serializable{
     private String name;
     private int score;
     private ArrayList<Game> games = new ArrayList<Game>();

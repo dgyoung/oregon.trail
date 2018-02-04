@@ -4,16 +4,18 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.model;
+import java.io.Serializable;
 
 /**
  *
  * @author team
  */
-public class Game {
+public class Game implements Serializable{
     private int noPeople;
     private int totalDays;
     private Player player;
-
+    private Map map;
+    
     public int getNoPeople() {
         return noPeople;
     }
@@ -37,9 +39,15 @@ public class Game {
     public void setPlayer(Player player) {
         this.player = player;
     }
-    
-    
 
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
     public Game() {
     }
 

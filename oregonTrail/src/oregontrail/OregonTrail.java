@@ -12,6 +12,8 @@ import byui.cit260.oregontrail.model.SceneDescription;
 import byui.cit260.oregontrail.model.StoreScene;
 import byui.cit260.oregontrail.model.Character;
 import byui.cit260.oregontrail.model.Wagon;
+import byui.cit260.oregontrail.model.Map;
+import byui.cit260.oregontrail.model.Location;
 
 /**
  *
@@ -58,7 +60,19 @@ public class OregonTrail {
         wagon1.setRations("Meager");
         System.out.println(wagon1.toString());
         
+        Map map1 = new Map();
+        map1.setPathChoice("Whichever has the most snakes?");
+        map1.setCheckpoint("You've reached the Trading Post in Missouri");
+        System.out.println(map1.toString());
         
+        Location location1 = new Location();
+        location1.setLabel("OREGON!");
+        location1.setNext(235);
+        location1.setPosition(564);
+        location1.setEnd(36);
+        location1.setWeather("Monsoon");
+        System.out.println(location1.toString());
+       
     }
     
 }
