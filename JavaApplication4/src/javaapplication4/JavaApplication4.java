@@ -14,9 +14,13 @@ public class JavaApplication4 {
     /**
      * @param args the command line arguments
      */
+    
+    
     public static void main(String[] args) 
     {
         System.out.println(Actor.Bob);
+        System.out.println(Game.class);
+        System.out.println(Player.class);
     }
     
 }
