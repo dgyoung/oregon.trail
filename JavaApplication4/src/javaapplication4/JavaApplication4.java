@@ -18,6 +18,17 @@ public class JavaApplication4 {
     
     public static void main(String[] args) 
     {
+        Player playerOne = new Player();
+        
+        playerOne.setName("Bob");
+        playerOne.setOccupation("General Store Manager");
+        
+        String PlayerOneName = playerOne.getName();
+        String PlayerOneOccupation = playerOne.getOccupation();
+        
+        System.out.println(playerOne.toString());
+        Actor.Bob.getName();
+        Actor.Bob.getDescription();
         System.out.println(Actor.Bob);
         System.out.println(Game.class);
         System.out.println(Player.class);
