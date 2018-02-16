@@ -26,6 +26,7 @@ public double calcVolumeOfStorageBox(double height, double width, double depth)
     if (depth < 0 || depth > 3)
     {
         return -1;
+        
     }
     
     double volume = (height * width * depth);
