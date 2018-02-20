@@ -14,23 +14,43 @@ import byui.cit260.oregontrail.model.Character;
  * @author David
  */
 public class Game {
-    public void startNewGame(){
+
+    public void startNewGame() {
     }
-    public void saveGame(){
+
+    public void saveGame() {
+
+    }
+
+    public void restoreSavedGame() {
+
+    }
+
+    public int getFinalScore(int supply, int bonus, int character) {
+        int finalScore;
+        int totalHealth = character;
+        if (totalHealth <= 0 || totalHealth > 15){
         
-    }
-    public void restoreSavedGame(){
+		return -1;
+        }
         
+        if (supply < 0) {
+            return -1;
+        }
+        if (bonus < 1 || bonus > 3) {
+            return -1;
+        }
+        finalScore = ((totalHealth * 200) + supply) * bonus;
+        return finalScore;
+
     }
-    public int getFinalScore(Wagon wagon, Supplies supplies, Character 
-            character) {
-        return 0;
+
+    public void initializeMap() {
+
     }
-    public void initializeMap(){
-        
-    }
-    public void setCharactersNames(String name1, String name2, String name3, 
-            String name4, String name5){
-        
+
+    public void setCharactersNames(String name1, String name2, String name3,
+            String name4, String name5) {
+
     }
 }
