@@ -14,16 +14,17 @@ import java.util.ArrayList;
 public enum RiverScene implements Serializable{
     
     
-    SouthPlate(50, 3, 10, "South Plate River"),
-    Snake(200, 82, 500, "Snake River"),
-    Columbia(200, 50, 30, "Columbia River"),
-    Missouri(50, 44, 18, "Missouri River");    
+    SouthPlate(50, 3, 10, "South Plate River", 1),
+    Snake(200, 82, 500, "Snake River", 2),
+    Columbia(200, 50, 30, "Columbia River", 3),
+    Missouri(50, 44, 18, "Missouri River", 4);    
     
     
     private int ferryCost;
     private int depth;
     private int width;
     private String name;  
+    private int riverID;
     private ArrayList<SceneDescription> description = new ArrayList<SceneDescription>(1);
   
 
@@ -46,6 +47,10 @@ public enum RiverScene implements Serializable{
     public ArrayList<SceneDescription> getDescription() {
         return description;
     }
+
+    public int getRiverID() {
+        return riverID;
+    }
     
 
     public int getFerryCost() {
@@ -64,19 +69,21 @@ public enum RiverScene implements Serializable{
         return name;
     }
 
-    RiverScene(int ferryCost, int depth, int width, String name) {
+    private RiverScene(int ferryCost, int depth, int width, String name, int riverID) {
         this.ferryCost = ferryCost;
         this.depth = depth;
         this.width = width;
         this.name = name;
+        this.riverID = riverID;
+    }
+
+    @Override
+    public String toString() {
+        return "RiverScene{" + "ferryCost=" + ferryCost + ", depth=" + depth + ", width=" + width + ", name=" + name + ", riverID=" + riverID + ", description=" + description + '}';
     }
 
     
 
-    @Override
-    public String toString() {
-        return "RiverScene{" + "ferryCost=" + ferryCost + ", depth=" + depth + ", width=" + width + ", name=" + name + '}';
-    }
     
     
 }
