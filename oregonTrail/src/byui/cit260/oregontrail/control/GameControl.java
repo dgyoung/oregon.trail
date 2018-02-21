@@ -13,20 +13,20 @@ import byui.cit260.oregontrail.model.Character;
  *
  * @author David
  */
-public class Game {
+public class GameControl {
 
-    public void startNewGame() {
+    public static void startNewGame() {
     }
 
-    public void saveGame() {
-
-    }
-
-    public void restoreSavedGame() {
+    public static void saveGame() {
 
     }
 
-    public int getFinalScore(int supply, int bonus, int character) {
+    public static void restoreSavedGame() {
+
+    }
+
+    public static int getFinalScore(int supply, int bonus, int character) {
         int finalScore;
         int totalHealth = character;
         if (totalHealth <= 0 || totalHealth > 15){
@@ -45,11 +45,11 @@ public class Game {
 
     }
 
-    public void initializeMap() {
+    public static void initializeMap() {
 
     }
 
-    public void setCharactersNames(String name1, String name2, String name3,
+    public static void setCharactersNames(String name1, String name2, String name3,
             String name4, String name5) {
 
     }

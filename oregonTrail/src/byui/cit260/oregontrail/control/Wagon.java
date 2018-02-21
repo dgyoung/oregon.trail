@@ -10,31 +10,31 @@ package byui.cit260.oregontrail.control;
  * @author David
  */
 public class Wagon {
-    public String getWagonPace(){
+    public static String getWagonPace(){
         return "";
     }
-    public String getWagonRations(){
+    public static String getWagonRations(){
         return "";
     }
-    public void changePace(){
+    public static void changePace(){
         
     }
-    public void changeRations(){
+    public static void changeRations(){
         
     }
-    public void killPlayer(){
+    public static void killPlayer(){
         
     }
-    public void findCurrentSpeed(){
+    public static void findCurrentSpeed(){
         
     }
-    public void findCurrentWeather(){
+    public static void findCurrentWeather(){
         
     }
-    public void healthLossEvaluation(){
+    public static void healthLossEvaluation(){
         
     }
-    public void findRationLossRate(){
+    public static void findRationLossRate(){
         
     }
 }

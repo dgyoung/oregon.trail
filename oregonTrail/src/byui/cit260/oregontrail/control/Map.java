@@ -10,28 +10,28 @@ package byui.cit260.oregontrail.control;
  * @author David
  */
 public class Map {
-    public void move(Wagon wagon, int location){
+    public static void move(Wagon wagon, int location){
         
     }
-    public boolean validLocation(){
+    public static boolean validLocation(){
         return true;
     }
-    public void visitRegularScene(){
+    public static void visitRegularScene(){
         
     }
-    public void visitStoreScene(){
+    public static void visitStoreScene(){
         
     }
-    public void visitRiverScene(){
+    public static void visitRiverScene(){
         
     }
-    public void visitHuntingScene(){
+    public static void visitHuntingScene(){
         
     }
-    public int setDistanceTraveled(int currentLocation){
+    public static int setDistanceTraveled(int currentLocation){
         return 0;
     }
-    public int distacneToNextLocation(){
+    public static int distacneToNextLocation(){
         return 0;
     }
 }

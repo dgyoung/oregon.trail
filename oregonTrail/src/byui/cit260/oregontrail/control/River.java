@@ -10,19 +10,19 @@ package byui.cit260.oregontrail.control;
  * @author David
  */
 public class River {
-    public String rindCurrentWeather(){
+    public static String rindCurrentWeather(){
         return "";
     }
-    public boolean calculateFording(int riverWidth, int riverDepth){
+    public static boolean calculateFording(int riverWidth, int riverDepth){
         return true;
     }
-    public boolean calculateCaulk(int riverWidth, int riverDepth){
+    public static boolean calculateCaulk(int riverWidth, int riverDepth){
         return true;
     }
-    public void findHelpCost(){
+    public static void findHelpCost(){
         
     }
-    public boolean calculateFerry(){
+    public static boolean calculateFerry(){
         return true;
     }
 }

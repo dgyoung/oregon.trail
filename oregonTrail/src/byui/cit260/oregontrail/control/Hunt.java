@@ -12,16 +12,16 @@ import byui.cit260.oregontrail.model.HuntingScene;
  * @author David
  */
 public class Hunt {
-    public void animalApperance(){
+    public static void animalApperance(){
         
     }
-    public void timePassed(){
+    public static void timePassed(){
         
     }
-    public boolean findResponce(){
+    public static boolean findResponce(){
         return true;
     }
-    public int meatTakenHome(){
+    public static int meatTakenHome(){
         return 0;
     }
 }

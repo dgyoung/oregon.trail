@@ -11,16 +11,16 @@ package byui.cit260.oregontrail.control;
  */
 public class Supply {
     
-    public void getSupplyList(){
+    public static void getSupplyList(){
         
     }
-    public void addToSupplies(char supplyItem, int quantity){
+    public static void addToSupplies(char supplyItem, int quantity){
         
     }
-    public void removeFromSupplies(char supplyItem, int quantity){
+    public static void removeFromSupplies(char supplyItem, int quantity){
         
     }
-    public void calcSupplyCost(char location, char supplyItem, int quantity){
+    public static void calcSupplyCost(char location, char supplyItem, int quantity){
         
     }
 }

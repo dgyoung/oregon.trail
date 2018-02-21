@@ -14,6 +14,7 @@ import byui.cit260.oregontrail.model.Character;
 import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.oregontrail.model.Map;
 import byui.cit260.oregontrail.model.Location;
+import byui.cit260.oregontrail.control.GameControl;
 
 /**
  *
@@ -72,6 +73,8 @@ public class OregonTrail {
         location1.setEnd(36);
         location1.setWeather("Monsoon");
         System.out.println(location1.toString());
+        int fun = GameControl.getFinalScore(5000, 3, 6);
+        System.out.println(fun);
        
     }
     
