@@ -56,27 +56,22 @@ class MainMenuView {
     }
 
     private boolean doAction(String[] inputs) {
-//    menuItem = first element in inputs array
-//convert menuItem to upper case
-//SWITCH menuItem
-//“N”: startNewGame()
-//“R”: restartGame()
-//“H”: getHelp()
-//“E”: RETURN true
-//DEFAULT: DISPLAY “Invalid menu item.”
-//ENDSWITCH
-//RETURN false
         String menuItem = inputs[0].toUpperCase();
-        if(menuItem.equals("N")){
-            startNewGame();
-        } else if(menuItem.equals("R")){
-            restartGame();
-        } else if(menuItem.equals("H")){
-            getHelp();
-        } else if(menuItem.equals("Q")){
-            return true;
-        } else {
-            System.out.println("Invalid menu item. Please try again:\n");
+        switch (menuItem) {
+            case "N":
+                startNewGame();
+                break;
+            case "R":
+                restartGame();
+                break;
+            case "H":
+                getHelp();
+                break;
+            case "Q":
+                return true;
+            default:
+                System.out.println("Invalid menu item. Please try again:\n");
+                break;
         }
         return false;
     }

@@ -53,18 +53,24 @@ public class HelpMenuView {
 
     private boolean doAction(String[] inputs) {
         String menuItem = inputs[0].toUpperCase();
-        if(menuItem.equals("G")){
-            displayGoal();
-        } else if(menuItem.equals("M")){
-            displayHowToMove();
-        } else if(menuItem.equals("E")){
-            displayEstimate();
-        } else if(menuItem.equals("H")){
-            displayHarvest();
-        } else if(menuItem.equals("Q")){
-            return true;
-        } else {
-            System.out.println("Invalid menu item. Please try again:\n");
+        switch (menuItem) {
+            case "G":
+                displayGoal();
+                break;
+            case "M":
+                displayHowToMove();
+                break;
+            case "E":
+                displayEstimate();
+                break;
+            case "H":
+                displayHarvest();
+                break;
+            case "Q":
+                return true;
+            default:
+                System.out.println("Invalid menu item. Please try again:\n");
+                break;
         }
         return false;
     }

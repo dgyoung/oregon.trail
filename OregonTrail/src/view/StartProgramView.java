@@ -7,8 +7,6 @@ package view;
 
 import control.GameControl;
 import java.util.Scanner;
-import static jdk.nashorn.internal.parser.TokenType.DO;
-import static jdk.nashorn.internal.parser.TokenType.IF;
 import model.Player;
 
 /**
@@ -79,14 +77,7 @@ public class StartProgramView {
         
         return true;
     }
-    public static boolean isInteger(String s, int radix) {
-        Scanner sc = new Scanner(s.trim());
-        if(!sc.hasNextInt(radix)) return false;
-        // we know it starts with a valid int, now make sure
-        // there's nothing left!
-        sc.nextInt(radix);
-        return !sc.hasNext();
-    }
+
 
      public void displayStartProgramView(){
 //        endOfView = false
