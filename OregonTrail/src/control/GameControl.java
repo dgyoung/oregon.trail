@@ -6,12 +6,28 @@
 package control;
 
 import java.util.Objects;
+import model.OregonTrail;
+import model.Player;
 
 /**
  *
  * @author bradrallen
  */
 public class GameControl {
+    public static Player savePlayer (String playersName){
+        if (playersName == null || playersName.length() <1){
+           return null;
+        }
+        Player player = new Player();
+        player.setName(playersName);
+        OregonTrail.setPlayer(player);
+        return player;
+    }
+    
+    public static void createNewGame(Player player){
+        System.out.println("*** createNewGame() ***");
+    }
+
     public double scoreGame(double[] trekers, double mileMarker, double[] remainingResources, String occupation){
     //validate input
     //add up health of all trekers
