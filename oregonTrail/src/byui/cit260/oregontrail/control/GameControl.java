@@ -49,8 +49,10 @@ public class GameControl {
 
     }
 
-    public static void setCharactersNames(String name1, String name2, String name3,
-            String name4, String name5) {
-
+    public static boolean setCharactersNames(String name) {
+        Character character = new Character();
+        character.setName(name);
+        return true;
+        
     }
 }

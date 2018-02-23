@@ -1,4 +1,6 @@
 package byui.cit260.oregontrail.view;
+import byui.cit260.oregontrail.control.GameControl;
+import static byui.cit260.oregontrail.control.GameControl.setCharactersNames;
 
 import java.util.Scanner;
 
@@ -16,7 +18,7 @@ public class StartProgramView {
         boolean endOfView = false;
         String[] inputs = this.getInputs();
         do {
-            if (inputs[0] == null || inputs[0].equals('6')) {//IF no inputs were entered OR the first input is Q
+            if (inputs[0] == null || inputs[0].equals("6")) {
                 return;
             }
             if (endOfView = doAction(inputs)) {
@@ -52,9 +54,13 @@ public class StartProgramView {
     }
 
     private boolean doAction(String[] inputs) {
-        System.out.println("**** doAction() called ****");
-        System.out.println("\tinputs = " + inputs[0]);
-
+        
+        if (setCharactersNames(inputs[0])){
+            return false;
+        }
+        
+        
+        
         return true;
     }
 
