@@ -9,11 +9,13 @@ import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.oregontrail.model.Supplies;
 import byui.cit260.oregontrail.model.Character;
 import byui.cit260.oregontrail.model.Player;
+import oregontrail.OregonTrail;
 
 
 public class GameControl {
 
     public static void startNewGame() {
+        
     }
 
     public static Player saveGame(String playersName) {
@@ -25,15 +27,17 @@ public class GameControl {
             }
        
             //player = new Player object
-            //Player player = new player();
+            Player player = new Player();
             //save the name in the player object
+            player.setName(playersName);
             //save the player in the main class of the project
+            OregonTrail.setPlayer(player);
    
         return new Player();
 }
 
     public static void restoreSavedGame() {
-
+        System.out.println("*** restoreSavedGame called ***");
     }
 
     public static int getFinalScore(int supply, int bonus, int character) {

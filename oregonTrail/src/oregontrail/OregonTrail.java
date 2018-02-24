@@ -15,18 +15,37 @@ import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.oregontrail.model.Map;
 import byui.cit260.oregontrail.model.Location;
 import byui.cit260.oregontrail.control.GameControl;
+import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.view.StartProgramView;
 
 
 public class OregonTrail {
 
-    /**
-     * @param args the command line arguments
-     */
+    private static Player player = null;
+    private static Game currentGame = null;
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        OregonTrail.player = player;
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        OregonTrail.currentGame = currentGame;
+    }
+    
+    
+    
     public static void main(String[] args) {
          StartProgramView startProgramView = new StartProgramView();
          startProgramView.displayStartProgramView();
        
     }
-    
+  
 }
