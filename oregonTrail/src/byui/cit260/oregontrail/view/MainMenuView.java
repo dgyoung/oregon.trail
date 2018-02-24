@@ -6,8 +6,9 @@ package byui.cit260.oregontrail.view;
  */
 class MainMenuView {
 
-    void displayMainMeuView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    void displayMainMenuView() {
+        
+        System.out.println("*** displayMainMenuView() called ***");
     }
     
 }

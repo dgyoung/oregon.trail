@@ -16,9 +16,9 @@ public class GameControl {
     public static void startNewGame() {
     }
 
-    public static void saveGame() {
-       
-    
+    public static Player saveGame(String playersName) {
+        System.out.println("*** saveGame() called ***");
+        return new Player();
 }
 
     public static void restoreSavedGame() {
@@ -55,10 +55,4 @@ public class GameControl {
         
     }
 
-    public static class saveGame extends Player {
-
-        public saveGame(String playersName) {
-            
-        }
-    }
 }

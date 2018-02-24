@@ -1,5 +1,7 @@
 package byui.cit260.oregontrail.view;
+
 import byui.cit260.oregontrail.control.GameControl;
+import static byui.cit260.oregontrail.control.GameControl.saveGame;
 import static byui.cit260.oregontrail.control.GameControl.setCharactersNames;
 import byui.cit260.oregontrail.model.Player;
 import java.util.ArrayList;
@@ -30,22 +32,21 @@ public class StartProgramView {
                 + "\n the challenge is possible – as long as you make it through"
                 + "\n the game with one wagon member alive, you win!"
                 + "\n"
-		+ "\n*****************************************************************");
-        
+                + "\n*****************************************************************");
+
     }
-    
+
     public void displayStartProgramView() {
         boolean endOfView = false;
         String[] inputs = this.getInputs();
-        
+
         do {
-            if (inputs[0].toUpperCase().equals("Q")) 
-            {
+            if (inputs[0].toUpperCase().equals("Q")) {
                 return; //exits program
             }
             //ENDIF endOfView = doAction(inputs)
             endOfView = this.doAction(inputs);
-            
+
         } while (!endOfView); //WHILE endOfView != true ;
 
     }
@@ -54,24 +55,20 @@ public class StartProgramView {
 
         String[] inputs = new String[1];
 
-        
-   
         Scanner scanner = new Scanner(System.in);
-        String userInput;
+        String userInput = null;
         String trimmedUserInput = null;
         boolean valid = false;
         while (!valid) {
-            
+
             System.out.println("\n" + "Please enter your name: ");
-            
+
             userInput = scanner.nextLine();
             trimmedUserInput = userInput.trim();
-            
+
             if (trimmedUserInput.length() < 1) {
                 System.out.println("You must enter a non-blank value");
-            }
-            
-            else {
+            } else {
                 valid = true;
             }
         }
@@ -82,34 +79,27 @@ public class StartProgramView {
     private boolean doAction(String[] inputs) {
         //playersName = get the first value in the inputs array
         String playersName;
-        playersName = inputs(0);
+        playersName = inputs[0];
         //player = savePlayer(playersName)
-        Player player = new GameControl.saveGame(playersName);
+        Player player = GameControl.saveGame(playersName);
         //IF player == null
         if (playersName == null) {
-                System.out.println("Could not create the player." + "\n" +
-               "Enter a different name.");
-           
+            System.out.println("Could not create the player." + "\n"
+                    + "Enter a different name.");
+
             return false;
-        }
-            
-            else {
+        } else {
             System.out.println(
-                "================================================="
-                + "Welcome to the game " + playersName 
-                + "We hope you have a lot of fun!"
-                + "=================================================");
-    
+                    "=================================================\n"
+                    + "Welcome to the game " + playersName
+                    + "\nWe hope you have a lot of fun!\n"
+                    + "=================================================");
+            
+            MainMenuView mainMenuView = new MainMenuView();
+            mainMenuView.displayMainMenuView();
+            return true;
+        }
 
-        //mainMenuView = Create a new MainMenuView object
-        //mainMenuView.displayMainMenuView()
-        return false;      
-    }
-    
-    }
-
-    private String inputs(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
