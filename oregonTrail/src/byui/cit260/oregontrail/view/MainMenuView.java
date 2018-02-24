@@ -74,20 +74,20 @@ class MainMenuView {
             case "1":
                 GameMenuView gameMenuView = new GameMenuView();
                 gameMenuView.displayGameMenuView();
-                return false;
+                break;
             case "2":
                 StartExistingGameView startExistingGameView = new StartExistingGameView();
                 startExistingGameView.displayStartExistingGameView();
-                return false;
+                break;
             case "3":
                 HelpMenuView helpMenuView = new HelpMenuView();
                 helpMenuView.displayHelpMenuView();
-                return false;
+                break;
             default:
                 System.out.println("Enter a valid option");
-                return false;
 
         }
+        return false;
     }
 
 }
