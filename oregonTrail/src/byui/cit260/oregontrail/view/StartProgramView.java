@@ -46,7 +46,7 @@ public class StartProgramView {
             //ENDIF endOfView = doAction(inputs)
             endOfView = this.doAction(inputs);
             
-        } while (!endOfView); //WHILE endOfView   != true ;
+        } while (!endOfView); //WHILE endOfView != true ;
 
     }
 
@@ -55,7 +55,7 @@ public class StartProgramView {
         String[] inputs = new String[1];
 
         
-        
+   
         Scanner scanner = new Scanner(System.in);
         String userInput;
         String trimmedUserInput = null;
@@ -79,7 +79,7 @@ public class StartProgramView {
         return inputs;
     }
 
-    private String doAction(String[] inputs) {
+    private boolean doAction(String[] inputs) {
         //playersName = get the first value in the inputs array
         String playersName;
         playersName = inputs(0);
@@ -90,23 +90,22 @@ public class StartProgramView {
                 System.out.println("Could not create the player." + "\n" +
                "Enter a different name.");
            
-            return null;
+            return false;
         }
-        else {
-                System.out.println(
+            
+            else {
+            System.out.println(
                 "================================================="
                 + "Welcome to the game " + playersName 
                 + "We hope you have a lot of fun!"
                 + "=================================================");
-            }
-         
+    
+
         //mainMenuView = Create a new MainMenuView object
-        MainMenuView mainMenuView = new MainMenuView();
-        
         //mainMenuView.displayMainMenuView()
-        mainMenuView.displayMainMeuView();
-        
-        return null;      
+        return false;      
+    }
+    
     }
 
     private String inputs(int i) {
