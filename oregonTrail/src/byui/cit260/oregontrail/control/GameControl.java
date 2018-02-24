@@ -17,7 +17,18 @@ public class GameControl {
     }
 
     public static Player saveGame(String playersName) {
-        System.out.println("*** saveGame() called ***");
+        //savePlayer(name): Player
+        //BEGIN
+            //if name is null OR length of name is < 1 THEN
+            if (playersName == null || playersName.length() < 1) {
+                return null;
+            }
+       
+            //player = new Player object
+            //Player player = new player();
+            //save the name in the player object
+            //save the player in the main class of the project
+   
         return new Player();
 }
 
