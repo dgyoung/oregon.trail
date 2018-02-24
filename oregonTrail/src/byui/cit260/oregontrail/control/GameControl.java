@@ -8,19 +8,18 @@ package byui.cit260.oregontrail.control;
 import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.oregontrail.model.Supplies;
 import byui.cit260.oregontrail.model.Character;
+import byui.cit260.oregontrail.model.Player;
 
-/**
- *
- * @author David
- */
+
 public class GameControl {
 
     public static void startNewGame() {
     }
 
     public static void saveGame() {
-
-    }
+       
+    
+}
 
     public static void restoreSavedGame() {
 
@@ -54,5 +53,12 @@ public class GameControl {
         character.setName(name);
         return true;
         
+    }
+
+    public static class saveGame extends Player {
+
+        public saveGame(String playersName) {
+            
+        }
     }
 }
