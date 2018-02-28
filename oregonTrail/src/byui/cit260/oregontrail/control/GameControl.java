@@ -8,6 +8,7 @@ package byui.cit260.oregontrail.control;
 import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.oregontrail.model.Supplies;
 import byui.cit260.oregontrail.model.Character;
+import byui.cit260.oregontrail.model.Game;
 import byui.cit260.oregontrail.model.Player;
 import oregontrail.OregonTrail;
 
@@ -67,6 +68,13 @@ public class GameControl {
         Character character = new Character();
         character.setName(name);
         return true;
+        
+    }
+    
+    public static Game setCharacterChoice(String choice) {
+        Game game = new Game();
+        game.setCharacterChoice(choice);
+        return game;
         
     }
 

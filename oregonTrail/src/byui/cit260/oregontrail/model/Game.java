@@ -15,6 +15,7 @@ public class Game implements Serializable{
     private int totalDays;
     private Player player;
     private Map map;
+    private String characterChoice;
     
     public int getNoPeople() {
         return noPeople;
@@ -46,6 +47,14 @@ public class Game implements Serializable{
 
     public void setMap(Map map) {
         this.map = map;
+    }
+
+    public String getCharacterChoice() {
+        return characterChoice;
+    }
+
+    public void setCharacterChoice(String characterChoice) {
+        this.characterChoice = characterChoice;
     }
     
     public Game() {

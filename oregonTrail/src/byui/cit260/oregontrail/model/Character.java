@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 public class Character implements Serializable{
     
-    private String name;
+    private String name = "";
     private String affliction;
 
     public String getName() {

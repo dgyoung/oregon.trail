@@ -9,7 +9,7 @@ package byui.cit260.oregontrail.control;
  *
  * @author David
  */
-public class Wagon {
+public class WagonControl {
     public static String getWagonPace(){
         return "";
     }

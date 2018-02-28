@@ -10,7 +10,7 @@ package byui.cit260.oregontrail.control;
  * @author David
  */
 public class Map {
-    public static void move(Wagon wagon, int location){
+    public static void move(WagonControl wagon, int location){
         
     }
     public static boolean validLocation(){
