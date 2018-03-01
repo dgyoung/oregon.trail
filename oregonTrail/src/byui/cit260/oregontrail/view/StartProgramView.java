@@ -88,12 +88,13 @@ public class StartProgramView {
                     + "Enter a different name.");
 
             return false;
-        } else {
-            System.out.println(
-                    "=================================================\n"
-                    + "Welcome to the game " + playersName
-                    + "\nWe hope you have a lot of fun!\n"
-                    + "=================================================");
+        } else {          
+            System.out.println("\n"
+                    + "=================================================\n"
+                    + "      Welcome to the game " + playersName
+                    + "\n      We hope you have a lot of fun!\n"
+                    + "================================================="
+                    + "\n");
 
             MainMenuView mainMenuView = new MainMenuView();
             mainMenuView.displayMainMenuView();
