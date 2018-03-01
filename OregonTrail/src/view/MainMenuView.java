@@ -36,6 +36,8 @@ class MainMenuView {
         System.out.println("N - Start new game");
         System.out.println("R - Restart existing game");
         System.out.println("H - Get help on how to play the game");
+        System.out.println("C - Change Rations");//this will be moved into a game play view later
+        System.out.println("S - Stop and Rest");//this will be moved into a game play view later        
         System.out.println("Q - Quit");
         System.out.println("================================================= ");
         
@@ -65,6 +67,12 @@ class MainMenuView {
             case "H":
                 getHelp();
                 break;
+            case "C":
+                changeRations();
+                break;
+            case "S":
+                stopAndRest();
+                break;
             case "Q":
                 return true;
             default:
@@ -89,5 +97,14 @@ class MainMenuView {
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.displayHelpMenuView();
     }
+    private void changeRations() {
+        ChangeRationsView changeRationsView = new ChangeRationsView();
+        changeRationsView.displayChangeRationsView();
+    }
+
+  private void stopAndRest() {
+        StopAndRestView stopAndRestView = new StopAndRestView();
+        stopAndRestView.displayStopAndRestView();
+  }
     
 }

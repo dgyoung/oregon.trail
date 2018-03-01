@@ -17,7 +17,7 @@ public class ChangeRationsView {
         do {
             //prompt for and get the desired rations
             String menuOption = this.getInputs();
-            if (menuOption.toUpperCase().equals("Q"))//user want to quit
+            if (menuOption.toUpperCase().equals("Q"))//user wants to quit
                 return; //exit game
             
             // do the requested action and display the correct view
@@ -32,9 +32,9 @@ public class ChangeRationsView {
 
         System.out.println("================================================= ");
         System.out.println("CHANGE FOOD RATIONS");
-        System.out.println("Your current rations are ");
+        System.out.println("Your current rations are 'filling'");
         System.out.println("Select your desired rations:");
-        System.out.println("1 - Filling ");
+        System.out.println("1 - Filling");
         System.out.println("2 - Meager");
         System.out.println("3 - Bare Bones");
         System.out.println("4 - Find out what these different rations mean");
@@ -52,7 +52,8 @@ public class ChangeRationsView {
               valid = true;
             }
         }
-        return userInput;  }
+        return userInput;
+  }
 
 
 
@@ -60,14 +61,14 @@ public class ChangeRationsView {
     
         String menuItem = menuOption.toUpperCase();
         switch (menuItem) {
-            case "1"://A steady Pace
-                updateRations();
+            case "1":
+                updateRations("Filling");
                 break;
-            case "2"://A strenuous pace
-                updateRations();
+            case "2":
+                updateRations("Meager");
                 break;
-            case "3"://A grueling pace
-                updateRations();
+            case "3":
+                updateRations("BareBones");
                 break;
             case "4"://explain what they mean
                 rationsExplanation();
@@ -81,13 +82,13 @@ public class ChangeRationsView {
         return false;
   }
 
-  private void updateRations() {
-    
+  private void updateRations(String rations) {
+    System.out.println("*** updateRations() " + rations + " ***");
   }
 
   private void rationsExplanation() {
-    HelpMenuView helpMenuView = new HelpMenuView();
-    helpMenuView.displayHelpMenuView();
+    ChangeRationsHelpView changeRationsHelpView = new ChangeRationsHelpView();
+    changeRationsHelpView.displayRationsHelpView();
   }
   
 }

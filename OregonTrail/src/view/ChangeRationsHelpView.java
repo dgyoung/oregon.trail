@@ -15,9 +15,8 @@ public class ChangeRationsHelpView {
         
         do {
             String [] inputs = getInputs();
-            if (inputs.length <1 || inputs[0].toUpperCase().equals("Q"))
-            {
-                return;
+            if (inputs.length <1 || inputs[0].toUpperCase().equals("Q")){
+              return;
             }
             endOfView = doAction(inputs);
         } while (endOfView == false);    }
@@ -29,14 +28,13 @@ public class ChangeRationsHelpView {
 
         System.out.println("================================================= ");
         System.out.println("RATIONS HELP MENU");
-        System.out.println("Steady - You travel about 8 hours a day, taking frequent rests. You take care not to get too tired.");
-        System.out.println("Strenuous - You travel about 12 hour a day, starting just after sunrise and stopping shortly before sunset. You stop to rest only when necessary. You finish each day feeling very tired.");
-        System.out.println("Grueling - You travel about 16 hours a day, starting before sunrise and continuing until dark. You almost never stop to rest. You do not get enough sleep at night. You finish each day feeling absolutely exhausted, and your health suffers.");
+        System.out.println("Filling - meals are large and generous.");
+        System.out.println("Meager - meals are small, but adequate.");
+        System.out.println("Bare Bones - meals are very small; everyone stays hungry.");
         System.out.println("C - Continue");
         System.out.println("================================================= ");
         
         while (valid == false) {
-            System.out.print("Please make your selection:\n");
             String input = keyboard.nextLine().trim();
             if (input.length()<1){
                 System.out.print("You must enter a value.\n");
@@ -50,40 +48,12 @@ public class ChangeRationsHelpView {
   private boolean doAction(String[] inputs) {
         String menuItem = inputs[0].toUpperCase();
         switch (menuItem) {
-            case "G":
-                displayGoal();
-                break;
-            case "M":
-                displayHowToMove();
-                break;
-            case "E":
-                displayEstimate();
-                break;
-            case "H":
-                displayHarvest();
-                break;
-            case "Q":
+            case "C":
                 return true;
             default:
                 System.out.println("Invalid menu item. Please try again:\n");
                 break;
         }
         return false;
-    }
-
-    private void displayGoal() {
-        System.out.println("*** displayGoal() ***");
-    }
-
-    private void displayHowToMove() {
-        System.out.println("*** displayHowToMove() ***");
-    }
-
-    private void displayEstimate() {
-        System.out.println("*** displayEstimate() ***");
-    }
-
-    private void displayHarvest() {
-        System.out.println("*** displayHarvest() ***");
-    }
+    }    
 }
