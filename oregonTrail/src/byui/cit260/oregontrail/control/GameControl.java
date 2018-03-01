@@ -10,6 +10,8 @@ import byui.cit260.oregontrail.model.Supplies;
 import byui.cit260.oregontrail.model.Character;
 import byui.cit260.oregontrail.model.Game;
 import byui.cit260.oregontrail.model.Player;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import oregontrail.OregonTrail;
 
 
@@ -76,6 +78,20 @@ public class GameControl {
         game.setCharacterChoice(choice);
         return game;
         
+    }
+
+    public static class cal {
+
+        public static void set(int i, int MARCH, int i0) {
+           
+        }
+        SimpleDateFormat simpleDateFormat1;
+        Calendar cal = Calendar.getInstance();
+
+        public cal() {
+            this.simpleDateFormat1 = new SimpleDateFormat("yyyy-MM-dd");
+        }
+
     }
 
 }
