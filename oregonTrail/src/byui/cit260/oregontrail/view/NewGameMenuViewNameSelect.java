@@ -24,13 +24,14 @@ class NewGameMenuViewNameSelect {
         Character character4 = new Character();
         Character character5 = new Character();
 
-        System.out.println("**** What are the names in the members of your "
-                + "party ****\n\n"
-        + "1.\\ " + character1.getName() + "\n"
-        + "2.\\ " + character2.getName() + "\n"
-        + "3.\\ " + character3.getName() + "\n"
-        + "4.\\ " + character4.getName() + "\n"
-        + "5.\\ " + character5.getName() + "\n");
+        System.out.println("\n"
+        + "***** What are the names of the members of your "
+                + "party? *****\n\n"
+        + "1.   " + character1.getName() + "\n"
+        + "2.   " + character2.getName() + "\n"
+        + "3.   " + character3.getName() + "\n"
+        + "4.   " + character4.getName() + "\n"
+        + "5.   " + character5.getName() + "\n");
         boolean endOfView = false;
 
         do {
@@ -42,11 +43,11 @@ class NewGameMenuViewNameSelect {
             endOfView = this.doAction(inputs, character1);
         } while (!endOfView); //WHILE endOfView != true ;
         System.out.println("**** Your wagon payty ****\n\n"
-        + "1.\\ " + character1.getName() + "\n"
-        + "2.\\ " + character2.getName() + "\n"
-        + "3.\\ " + character3.getName() + "\n"
-        + "4.\\ " + character4.getName() + "\n"
-        + "5.\\ " + character5.getName() + "\n");
+        + "1.   " + character1.getName() + "\n"
+        + "2.   " + character2.getName() + "\n"
+        + "3.   " + character3.getName() + "\n"
+        + "4.   " + character4.getName() + "\n"
+        + "5.   " + character5.getName() + "\n");
         do {
             String[] inputs = this.getInputs();
             if (inputs[0].toUpperCase().equals("Q")) {
@@ -56,11 +57,11 @@ class NewGameMenuViewNameSelect {
             endOfView = this.doAction(inputs, character2);
         } while (!endOfView); //WHILE endOfView != true ;
         System.out.println("**** Your wagon payty ****\n\n"
-        + "1.\\ " + character1.getName() + "\n"
-        + "2.\\ " + character2.getName() + "\n"
-        + "3.\\ " + character3.getName() + "\n"
-        + "4.\\ " + character4.getName() + "\n"
-        + "5.\\ " + character5.getName() + "\n");
+        + "1.  " + character1.getName() + "\n"
+        + "2.  " + character2.getName() + "\n"
+        + "3.  " + character3.getName() + "\n"
+        + "4.  " + character4.getName() + "\n"
+        + "5.  " + character5.getName() + "\n");
         do {
             String[] inputs = this.getInputs();
             if (inputs[0].toUpperCase().equals("Q")) {
@@ -70,11 +71,11 @@ class NewGameMenuViewNameSelect {
             endOfView = this.doAction(inputs, character3);
         } while (!endOfView); //WHILE endOfView != true ;
         System.out.println("**** Your wagon payty ****\n\n"
-        + "1.\\ " + character1.getName() + "\n"
-        + "2.\\ " + character2.getName() + "\n"
-        + "3.\\ " + character3.getName() + "\n"
-        + "4.\\ " + character4.getName() + "\n"
-        + "5.\\ " + character5.getName() + "\n");
+        + "1.   " + character1.getName() + "\n"
+        + "2.   " + character2.getName() + "\n"
+        + "3.   " + character3.getName() + "\n"
+        + "4.   " + character4.getName() + "\n"
+        + "5.   " + character5.getName() + "\n");
         do {
             String[] inputs = this.getInputs();
             if (inputs[0].toUpperCase().equals("Q")) {
@@ -84,11 +85,11 @@ class NewGameMenuViewNameSelect {
             endOfView = this.doAction(inputs, character4);
         } while (!endOfView); //WHILE endOfView != true ;
         System.out.println("**** Your wagon payty ****\n\n"
-        + "1.\\ " + character1.getName() + "\n"
-        + "2.\\ " + character2.getName() + "\n"
-        + "3.\\ " + character3.getName() + "\n"
-        + "4.\\ " + character4.getName() + "\n"
-        + "5.\\ " + character5.getName() + "\n");
+        + "1.   " + character1.getName() + "\n"
+        + "2.   " + character2.getName() + "\n"
+        + "3.   " + character3.getName() + "\n"
+        + "4.   " + character4.getName() + "\n"
+        + "5.   " + character5.getName() + "\n");
         do {
             String[] inputs = this.getInputs();
             if (inputs[0].toUpperCase().equals("Q")) {
@@ -98,13 +99,13 @@ class NewGameMenuViewNameSelect {
             endOfView = this.doAction(inputs, character5);
         } while (!endOfView); //WHILE endOfView != true ;
         System.out.println("**** Your wagon payty ****\n\n"
-        + "1.\\ " + character1.getName() + "\n"
-        + "2.\\ " + character2.getName() + "\n"
-        + "3.\\ " + character3.getName() + "\n"
-        + "4.\\ " + character4.getName() + "\n"
-        + "5.\\ " + character5.getName() + "\n");
-        NewGameMenuViewSelectOccupation newGameMenuViewSelectOccupation = new NewGameMenuViewSelectOccupation();
-        newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
+        + "1.   " + character1.getName() + "\n"
+        + "2.   " + character2.getName() + "\n"
+        + "3.   " + character3.getName() + "\n"
+        + "4.   " + character4.getName() + "\n"
+        + "5.   " + character5.getName() + "\n");
+        NewGameMenuViewStartingMonth newGameMenuViewStartingMonth = new NewGameMenuViewStartingMonth();
+        newGameMenuViewStartingMonth.displayNewGameMenuViewStartingMonth();
 
     }
 
@@ -144,11 +145,12 @@ class NewGameMenuViewNameSelect {
 
             return false;
         } else {
-            System.out.println(
-                    "=================================================\n"
-                    + "Welcome to the game " + character.getName()
-                    + "\nWe hope you have a lot of fun!\n"
-                    + "=================================================");
+            System.out.println("\n"
+                    + "=================================================\n"
+                    + "     Welcome to the game " + character.getName()
+                    + "\n      We hope you have a lot of fun!\n"
+                    + "================================================="
+                    + "\n");
             return true;
         }
 
