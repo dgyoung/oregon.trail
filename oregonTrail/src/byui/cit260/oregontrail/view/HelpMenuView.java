@@ -83,7 +83,6 @@ class HelpMenuView {
     }
 
     private boolean doAction(String[] inputs, int increment, String[] help) {
-//playersName = get the first value in the inputs array
         String choice;
         choice = inputs[0];
         //player = savePlayer(playersName)
