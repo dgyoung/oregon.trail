@@ -17,13 +17,11 @@ import model.Player;
 class MainMenuView {
     public void displayMainMenuView(){
         boolean endOfView = false;
-        
         do {
             String [] inputs = getInputs();
-            if (inputs.length <1 || inputs[0].toUpperCase().equals("Q"))
-            {
-                return;
-            }
+            if (inputs.length <1 || inputs[0].toUpperCase().equals("Q"))//user want to quit
+                return; //exit game
+            // do the requested action and display the correct view
             endOfView = doAction(inputs);
         } while (endOfView == false);
     }
@@ -42,10 +40,10 @@ class MainMenuView {
         System.out.println("================================================= ");
         
 
-        while (valid == false) {
+        while (valid == false) { //(!valid) is the same thing as (valid == false)
             System.out.print("Please make your selection:\n");
             String input = keyboard.nextLine().trim();
-            if (input.length()<1){
+            if (input.length()<1){//blank value entered
                 System.out.print("You must enter a value.\n");
             }else{
                 inputs[0] = input;
