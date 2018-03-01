@@ -22,8 +22,8 @@ class NewGameMenuViewSelectOccupation {
 
         System.out.println("********** The Oregon Trail **********\n"
                 + "\n"
-                + "Many kinds of people made \n"
-                + "the trip to Oregon. \n"
+                + "     Many kinds of people made \n"
+                + "         the trip to Oregon. \n"
                 + "\n"
                 + "* Choose your occupation: *\n"
                 + "* 1. Banker from Boston *\n"
@@ -53,8 +53,7 @@ class NewGameMenuViewSelectOccupation {
         boolean valid = false;
         while (!valid) {
 
-            System.out.println("\nWhat is your choice? *\n "
-                    + "***********************************\n");
+            System.out.println("\n***** What is your choice? *****\n ");
 
             userInput = scanner.nextLine();
             trimmedUserInput = userInput.trim();
@@ -101,7 +100,7 @@ class NewGameMenuViewSelectOccupation {
                 newGameMenuViewPurchaseItems.displayNewGameMenuViewPurchaseItems();
                 return true;
             case "4":
-                System.out.println("Traveling to Oregon isnt' easy!\n"
+                System.out.println("\nTraveling to Oregon isnt' easy!\n"
                         + "But if you're a banker, you'll have more money for\n"
                         + "supplies and services than a carpenter or a farmer.\n"
                         + "\n"
