@@ -14,7 +14,8 @@ class MainMenuView {
 
     void displayMainMenuView() {
 
-        System.out.println("**** The Oregon Trail – Main Menu *****\n"
+        System.out.println("**** The Oregon Trail – MAIN MENU *****\n"
+                + "\n"
                 + "* 1. Start New Game *\n"
                 + "* 2. Resume Saved Game *\n"
                 + "* 3. Help *\n"
@@ -42,8 +43,7 @@ class MainMenuView {
         boolean valid = false;
         while (!valid) {
 
-            System.out.println("\nWhat is your choice? *\n "
-                    + "***********************************\n");
+            System.out.println("***** What is your choice? *****");
 
             userInput = scanner.nextLine();
             trimmedUserInput = userInput.trim();
