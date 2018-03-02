@@ -5,17 +5,18 @@
  */
 package byui.cit260.oregontrail.control;
 
-import byui.cit260.oregontrail.model.Wagon;
-import byui.cit260.oregontrail.model.Supplies;
 import byui.cit260.oregontrail.model.Character;
 import byui.cit260.oregontrail.model.Game;
+import byui.cit260.oregontrail.model.Location;
 import byui.cit260.oregontrail.model.Player;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import oregontrail.OregonTrail;
 
 
 public class GameControl {
+
 
     public static void startNewGame() {
         
@@ -80,18 +81,13 @@ public class GameControl {
         
     }
 
-    public static class cal {
-
-        public static void set(int i, int MARCH, int i0) {
-           
-        }
-        SimpleDateFormat simpleDateFormat1;
-        Calendar cal = Calendar.getInstance();
-
-        public cal() {
-            this.simpleDateFormat1 = new SimpleDateFormat("yyyy-MM-dd");
-        }
-
+    public static Calendar setCalendar() {
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("MMMMM dd yyyy");
+        Calendar calendar = new GregorianCalendar();
+        sdf.format(calendar.getTime());
+        return calendar;
+        
     }
-
 }
+// void roll(int calendarField, boolean up)   --- advance calendar 1 day
