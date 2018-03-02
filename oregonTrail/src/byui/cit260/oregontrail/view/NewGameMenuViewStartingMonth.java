@@ -1,13 +1,16 @@
 package byui.cit260.oregontrail.view;
 import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.model.Player;
+import byui.cit260.oregontrail.model.Location;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 /**
  *
  * @author Alexandra
  */
-class NewGameMenuViewStartingMonth {
+class NewGameMenuViewStartingMonth{
     
     void displayNewGameMenuViewStartingMonth(){
        
@@ -50,56 +53,67 @@ class NewGameMenuViewStartingMonth {
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
-//playersName = get the first value in the inputs array
-        String month;
-        month = inputs[0];
-        Player player = GameControl.saveGame(month);
-        if (month == null) {
-            System.out.println("Please enter a correct input");
-            return false;
-        }
-        NewGameMenuViewSelectOccupation newGameMenuViewSelectOccupation
-                = new NewGameMenuViewSelectOccupation();
-        switch (month) {
-            case "1":
-                GameControl.cal.set(1848,Calendar.MARCH,1);
-                newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
-            case "2":
-                GameControl.cal.set(1848,Calendar.APRIL,1);
-                newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
-                return true;
-            case "3":
-                GameControl.cal.set(1848,Calendar.MAY,1);
-                newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
-                return true;
-            case "4":
-                GameControl.cal.set(1848,Calendar.JUNE,1);
-                newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
-                return true;
-            case "5":
-                GameControl.cal.set(1848,Calendar.JULY,1);
-                newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
-                return true;
-            case "6":
-                System.out.println("\n"
-                        + "You attend a public meeting held for \n" 
-                        + "\"folks with the California - Oregon fever.\" \n" 
-                        + "\n" 
-                        + "You're told: If you leave too early, \n" 
-                        + "there won't be any grass for your oxen to eat. \n" 
-                        + "If you leave too late, you may not get to Oregon \n" 
-                        + "before winder comes. If you leave at just \n" 
-                        + "the right time, there will be green grass \n" 
-                        + "and the weather will still be cool.\n" 
-                        + "\n" 
-                        + "(Enter \"C\" to Continue)");
-                break;
-            default:
-                System.out.println("Enter a valid option");
+        private boolean doAction(String[] inputs) {
+            SimpleDateFormat sdf = new SimpleDateFormat("MMMMM dd yyyy");        
+            String month;
+            month = inputs[0];
 
-        }
-        return false;
+            Calendar calendar = GameControl.setCalendar();
+
+            if (month == null) {
+                System.out.println("Please enter a correct input");
+
+                return false;
+            }
+            NewGameMenuViewSelectOccupation newGameMenuViewSelectOccupation
+                    = new NewGameMenuViewSelectOccupation();
+            switch (month) {
+                case "1":
+                    //update a date
+                    calendar.set(Calendar.YEAR, 1848);
+                    calendar.set(Calendar.MONTH, 02);
+                    calendar.set(Calendar.DATE, 01);
+                    System.out.println("You'll begin your journey on" + sdf.format(calendar.getTime()));
+                    newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
+                case "2":
+                    calendar.set(Calendar.YEAR, 1848);
+                    calendar.set(Calendar.MONTH, 03);
+                    calendar.set(Calendar.DATE, 01);
+                    newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
+                case "3":
+                    calendar.set(Calendar.YEAR, 1848);
+                    calendar.set(Calendar.MONTH, 04);
+                    calendar.set(Calendar.DATE, 01);
+                    newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
+                case "4":
+                    calendar.set(Calendar.YEAR, 1848);
+                    calendar.set(Calendar.MONTH, 05);
+                    calendar.set(Calendar.DATE, 01);
+                    newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
+                case "5":
+                    calendar.set(Calendar.YEAR, 1848);
+                    calendar.set(Calendar.MONTH, 06);
+                    calendar.set(Calendar.DATE, 01);
+                    newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
+                case "6":
+                    System.out.println("\n"
+                            + "You attend a public meeting held for \n" 
+                            + "\"folks with the California - Oregon fever.\" \n" 
+                            + "\n" 
+                            + "You're told: If you leave too early, \n" 
+                            + "there won't be any grass for your oxen to eat. \n" 
+                            + "If you leave too late, you may not get to Oregon \n" 
+                            + "before winder comes. If you leave at just \n" 
+                            + "the right time, there will be green grass \n" 
+                            + "and the weather will still be cool.\n" 
+                            + "\n" 
+                            + "(Enter \"C\" to Continue)");
+                    break;
+                default:
+                    System.out.println("Enter a valid option");
+
+            }
+            return false;
     }
 
 }

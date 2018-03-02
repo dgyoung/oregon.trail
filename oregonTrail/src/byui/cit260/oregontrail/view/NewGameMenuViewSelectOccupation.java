@@ -7,9 +7,7 @@ package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.control.SupplyControl;
-import byui.cit260.oregontrail.model.Game;
 import byui.cit260.oregontrail.model.Player;
-import byui.cit260.oregontrail.model.Supplies;
 import java.util.Scanner;
 
 /**
@@ -72,9 +70,9 @@ class NewGameMenuViewSelectOccupation {
 //playersName = get the first value in the inputs array
         String choice;
         choice = inputs[0];
-        //player = savePlayer(playersName)
+        
         Player player = GameControl.saveGame(choice);
-        //IF player == null
+        
         if (choice == null) {
             System.out.println("Please enter a correct input");
 
