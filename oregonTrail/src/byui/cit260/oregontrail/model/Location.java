@@ -5,6 +5,7 @@
  */
 package byui.cit260.oregontrail.model;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Objects;
 
 /**
@@ -18,6 +19,15 @@ public class Location implements Serializable{
     private int position; /**distance from start*/
     private int end; /**distance to final location on map*/
     private String weather;
+    private Calendar calendar;
+
+    public Calendar getCalendar() {
+        return calendar;
+    }
+
+    public void setCalendar(String month) {
+        this.calendar = calendar;
+    }
 
     public String getLabel() {
         return label;
@@ -57,9 +67,6 @@ public class Location implements Serializable{
 
     public void setWeather(String weather) {
         this.weather = weather;
-    }
-
-    public Location() {
     }
 
     @Override
@@ -107,5 +114,5 @@ public class Location implements Serializable{
         }
         return true;
     }
-    
+
 }
