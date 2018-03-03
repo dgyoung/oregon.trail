@@ -111,7 +111,7 @@ class StartingMonthView{
                 case "6":
                     System.out.println("\n"
                             + "You attend a public meeting held for \n" 
-                            + "\"folks with the California - Oregon fever. \n" 
+                            + "\folks with the California - Oregon fever. \n" 
                             + "\n" 
                             + "You're told: If you leave too early, \n" 
                             + "there won't be any grass for your oxen to eat. \n" 
