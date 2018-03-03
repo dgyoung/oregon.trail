@@ -36,11 +36,11 @@ public class GameControl {
         trekerHealth += trekers[i];
     }
     //if 0 gthen no health left so everyone is dead
-    if (trekerHealth ==0){
+    if (trekerHealth == 0){
         return -1;
     }
     //if not 2000 then not at end of trail
-    if (mileMarker !=2000){
+    if (mileMarker != 2000){
         return -1;
     }
     
@@ -64,6 +64,5 @@ public class GameControl {
 
     double score = rawScore * occupationMultiplier;
     return score;
-    }
-    
+    }    
 }

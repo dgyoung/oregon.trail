@@ -40,26 +40,6 @@ public class StartProgramView {
         return inputs;
     }
         private boolean doAction(String[] inputs){
-//playersName = get the first value in the inputs array
-//player = savePlayer(playersName)
-//IF player == null
-//display “Could not create the player. “ +
-//“Enter a different name.”
-//RETURN false
-//ENDIF
-//DISPLAY "================================================= "
-//+ "Welcome to the game " + playersName
-//+ "We hope you have a lot of fun!”
-//+ "================================================= "
-//mainMenuView = Create a new MainMenuView object
-//mainMenuView.displayMainMenuView()
-//RETURN true
-        
-        //if (isInteger(inputs[0],10) != false){
-//            int inputValues = Integer.parseInt(inputs[0]);
-//        } else {
-//            String inputsValues = inputs[0];
-//        }
         String playersName = inputs[0];
         Player player = GameControl.savePlayer(playersName);
         if (player == null){
@@ -78,17 +58,7 @@ public class StartProgramView {
         return true;
     }
 
-
      public void displayStartProgramView(){
-//        endOfView = false
-//        DO
-//        inputs = getInputs()
-//        IF no inputs were entered OR the first input is Q
-//        RETURN
-//        ENDIF
-//        endOfView = doAction(inputs)
-//        WHILE endOfView != true
-
         boolean endOfView = false;
         
         do {

@@ -39,7 +39,7 @@ public class GameControlTest {
     public void testScoreGame2() {
         System.out.println("\t Test Case 2 - error everyone is dead");
         //-1 because everyone is dead
-        double[] trekers = {0, 0, 0, 0, 0} ;//sum=27
+        double[] trekers = {0, 0, 0, 0, 0} ;//sum=0
         double mileMarker = 2000;
         double[] remainingResources = {50, 50, 25, 25, 50, 10} ;//sum = 210
         String occupation = "carpenter";
