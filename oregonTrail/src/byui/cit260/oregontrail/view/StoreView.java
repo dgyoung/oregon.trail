@@ -160,6 +160,9 @@ class StoreView {
                 SupplyControl.addToSupplies("wagonTonuge", Integer.parseInt(inputs2));
                 SupplyControl.removeFromSupplies("money", storeScene.store1.getTongueCost());
                 break;
+            case "8":
+                GameMenuView gameMenuView = new GameMenuView();
+                gameMenuView.display();
             default:
                 System.out.println("Enter a valid option");
 
