@@ -7,7 +7,7 @@ package byui.cit260.oregontrail.model;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Objects;
-
+import byui.cit260.oregontrail.control.GameControl;
 /**
  *
  * @author allie
@@ -20,15 +20,7 @@ public class Location implements Serializable{
     private int end; /**distance to final location on map*/
     private String weather;
     private Calendar calendar;
-
-    public Calendar getCalendar() {
-        return calendar;
-    }
-
-    public void setCalendar(String month) {
-        this.calendar = calendar;
-    }
-
+    
     public String getLabel() {
         return label;
     }
@@ -68,6 +60,15 @@ public class Location implements Serializable{
     public void setWeather(String weather) {
         this.weather = weather;
     }
+    
+    public Calendar getCalendar() {
+        return calendar;
+    }
+
+    public void setCalendar(String month) {
+        this.calendar = calendar;
+    }
+
 
     @Override
     public int hashCode() {

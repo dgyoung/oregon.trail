@@ -13,20 +13,31 @@ import java.util.Scanner;
 class NewGameMenuViewStartingMonth{
     
     void displayNewGameMenuViewStartingMonth(){
-       
+        
         System.out.println("********** The Oregon Trail **********\n"
-                + "\n"
-                + "  It is 1848. Your jumping off place for\n" 
-                +"    Oregon is Independence, Missouri. \n"
-                + "\n"
-                + "* Choose a moth to begin journey: *\n"
-                + "* 1.   March *\n"
-                + "* 2.   April *\n"
-                + "* 3.   May *\n"
-                + "* 4.   June *\n"
-                + "* 5.   July *\n"
-                + "* 6.   When should I leave? *\n");
+            + "\n"
+            + "  It is 1848. Your jumping off place\n" 
+            + " for Oregon is Independence, Missouri. \n"
+            + "\n"
+            + "* Choose a month to begin journey: *\n"
+            + "* 1.   March *\n"
+            + "* 2.   April *\n"
+            + "* 3.   May *\n"
+            + "* 4.   June *\n"
+            + "* 5.   July *\n"
+            + "* 6.   When should I leave? *\n");
         boolean endOfView = false;
+ 
+        do {
+            String[] inputs = this.getInputs();
+            if (inputs[0].toUpperCase().equals("Q")) {
+                return; //exits program
+            }
+            //ENDIF endOfView = doAction(inputs)
+            endOfView = this.doAction(inputs);
+
+        } while (!endOfView); //WHILE endOfView != true ;
+
     }
 
     private String[] getInputs() {
@@ -38,7 +49,7 @@ class NewGameMenuViewStartingMonth{
         boolean valid = false;
         while (!valid) {
 
-            System.out.println("\n***** What is your choice? *****\n ");
+            System.out.println("\n***** Which month do you choose? *****\n ");
 
             userInput = scanner.nextLine();
             trimmedUserInput = userInput.trim();
@@ -73,32 +84,36 @@ class NewGameMenuViewStartingMonth{
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 02);
                     calendar.set(Calendar.DATE, 01);
-                    System.out.println("You'll begin your journey on" + sdf.format(calendar.getTime()));
+                    System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
                     newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
                 case "2":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 03);
                     calendar.set(Calendar.DATE, 01);
+                    System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
                     newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
                 case "3":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 04);
-                    calendar.set(Calendar.DATE, 01);
+                    calendar.set(Calendar.DATE, 01);                    
+                    System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
                     newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
                 case "4":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 05);
                     calendar.set(Calendar.DATE, 01);
+                    System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
                     newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
                 case "5":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 06);
                     calendar.set(Calendar.DATE, 01);
+                    System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
                     newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
                 case "6":
                     System.out.println("\n"
                             + "You attend a public meeting held for \n" 
-                            + "\"folks with the California - Oregon fever.\" \n" 
+                            + "\"folks with the California - Oregon fever. \n" 
                             + "\n" 
                             + "You're told: If you leave too early, \n" 
                             + "there won't be any grass for your oxen to eat. \n" 
@@ -106,9 +121,15 @@ class NewGameMenuViewStartingMonth{
                             + "before winder comes. If you leave at just \n" 
                             + "the right time, there will be green grass \n" 
                             + "and the weather will still be cool.\n" 
-                            + "\n" 
-                            + "(Enter \"C\" to Continue)");
-                    break;
+                            + "\n"
+                            + "* Choose a month to begin journey: *\n"
+                            + "* 1.   March *\n"
+                            + "* 2.   April *\n"
+                            + "* 3.   May *\n"
+                            + "* 4.   June *\n"
+                            + "* 5.   July *\n"
+                            + "* 6.   When should I leave? *\n");
+                                    break;
                 default:
                     System.out.println("Enter a valid option");
 

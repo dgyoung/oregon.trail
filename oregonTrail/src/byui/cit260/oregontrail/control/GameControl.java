@@ -88,6 +88,10 @@ public class GameControl {
         sdf.format(calendar.getTime());
         return calendar;
         
+        //TO INCREMENT THE DATE BY ONE DAY
+        //calendar.add(Calendar.DATE, 1);
+        //System.out.println("Date : " + sdf.format(calendar.getTime()));
+        
     }
 }
 // void roll(int calendarField, boolean up)   --- advance calendar 1 day

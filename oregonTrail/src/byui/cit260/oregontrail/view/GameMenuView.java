@@ -4,30 +4,33 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.view;
-
+import byui.cit260.oregontrail.model.Location;
+import byui.cit260.oregontrail.control.GameControl;
+import byui.cit260.oregontrail.view.NewGameMenuViewStartingMonth;
+import java.util.Calendar;
 /**
  *
  * @author Allie
  */
 class GameMenuView {
+    
     void displayGameMenuView(){
-        
+        Calendar calendar = null;       
         System.out.println("\n********** The Oregon Trail *******************"
-                + "* Location: Independence *"
-                + "* Date: March 1, 1848 *"
-                + "* Weather: Cold *"
-                + "* Health: good *"
-                + "* Pace: steady *"
-                + "* Rations: filling *"
-                + "* *"
-                + "* 1. Continue on trail *"
-                + "* 2. Check supplies *"
-                + "* 3. Display the map *"
-                + "* 4. Change pace *"
-                + "* 5. Change food rations *"
-                + "* 6. Stop to rest *"
-                + "* 7. Hunt *"
-                +"*-----What is your choice? *");
+                + "* Location: Independence *\n"
+                + "* Date: " + calendar.getCalendar() + "*\n"
+                + "* Health: good *\n"
+                + "* Pace: steady *\n"
+                + "* Rations: filling *\n"
+                + "\n"
+                + "* 1. Continue on trail *\n"
+                + "* 2. Check supplies *\n"
+                + "* 3. Display the map *\n"
+                + "* 4. Change pace *\n"
+                + "* 5. Change food rations *\n"
+                + "* 6. Stop to rest *\n"
+                + "* 7. Hunt *\n"
+                +"*-----What is your choice? *\n");
 
         boolean endOfView = false;
     }
