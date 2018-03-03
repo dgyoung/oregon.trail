@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 class GameMenuView {
     
-    void displayGameMenuView(){
+    void display(){
                
         System.out.println("\n***** The Oregon Trail *****"
                 + "* Location: Locatoin.getLocation() *\n"
@@ -70,7 +70,7 @@ class GameMenuView {
         String menuOption;
         menuOption = inputs[0];
         
-        Player player = GameControl.saveGame(menuOption);
+        //Player player = GameControl.saveGame(menuOption);
         
         if (menuOption == null) {
             System.out.println("Please enter a valid menu option");
