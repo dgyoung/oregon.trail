@@ -18,7 +18,7 @@ class GameMenuView {
         Calendar calendar = null;       
         System.out.println("\n********** The Oregon Trail *******************"
                 + "* Location: Independence *\n"
-                + "* Date: " + calendar.getCalendar() + "*\n"
+                + "* Date: GetCalendar *\n"
                 + "* Health: good *\n"
                 + "* Pace: steady *\n"
                 + "* Rations: filling *\n"
