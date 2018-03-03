@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.model.Character;
 import byui.cit260.oregontrail.model.Game;
-import byui.cit260.oregontrail.model.Location;
 import byui.cit260.oregontrail.model.Player;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -87,11 +81,10 @@ public class GameControl {
         Calendar calendar = new GregorianCalendar();
         sdf.format(calendar.getTime());
         return calendar;
-        
-        //TO INCREMENT THE DATE BY ONE DAY
-        //calendar.add(Calendar.DATE, 1);
-        //System.out.println("Date : " + sdf.format(calendar.getTime()));
-        
     }
+    
+    public static String getCalendar() {
+        return "";
+    }
+    
 }
-// void roll(int calendarField, boolean up)   --- advance calendar 1 day

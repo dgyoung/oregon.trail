@@ -40,6 +40,17 @@ public class OregonTrail {
         OregonTrail.currentGame = currentGame;
     }
     
+    public static void pressAnyKeyToContinue()
+ {      System.out.println("Press any key to continue...");
+        try
+        {
+            System.in.read();
+        }  
+        catch(Exception e)
+        {}  
+ }
+
+    
     public static void main(String[] args) {
          StartProgramView startProgramView = new StartProgramView();
          startProgramView.displayStartProgramView();

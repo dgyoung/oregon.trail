@@ -1,12 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.oregontrail.view;
 
-import byui.cit260.oregontrail.control.GameControl;
-import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.Character;
 import java.util.Scanner;
 
@@ -14,9 +7,9 @@ import java.util.Scanner;
  *
  * @author David
  */
-class NewGameMenuViewNameSelect {
+class NameSelectView {
 
-    void displayNewGameMenuViewNameSelect() {
+    void displayNameSelectView() {
         
         Character character1 = new Character();
         Character character2 = new Character();
@@ -104,8 +97,8 @@ class NewGameMenuViewNameSelect {
         + "3.   " + character3.getName() + "\n"
         + "4.   " + character4.getName() + "\n"
         + "5.   " + character5.getName() + "\n");
-        NewGameMenuViewStartingMonth newGameMenuViewStartingMonth = new NewGameMenuViewStartingMonth();
-        newGameMenuViewStartingMonth.displayNewGameMenuViewStartingMonth();
+        StartingMonthView StartingMonthView = new StartingMonthView();
+        StartingMonthView.displayStartingMonthView();
 
     }
 
@@ -147,8 +140,8 @@ class NewGameMenuViewNameSelect {
         } else {
             System.out.println("\n"
                     + "=================================================\n"
-                    + "     Welcome to the game " + character.getName()
-                    + "\n      We hope you have a lot of fun!\n"
+                    + "Welcome to the game " + character.getName()
+                    + "\nWe hope you have a lot of fun!\n"
                     + "================================================="
                     + "\n");
             return true;

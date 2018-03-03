@@ -17,9 +17,9 @@ import java.util.Scanner;
  *
  * @author David
  */
-class NewGameMenuViewPurchaseItems {
+class StoreView {
 
-    void displayNewGameMenuViewPurchaseItems() {
+    void displayPurchaseItemsView() {
         StoreScene storeScene = null;
         SupplyControl.initilizeSupplies();
         Supplies supplies = new Supplies();

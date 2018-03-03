@@ -11,7 +11,7 @@ import byui.cit260.oregontrail.model.HuntingScene;
  *
  * @author David
  */
-public class Hunt {
+public class HuntControl {
     public static void animalApperance(){
         
     }

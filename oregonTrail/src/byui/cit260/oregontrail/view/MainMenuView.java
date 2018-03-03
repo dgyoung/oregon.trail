@@ -72,8 +72,8 @@ class MainMenuView {
         }
         switch (choice) {
             case "1":
-                NewGameMenuViewNameSelect newgameMenuView = new NewGameMenuViewNameSelect();
-                newgameMenuView.displayNewGameMenuViewNameSelect();
+                NameSelectView newgameMenuView = new NameSelectView();
+                newgameMenuView.displayNameSelectView();
                 break;
             case "2":
                 StartExistingGameView startExistingGameView = new StartExistingGameView();

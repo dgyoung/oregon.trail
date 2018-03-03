@@ -16,6 +16,9 @@ public class WagonControl {
     public static String getWagonRations(){
         return "";
     }
+    public static String getWagonHealth(){
+        return "";
+    }
     public static void changePace(){
         
     }

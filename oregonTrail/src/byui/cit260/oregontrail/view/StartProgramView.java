@@ -1,12 +1,7 @@
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.GameControl;
-import static byui.cit260.oregontrail.control.GameControl.saveGame;
-import static byui.cit260.oregontrail.control.GameControl.setCharactersNames;
 import byui.cit260.oregontrail.model.Player;
-import java.util.ArrayList;
-import java.util.List;
-
 import java.util.Scanner;
 
 /**

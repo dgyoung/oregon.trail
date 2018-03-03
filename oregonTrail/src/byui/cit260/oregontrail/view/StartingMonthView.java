@@ -1,18 +1,16 @@
 package byui.cit260.oregontrail.view;
+
 import byui.cit260.oregontrail.control.GameControl;
-import byui.cit260.oregontrail.model.Player;
-import byui.cit260.oregontrail.model.Location;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.Scanner;
 /**
  *
  * @author Alexandra
  */
-class NewGameMenuViewStartingMonth{
+class StartingMonthView{
     
-    void displayNewGameMenuViewStartingMonth(){
+    void displayStartingMonthView(){
         
         System.out.println("********** The Oregon Trail **********\n"
             + "\n"
@@ -76,8 +74,8 @@ class NewGameMenuViewStartingMonth{
 
                 return false;
             }
-            NewGameMenuViewSelectOccupation newGameMenuViewSelectOccupation
-                    = new NewGameMenuViewSelectOccupation();
+            SelectOccupationView SelectOccupationView
+                    = new SelectOccupationView();
             switch (month) {
                 case "1":
                     //update a date
@@ -85,31 +83,31 @@ class NewGameMenuViewStartingMonth{
                     calendar.set(Calendar.MONTH, 02);
                     calendar.set(Calendar.DATE, 01);
                     System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
-                    newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
+                    SelectOccupationView.displaySelectOccupationView();
                 case "2":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 03);
                     calendar.set(Calendar.DATE, 01);
                     System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
-                    newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
+                    SelectOccupationView.displaySelectOccupationView();
                 case "3":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 04);
                     calendar.set(Calendar.DATE, 01);                    
                     System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
-                    newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
+                    SelectOccupationView.displaySelectOccupationView();
                 case "4":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 05);
                     calendar.set(Calendar.DATE, 01);
                     System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
-                    newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
+                    SelectOccupationView.displaySelectOccupationView();
                 case "5":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 06);
                     calendar.set(Calendar.DATE, 01);
                     System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
-                    newGameMenuViewSelectOccupation.displayNewGameMenuViewSelectOccupation();
+                    SelectOccupationView.displaySelectOccupationView();
                 case "6":
                     System.out.println("\n"
                             + "You attend a public meeting held for \n" 

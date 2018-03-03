@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.GameControl;
@@ -14,9 +9,9 @@ import java.util.Scanner;
  *
  * @author David
  */
-class NewGameMenuViewSelectOccupation {
+class SelectOccupationView {
 
-    void displayNewGameMenuViewSelectOccupation() {
+    void displaySelectOccupationView() {
 
         System.out.println("********** The Oregon Trail **********\n"
                 + "\n"
@@ -78,24 +73,24 @@ class NewGameMenuViewSelectOccupation {
 
             return false;
         }
-        NewGameMenuViewPurchaseItems newGameMenuViewPurchaseItems
-                = new NewGameMenuViewPurchaseItems();
+        StoreView PurchaseItemsView
+                = new StoreView();
         switch (choice) {
             case "1":
                 GameControl.setCharacterChoice("Banker");
                 SupplyControl.addToSupplies("money", 1600);
-                newGameMenuViewPurchaseItems.displayNewGameMenuViewPurchaseItems();
+                PurchaseItemsView.displayPurchaseItemsView();
 
                 return true;
             case "2":
                 GameControl.setCharacterChoice("Carpenter");
                 SupplyControl.addToSupplies("money", 800);
-                newGameMenuViewPurchaseItems.displayNewGameMenuViewPurchaseItems();
+                PurchaseItemsView.displayPurchaseItemsView();
                 return true;
             case "3":
                 GameControl.setCharacterChoice("farmer");
                 SupplyControl.addToSupplies("money", 400);
-                newGameMenuViewPurchaseItems.displayNewGameMenuViewPurchaseItems();
+                PurchaseItemsView.displayPurchaseItemsView();
                 return true;
             case "4":
                 System.out.println("\nTraveling to Oregon isnt' easy!\n"

@@ -16,6 +16,7 @@ public class Game implements Serializable{
     private Player player;
     private Map map;
     private String characterChoice;
+    private String helpMenuChoice;
     
     public int getNoPeople() {
         return noPeople;
@@ -58,6 +59,14 @@ public class Game implements Serializable{
     }
     
     public Game() {
+    }
+    
+    public String getHelpMenuChoice() {
+        return helpMenuChoice;
+    }
+
+    public void setHelpMenuChoice(String helpMenuChoice) {
+        this.helpMenuChoice = helpMenuChoice;
     }
 
     @Override
