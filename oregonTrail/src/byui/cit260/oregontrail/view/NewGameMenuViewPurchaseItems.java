@@ -126,7 +126,7 @@ class NewGameMenuViewPurchaseItems {
                 break;
             case "4":
                 System.out.println("\n"
-                        + "I sell ammunition in boxes of 20 bullets. Each nox costs $2.00.\n"
+                        + "I sell ammunition in boxes of 20 bullets. Each box costs $2.00.\n"
                         + "***** How many boxes would you like to buy? *****");
                 number = this.getInputs();
                 inputs2 = number[0];
