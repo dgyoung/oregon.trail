@@ -22,7 +22,8 @@ public class StartingMonthView extends View{
             + "* 3.   May *\n"
             + "* 4.   June *\n"
             + "* 5.   July *\n"
-            + "* 6.   When should I leave? *\n");
+            + "* 6.   When should I leave? *\n"
+            + "\n***** Which month do you choose? *****\n ");
         }
 @Override
         public boolean doAction(String inputs) {

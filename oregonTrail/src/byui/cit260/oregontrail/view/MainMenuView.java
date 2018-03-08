@@ -18,7 +18,8 @@ public class MainMenuView extends View {
                 + "* 1. Start New Game *\n"
                 + "* 2. Resume Saved Game *\n"
                 + "* 3. Help *\n"
-                + "* 4. Exit *\n");
+                + "* 4. Exit *\n"
+                + "***** What is your choice? *****\n");
     }
     @Override
     public boolean doAction(String inputs) {
