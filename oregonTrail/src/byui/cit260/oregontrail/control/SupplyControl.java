@@ -48,7 +48,7 @@ public class SupplyControl {
             Supplies supplies = new Supplies();
             supplies.setFood(supplies.getFood() + quantity);
         } else {
-            System.out.println("addToSupplies errorkjgh");
+            System.out.println("addToSupplies error");
             return;
         }
     }
@@ -79,8 +79,7 @@ public class SupplyControl {
             Supplies supplies = new Supplies();
             supplies.setFood(supplies.getFood() - quantity);
         } else {
-            System.out.println("addToSupplies errorkjgh");
-            return;
+            System.out.println("removeToSupplies errorkjgh");
         }
     }
 

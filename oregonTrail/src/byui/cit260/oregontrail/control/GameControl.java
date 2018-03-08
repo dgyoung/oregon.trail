@@ -53,6 +53,12 @@ public class GameControl {
             return -1;
         }
         finalScore = ((totalHealth * 200) + supply) * bonus;
+        
+        System.out.println("supply: " + supply
+        + "\nbonus: " + bonus
+        + "\ncharacter: " + character
+        + "\nfinalScore: " + finalScore
+        + "\ntotalHealth: " + totalHealth);
         return finalScore;
 
     }

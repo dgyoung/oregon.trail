@@ -15,6 +15,7 @@ import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.oregontrail.model.Map;
 import byui.cit260.oregontrail.model.Location;
 import byui.cit260.oregontrail.control.GameControl;
+import static byui.cit260.oregontrail.control.GameControl.getFinalScore;
 import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.view.StartProgramView;
 
@@ -52,8 +53,9 @@ public class OregonTrail {
 
     
     public static void main(String[] args) {
-         StartProgramView startProgramView = new StartProgramView();
-         startProgramView.displayStartProgramView();
+        //System.out.println(getFinalScore(5000, 3, 6));
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
        
     }
   
