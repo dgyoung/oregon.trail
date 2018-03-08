@@ -19,7 +19,7 @@ public class MainMenuView extends View {
                 + "* 2. Resume Saved Game *\n"
                 + "* 3. Help *\n"
                 + "* 4. Exit *\n"
-                + "***** What is your choice? *****\n");
+                + "\n***** What is your choice? *****\n");
     }
     @Override
     public boolean doAction(String inputs) {
