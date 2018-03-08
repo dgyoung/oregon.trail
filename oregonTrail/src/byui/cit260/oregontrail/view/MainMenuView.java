@@ -10,58 +10,21 @@ import java.util.Scanner;
  *
  * @author Alexandra
  */
-class MainMenuView {
+public class MainMenuView extends View {
 
-    void displayMainMenuView() {
-
-        System.out.println("**** The Oregon Trail – MAIN MENU *****\n"
+    public MainMenuView() {
+        super("**** The Oregon Trail – MAIN MENU *****\n"
                 + "\n"
                 + "* 1. Start New Game *\n"
                 + "* 2. Resume Saved Game *\n"
                 + "* 3. Help *\n"
                 + "* 4. Exit *\n");
-        boolean endOfView = false;
-
-        do {
-
-            String[] inputs = this.getInputs();
-            if (inputs[0].toUpperCase().equals("4")) {
-                return; //exits program
-            }
-            //ENDIF endOfView = doAction(inputs)
-            endOfView = this.doAction(inputs);
-        } while (!endOfView); //WHILE endOfView != true ;
-
     }
-
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-
-        Scanner scanner = new Scanner(System.in);
-        String userInput = null;
-        String trimmedUserInput = null;
-        boolean valid = false;
-        while (!valid) {
-
-            System.out.println("***** What is your choice? *****");
-
-            userInput = scanner.nextLine();
-            trimmedUserInput = userInput.trim();
-
-            if (trimmedUserInput.length() < 1) {
-                System.out.println("You must enter a non-blank value");
-            } else {
-                valid = true;
-            }
-        }
-        inputs[0] = trimmedUserInput;
-        return inputs;
-    }
-
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String inputs) {
 //playersName = get the first value in the inputs array
         String choice;
-        choice = inputs[0];
+        choice = inputs;
         //player = savePlayer(playersName)
         Player player = GameControl.saveGame(choice);
         //IF player == null
@@ -89,5 +52,7 @@ class MainMenuView {
         }
         return false;
     }
+
+    
 
 }

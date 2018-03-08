@@ -92,7 +92,7 @@ public class StartProgramView {
                     + "\n");
 
             MainMenuView mainMenuView = new MainMenuView();
-            mainMenuView.displayMainMenuView();
+            mainMenuView.display();
             return true;
         }
 
