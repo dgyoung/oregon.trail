@@ -48,6 +48,12 @@ public enum SceneDescription implements Serializable{
     public String toString() {
         return "SceneDescription{" + "description=" + description + '}';
     }
+
+    public class store1 {
+
+        public store1() {
+        }
+    }
     
     
 }

@@ -8,11 +8,10 @@ import java.util.Scanner;
  *
  * @author Alexandra
  */
-class StartingMonthView{
+public class StartingMonthView extends View{
     
-    void displayStartingMonthView(){
-        
-        System.out.println("********** The Oregon Trail **********\n"
+    public StartingMonthView(){
+        super("********** The Oregon Trail **********\n"
             + "\n"
             + "  It is 1848. Your jumping off place\n" 
             + " for Oregon is Independence, Missouri. \n"
@@ -24,48 +23,12 @@ class StartingMonthView{
             + "* 4.   June *\n"
             + "* 5.   July *\n"
             + "* 6.   When should I leave? *\n");
-        boolean endOfView = false;
- 
-        do {
-            String[] inputs = this.getInputs();
-            if (inputs[0].toUpperCase().equals("Q")) {
-                return; //exits program
-            }
-            //ENDIF endOfView = doAction(inputs)
-            endOfView = this.doAction(inputs);
-
-        } while (!endOfView); //WHILE endOfView != true ;
-
-    }
-
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-
-        Scanner scanner = new Scanner(System.in);
-        String userInput = null;
-        String trimmedUserInput = null;
-        boolean valid = false;
-        while (!valid) {
-
-            System.out.println("\n***** Which month do you choose? *****\n ");
-
-            userInput = scanner.nextLine();
-            trimmedUserInput = userInput.trim();
-
-            if (trimmedUserInput.length() < 1) {
-                System.out.println("You must enter a non-blank value");
-            } else {
-                valid = true;
-            }
         }
-        inputs[0] = trimmedUserInput;
-        return inputs;
-    }
-
-        private boolean doAction(String[] inputs) {
+@Override
+        public boolean doAction(String inputs) {
             SimpleDateFormat sdf = new SimpleDateFormat("MMMMM dd yyyy");        
             String month;
-            month = inputs[0];
+            month = inputs;
 
             Calendar calendar = GameControl.setCalendar();
 
@@ -83,31 +46,31 @@ class StartingMonthView{
                     calendar.set(Calendar.MONTH, 02);
                     calendar.set(Calendar.DATE, 01);
                     System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
-                    SelectOccupationView.displaySelectOccupationView();
+                    SelectOccupationView.display();
                 case "2":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 03);
                     calendar.set(Calendar.DATE, 01);
                     System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
-                    SelectOccupationView.displaySelectOccupationView();
+                    SelectOccupationView.display();
                 case "3":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 04);
                     calendar.set(Calendar.DATE, 01);                    
                     System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
-                    SelectOccupationView.displaySelectOccupationView();
+                    SelectOccupationView.display();
                 case "4":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 05);
                     calendar.set(Calendar.DATE, 01);
                     System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
-                    SelectOccupationView.displaySelectOccupationView();
+                    SelectOccupationView.display();
                 case "5":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 06);
                     calendar.set(Calendar.DATE, 01);
                     System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
-                    SelectOccupationView.displaySelectOccupationView();
+                    SelectOccupationView.display();
                 case "6":
                     System.out.println("\n"
                             + "You attend a public meeting held for \n" 

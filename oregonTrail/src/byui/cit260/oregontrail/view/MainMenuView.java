@@ -44,7 +44,7 @@ public class MainMenuView extends View {
                 break;
             case "3":
                 HelpMenuView helpMenuView = new HelpMenuView();
-                helpMenuView.displayHelpMenuView();
+                helpMenuView.display();
                 break;
             default:
                 System.out.println("Enter a valid option");

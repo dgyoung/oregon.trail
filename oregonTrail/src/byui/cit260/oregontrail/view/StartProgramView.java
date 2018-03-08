@@ -8,10 +8,10 @@ import java.util.Scanner;
  *
  * @author Alexandra
  */
-public class StartProgramView {
+public class StartProgramView extends View {
 
     public StartProgramView() {
-        System.out.println(
+        super(
                 "\n*****************************************************************"
                 + "\n"
                 + "\n The Oregon Trail game is a text based role playing game."
@@ -27,54 +27,15 @@ public class StartProgramView {
                 + "\n the challenge is possible – as long as you make it through"
                 + "\n the game with one wagon member alive, you win!"
                 + "\n"
-                + "\n*****************************************************************");
-
+                + "\n*****************************************************************\n"
+                + "Please enter your name: ");
     }
 
-    public void displayStartProgramView() {
-        boolean endOfView = false;
-        String[] inputs = this.getInputs();
-
-        do {
-            if (inputs[0].toUpperCase().equals("Q")) {
-                return; //exits program
-            }
-            //ENDIF endOfView = doAction(inputs)
-            endOfView = this.doAction(inputs);
-
-        } while (!endOfView); //WHILE endOfView != true ;
-
-    }
-
-    private String[] getInputs() {
-
-        String[] inputs = new String[1];
-
-        Scanner scanner = new Scanner(System.in);
-        String userInput = null;
-        String trimmedUserInput = null;
-        boolean valid = false;
-        while (!valid) {
-
-            System.out.println("\n" + "Please enter your name: ");
-
-            userInput = scanner.nextLine();
-            trimmedUserInput = userInput.trim();
-
-            if (trimmedUserInput.length() < 1) {
-                System.out.println("You must enter a non-blank value");
-            } else {
-                valid = true;
-            }
-        }
-        inputs[0] = trimmedUserInput;
-        return inputs;
-    }
-
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String inputs) {
         //playersName = get the first value in the inputs array
         String playersName;
-        playersName = inputs[0];
+        playersName = inputs;
         //player = savePlayer(playersName)
         Player player = GameControl.saveGame(playersName);
         //IF player == null
@@ -83,7 +44,7 @@ public class StartProgramView {
                     + "Enter a different name.");
 
             return false;
-        } else {          
+        } else {
             System.out.println("\n"
                     + "=================================================\n"
                     + "      Welcome to the game " + playersName

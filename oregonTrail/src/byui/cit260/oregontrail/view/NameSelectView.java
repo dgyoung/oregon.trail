@@ -98,7 +98,7 @@ class NameSelectView {
         + "4.   " + character4.getName() + "\n"
         + "5.   " + character5.getName() + "\n");
         StartingMonthView StartingMonthView = new StartingMonthView();
-        StartingMonthView.displayStartingMonthView();
+        StartingMonthView.display();
 
     }
 

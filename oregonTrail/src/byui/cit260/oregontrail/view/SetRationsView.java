@@ -6,10 +6,10 @@ import byui.cit260.oregontrail.control.WagonControl;
  *
  * @author Alexandra
  */
-public class SetRationsView {
+public class SetRationsView extends View{
     
-    void display() {
-        System.out.println("\n"
+    public SetRationsView() {
+        super("\n"
                 + "\n***** Change Food Rations *****"
                 + "\nCURRENTLY: '" + WagonControl.getWagonRations() + "'"
                 + "\n"
@@ -22,6 +22,11 @@ public class SetRationsView {
                 + "\n 4. Find out what these different paces mean"
                 + "\n"
                 + "\n What is your choice?");
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

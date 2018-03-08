@@ -9,11 +9,11 @@ import java.util.Scanner;
  *
  * @author David
  */
-class SelectOccupationView {
+public class SelectOccupationView extends View{
 
-    void displaySelectOccupationView() {
+    public SelectOccupationView() {
 
-        System.out.println("********** The Oregon Trail **********\n"
+        super("********** The Oregon Trail **********\n"
                 + "\n"
                 + "     Many kinds of people made \n"
                 + "         the trip to Oregon. \n"
@@ -23,48 +23,12 @@ class SelectOccupationView {
                 + "* 2. Carpenter from Ohio *\n"
                 + "* 3. Farmer from Illinois *\n"
                 + "* 4. Which one should I choose? *\n");
-        boolean endOfView = false;
-
-        do {
-
-            String[] inputs = this.getInputs();
-            if (inputs[0].toUpperCase().equals("5")) {
-                return; //exits program
-            }
-            //ENDIF endOfView = doAction(inputs)
-            endOfView = this.doAction(inputs);
-        } while (!endOfView); //WHILE endOfView != true ;
-
-    }
-
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-
-        Scanner scanner = new Scanner(System.in);
-        String userInput = null;
-        String trimmedUserInput = null;
-        boolean valid = false;
-        while (!valid) {
-
-            System.out.println("\n***** What is your choice? *****\n ");
-
-            userInput = scanner.nextLine();
-            trimmedUserInput = userInput.trim();
-
-            if (trimmedUserInput.length() < 1) {
-                System.out.println("You must enter a non-blank value");
-            } else {
-                valid = true;
-            }
         }
-        inputs[0] = trimmedUserInput;
-        return inputs;
-    }
-
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String inputs) {
 //playersName = get the first value in the inputs array
         String choice;
-        choice = inputs[0];
+        choice = inputs;
         
         Player player = GameControl.saveGame(choice);
         

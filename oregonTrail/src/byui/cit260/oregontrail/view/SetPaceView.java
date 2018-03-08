@@ -6,10 +6,10 @@ import byui.cit260.oregontrail.control.WagonControl;
  *
  * @author Alexandra
  */
-public class SetPaceView {
+public class SetPaceView extends View{
     
-    void display() {
-        System.out.println("\n"
+    public SetPaceView() {
+        super("\n"
                 + "\n***** Change Pace *****"
                 + "\nCURRENTLY: '" + WagonControl.getWagonPace() + "'"
                 + "\n"
@@ -22,5 +22,10 @@ public class SetPaceView {
                 + "\n 4. Find out what these different paces mean"
                 + "\n"
                 + "\n What is your choice?");
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

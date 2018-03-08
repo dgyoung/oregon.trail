@@ -7,11 +7,11 @@ import java.util.Scanner;
  *
  * @author Allie
  */
-class GameMenuView {
+public class GameMenuView extends View{
     
-    void display(){
+    public GameMenuView(){
                
-        System.out.println("\n***** The Oregon Trail *****"
+        super("\n***** The Oregon Trail *****"
                 + "* Location: Locatoin.getLocation() *\n"
                 + "* Date: " + GameControl.getCalendar() + "*\n"
                 + "* Health: " + WagonControl.getWagonHealth() + "*\n"
@@ -27,48 +27,15 @@ class GameMenuView {
                 + "* 7. Hunt *\n"
                 + "* 8. Print Report *\n"
                 +"*-----What is your choice? *\n");
-            boolean endOfView = false;
-
-            do {
-
-                String[] inputs = this.getInputs();
-                if (inputs[0].toUpperCase().equals("4")) {
-                    return; //exits program
-                }
-                //ENDIF endOfView = doAction(inputs)
-                endOfView = this.doAction(inputs);
-            } while (!endOfView); //WHILE endOfView != true ;
-
+            
         }
 
-        private String[] getInputs() {
-            String[] inputs = new String[1];
-
-            Scanner scanner = new Scanner(System.in);
-            String userInput = null;
-            String trimmedUserInput = null;
-            boolean valid = false;
-            while (!valid) {
-
-                System.out.println("***** What is your choice? *****");
-
-                userInput = scanner.nextLine();
-                trimmedUserInput = userInput.trim();
-
-                if (trimmedUserInput.length() < 1) {
-                    System.out.println("You must enter a non-blank value");
-                } else {
-                    valid = true;
-                }
-            }
-            inputs[0] = trimmedUserInput;
-            return inputs;
-        }
         
-        private boolean doAction(String[] inputs) {
+        @Override
+        public boolean doAction(String inputs) {
 
         String menuOption;
-        menuOption = inputs[0];
+        menuOption = inputs;
         
         //Player player = GameControl.saveGame(menuOption);
         
