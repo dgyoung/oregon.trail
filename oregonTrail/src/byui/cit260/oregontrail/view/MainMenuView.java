@@ -18,7 +18,8 @@ public class MainMenuView extends View {
                 + "* 1. Start New Game *\n"
                 + "* 2. Resume Saved Game *\n"
                 + "* 3. Help *\n"
-                + "* 4. Exit *\n"
+                + "* 4. Test View *\n"
+                + "* 5. Exit *\n"
                 + "\n***** What is your choice? *****\n");
     }
     @Override
@@ -30,22 +31,22 @@ public class MainMenuView extends View {
         Player player = GameControl.saveGame(choice);
         //IF player == null
         if (choice == null) {
-            System.out.println("Plese enter a character");
+            System.out.println("Plese enter a valid option");
 
             return false;
         }
         switch (choice) {
             case "1":
-                NameSelectView newgameMenuView = new NameSelectView();
-                newgameMenuView.displayNameSelectView();
+                this.nameSelectView();
                 break;
             case "2":
-                StartExistingGameView startExistingGameView = new StartExistingGameView();
-                startExistingGameView.displayStartExistingGameView();
+                this.startExistingGameView();
                 break;
             case "3":
-                HelpMenuView helpMenuView = new HelpMenuView();
-                helpMenuView.display();
+                this.helpMenuView();
+                break;
+            case "4":
+                this.testView();
                 break;
             default:
                 System.out.println("Enter a valid option");
@@ -53,7 +54,25 @@ public class MainMenuView extends View {
         }
         return false;
     }
-
     
-
+    private void nameSelectView() {
+        NameSelectView newgameMenuView = new NameSelectView();
+        newgameMenuView.displayNameSelectView();   
+    }
+    
+    private void startExistingGameView() { 
+        StartExistingGameView startExistingGameView = new StartExistingGameView();
+        startExistingGameView.display();
+    }
+    
+    private void helpMenuView() { 
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
+    }
+    
+    private void testView() { 
+        TestView testView = new TestView();
+        testView.display();
+    }
+    
 }
