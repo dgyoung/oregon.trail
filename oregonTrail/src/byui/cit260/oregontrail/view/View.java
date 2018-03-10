@@ -42,7 +42,7 @@ public abstract class View implements ViewInterface {
             boolean valid = false;
             Scanner keyboard = new Scanner(System.in);
             String input = null;
-            while (valid == false) { //(!valid) is the same thing as (valid == false)
+            while (!valid) {
                 System.out.print("\n" + this.displayMessage);
                 input = keyboard.nextLine().trim();
                 if (input.length() < 1) {//blank value entered

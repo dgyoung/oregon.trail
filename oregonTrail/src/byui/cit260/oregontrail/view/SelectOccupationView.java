@@ -22,7 +22,9 @@ public class SelectOccupationView extends View{
                 + "* 1. Banker from Boston *\n"
                 + "* 2. Carpenter from Ohio *\n"
                 + "* 3. Farmer from Illinois *\n"
-                + "* 4. Which one should I choose? *\n");
+                + "* 4. Which one should I choose? *\n"
+                + "\n***** What is your choice? *****\n"
+                + "\n");
         }
     @Override
     public boolean doAction(String inputs) {

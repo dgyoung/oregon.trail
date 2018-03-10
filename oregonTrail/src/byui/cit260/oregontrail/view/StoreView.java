@@ -23,8 +23,8 @@ class StoreView {
         StoreScene storeScene = null;
         SupplyControl.initilizeSupplies();
         Supplies supplies = new Supplies();
-        System.out.println(
-                "***** The Oregon Trail – " + storeScene.store1.getStoreName() + " *****\n"  //There is only one store in the game. ***** The Oregon Trail – Matt’s General Store *****
+        System.out.println("\n"
+                +"***** The Oregon Trail – " + storeScene.store1.getStoreName() + " *****\n"  //There is only one store in the game. ***** The Oregon Trail – Matt’s General Store *****
                 + "\n"                                                                       //There are trading posts/opportunities along the trail, but they don't work like this scene.
                 + "* Item Name Price *\n"
                 + "* 1. Oxen $" + storeScene.store1.getOxenCost() + "\n"
