@@ -28,7 +28,7 @@ public abstract class View implements ViewInterface {
         do {
 
             String inputs = this.getInput();
-            if (inputs.toUpperCase().equals("4")) {
+            if (inputs.toUpperCase().equals("Q")) {
                 return; //exits program
             }
             //ENDIF endOfView = doAction(inputs)
@@ -37,9 +37,7 @@ public abstract class View implements ViewInterface {
     }
 
         @Override
-        public String getInput
-        
-            () {
+        public String getInput() {
         String[] inputs = new String[1];
             boolean valid = false;
             Scanner keyboard = new Scanner(System.in);
