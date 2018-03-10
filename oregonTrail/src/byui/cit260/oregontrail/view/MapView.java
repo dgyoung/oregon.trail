@@ -6,13 +6,48 @@ import oregontrail.OregonTrail;
  *
  * @author Alexandra
  */
-public class MapView {
+public class MapView extends View {
     
-    void display() {
-        
-        System.out.println("\n"
-                + "***** MAP OF THE OREGON TRAIL *****\n");
+    public MapView() {
+    
+        System.out.println("\n"+
+"=============================================================================\n" +
+" |                                                                         |\n" +
+" |                         Map of the Oregon Trail                         |\n" +
+" |                                                                         |\n" +
+" |                       ---.____    ,/k.                                  |\n" +
+" |                       ___,---'  /  ih,__,-----.___                      |\n" +
+" |                              ,-' ,  `:7b----.__---`                     |\n" +
+" |                          _.-/   '  /b.`.4p,                             |\n" +
+" |                      --\"  ,    ,-' ^6x, `.\"^=._                         |\n" +
+" |                                                                         |\n" +
+"=============================================================================\n" +
+" |									   |\n" +
+" |   *END*                                                                 |\n" +
+" |*Oregon City*                                                            |\n" +
+" |                                                                         |\n" +               
+" |    Fort Walla Walla							   |\n" +
+" |	  The Dalles							   |\n" +
+" |		Blue Mountains                                  	   |\n" +
+" |		    Fort Boise				                   |\n" +
+" |			Fort Hall			   	   	   |\n" +
+" |			    Soda Springs			   	   |\n" +
+" |				Fort Bridger			   	   |\n" +
+" |				    South Pass			   	   |\n" +
+" |					Independence Rock                  |\n" +
+" |					    Laramie			   |\n" +
+" |						Chimney Rock               |\n" +
+" | 						    Fort Kearney	   |\n" +
+" |   						    	   *START*		|\n" +
+" |						    	*Independence*	   |\n" +
+" |                                                                         |\n" +
+"=============================================================================");
         OregonTrail.pressAnyKeyToContinue();
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

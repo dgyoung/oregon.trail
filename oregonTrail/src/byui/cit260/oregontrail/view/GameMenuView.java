@@ -11,8 +11,8 @@ public class GameMenuView extends View{
     
     public GameMenuView(){
                
-        super("\n***** The Oregon Trail *****"
-                + "* Location: Locatoin.getLocation() *\n"
+        super("\n***** The Oregon Trail *****\n"
+                + "* Location: + Location.getLocation() *\n"
                 + "* Date: " + GameControl.getCalendar() + "*\n"
                 + "* Health: " + WagonControl.getWagonHealth() + "*\n"
                 + "* Pace: " + WagonControl.getWagonPace() + "*\n"
@@ -26,7 +26,8 @@ public class GameMenuView extends View{
                 + "* 6. Stop to rest *\n"
                 + "* 7. Hunt *\n"
                 + "* 8. Print Report *\n"
-                +"*-----What is your choice? *\n");
+                +"\n"       
+                +"***** What is your choice? *****\n");
             
         }
 
