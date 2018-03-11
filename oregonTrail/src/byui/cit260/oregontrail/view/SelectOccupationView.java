@@ -63,7 +63,7 @@ public class SelectOccupationView extends View{
                         + "But if you're a banker, you'll have more money for\n"
                         + "supplies and services than a carpenter or a farmer.\n"
                         + "\n"
-                        + "However, the harder you have to try the more point you have to deserve! \n"
+                        + "However, the harder you have to try the more points you deserve! \n"
                         + "Therefore, the farmer earns the greatest number of poinst and the banker earns the least.");
                 break;
             default:

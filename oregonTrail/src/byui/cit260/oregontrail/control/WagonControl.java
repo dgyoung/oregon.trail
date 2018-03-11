@@ -19,8 +19,8 @@ public class WagonControl {
     public static String getWagonHealth(){
         return "";
     }
-    public static void changePace(){
-        
+    public static void changePace(String pace){
+      System.out.println("STUB - Will set Pace to " + pace);
     }
     public static void changeRations(){
         
