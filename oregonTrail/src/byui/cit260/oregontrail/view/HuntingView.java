@@ -14,17 +14,17 @@ import java.util.logging.Logger;
  */
 public class HuntingView extends View {
 
-    public HuntingView() {
+       public HuntingView() {
         super("\n***** Out Hunting *****\n"
-                + "After the either POW, BANG or FIRE show on the seceen type the \n"
-                + "word as fast as you can or the animal may get away.\n"
-                + "To start press \"R\" for ready or \n \"Q\" to quit");
+                + "After POW, BANG or FIRE show on the seceen, type the \n"
+                + "word as fast as you can or your prey may get away.\n"
+                + "To start press \"R\" for Ready or \n \"Q\" to Quit. \n");
     }
 
     @Override
     public boolean doAction(String inputs) {
         String choice;
-        choice = inputs;
+        choice = inputs.toUpperCase();
         //player = savePlayer(playersName)
         Player player = GameControl.saveGame(choice);
         //IF player == null
@@ -86,8 +86,8 @@ public class HuntingView extends View {
     public int getInput(String word, long time, long delay) {
         Scanner keyboard = new Scanner(System.in);
         String input = null;
-        input = keyboard.nextLine().trim().toUpperCase();
-        if (input == word && (time + delay) > System.currentTimeMillis()) {
+        input = keyboard.nextLine().trim();
+        if (input.toUpperCase() == word && (time + delay) > System.currentTimeMillis()) {
             System.out.print("Hit\n");
             return 25;
         } else {
