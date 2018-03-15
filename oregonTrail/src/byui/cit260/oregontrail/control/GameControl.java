@@ -2,6 +2,7 @@ package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.model.Character;
 import byui.cit260.oregontrail.model.Game;
+import byui.cit260.oregontrail.model.Map;
 import byui.cit260.oregontrail.model.Player;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -11,9 +12,44 @@ import oregontrail.OregonTrail;
 
 public class GameControl {
 
-
+    public static int createNewGame(Player player){
+      if (player == null){
+        return -1;
+      }
+      //      game = create a new Game object
+      Game game = new Game();
+      
+    //Save a reference to the Player object in the game
+      game.setPlayer(player);
+      
+    //Save a reference to the game in the main class
+    OregonTrail.setCurrentGame(game);
+    
+    //actors = createActors()
+    //Save the list of actors in the Game object
+    game.setNoPeople(5);
+    
+    //Assign an actor to the player
+    
+    //items = createItems()
+    
+    //Save the list of items in the game
+    
+    //map = createMap(noOfRows, noOfColumns, items)
+    Map map = createMap();
+      if (map == null){
+        return -1;
+      }
+    game.setMap(map);
+    return 1;
+    
+    }
+ 
     public static void startNewGame() {
-        
+      int returnValue = GameControl.createNewGame(OregonTrail.getPlayer());
+      if (returnValue <0){
+        System.out.println("Error - Failed to create new game");
+      }
     }
 
     public static Player saveGame(String playersName) {
@@ -63,8 +99,9 @@ public class GameControl {
 
     }
 
-    public static void initializeMap() {
-
+    public static Map createMap() {
+      Map map = new Map();
+      return map;
     }
 
     public static boolean setCharactersNames(String name) {

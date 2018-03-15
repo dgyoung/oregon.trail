@@ -133,7 +133,7 @@ class NameSelectView {
         //player = savePlayer(playersName)
         //IF player == null
         if (character.getName() == null) {
-            System.out.println("Could not create the player." + "\n"
+            System.out.println("Could not create the character." + "\n"
                     + "Enter a different name.");
 
             return false;

@@ -9,7 +9,7 @@ package byui.cit260.oregontrail.control;
  *
  * @author David
  */
-public class River {
+public class RiverControl {
     public static String rindCurrentWeather(){
         return "";
     }
