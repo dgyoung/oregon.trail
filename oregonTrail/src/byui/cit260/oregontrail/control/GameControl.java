@@ -1,5 +1,6 @@
 package byui.cit260.oregontrail.control;
 
+import static byui.cit260.oregontrail.control.MapControl.createMap;
 import byui.cit260.oregontrail.model.Character;
 import byui.cit260.oregontrail.model.Game;
 import byui.cit260.oregontrail.model.Map;
@@ -11,7 +12,12 @@ import oregontrail.OregonTrail;
 
 
 public class GameControl {
-
+    public static void startNewGame() {
+      int returnValue = GameControl.createNewGame(OregonTrail.getPlayer());
+      if (returnValue <0){
+        System.out.println("Error - Failed to create new game");
+      }
+    }
     public static int createNewGame(Player player){
       if (player == null){
         return -1;
@@ -30,27 +36,18 @@ public class GameControl {
     game.setNoPeople(5);
     
     //Assign an actor to the player
-    
-    //items = createItems()
-    
+   
     //Save the list of items in the game
     
     //map = createMap(noOfRows, noOfColumns, items)
-    Map map = createMap();
-      if (map == null){
-        return -1;
-      }
-    game.setMap(map);
+    MapControl.createMap();
     return 1;
     
+    //game.setMap(map); we can't do this yet
+    //items = createItems()
+
     }
- 
-    public static void startNewGame() {
-      int returnValue = GameControl.createNewGame(OregonTrail.getPlayer());
-      if (returnValue <0){
-        System.out.println("Error - Failed to create new game");
-      }
-    }
+
 
     public static Player saveGame(String playersName) {
         //savePlayer(name): Player
@@ -73,7 +70,10 @@ public class GameControl {
     public static void restoreSavedGame() {
         System.out.println("*** restoreSavedGame called ***");
     }
+    //public static InventoryItem[] createItems(){
+   //       System.out.println("*** InventoryItem called ***");
 
+   // }
     public static int getFinalScore(int supply, int bonus, int character) {
         int finalScore;
         int totalHealth = character;
@@ -99,10 +99,6 @@ public class GameControl {
 
     }
 
-    public static Map createMap() {
-      Map map = new Map();
-      return map;
-    }
 
     public static boolean setCharactersNames(String name) {
         Character character = new Character();

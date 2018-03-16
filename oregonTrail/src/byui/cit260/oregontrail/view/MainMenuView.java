@@ -37,6 +37,7 @@ public class MainMenuView extends View {
         }
         switch (choice) {
             case "1":
+                GameControl.startNewGame();
                 this.nameSelectView();
                 break;
             case "2":

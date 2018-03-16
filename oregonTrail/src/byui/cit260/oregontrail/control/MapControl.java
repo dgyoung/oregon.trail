@@ -5,6 +5,8 @@
  */
 package byui.cit260.oregontrail.control;
 
+import byui.cit260.oregontrail.model.Map;
+
 /**
  *
  * @author David
@@ -33,5 +35,13 @@ public class MapControl {
     }
     public static int distacneToNextLocation(){
         return 0;
+    }
+    
+    
+    public static Map createMap() {
+      System.out.println("*** createMap called ***");
+      Map map = new Map();
+      //retun map;
+      return null;
     }
 }
