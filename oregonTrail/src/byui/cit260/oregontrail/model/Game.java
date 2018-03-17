@@ -15,6 +15,7 @@ public class Game implements Serializable{
     private int totalDays;
     private Player player;
     private Map map;
+    private Wagon wagon;
     private String characterChoice;
     private String helpMenuChoice;
     
@@ -61,6 +62,13 @@ public class Game implements Serializable{
     public Game() {
     }
     
+    public Wagon getWagon() {
+      return wagon;
+    }
+
+    public void setWagon(Wagon wagon) {
+      this.wagon = wagon;
+    }
     public String getHelpMenuChoice() {
         return helpMenuChoice;
     }

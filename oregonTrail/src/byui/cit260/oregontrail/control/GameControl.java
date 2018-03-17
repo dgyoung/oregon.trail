@@ -5,6 +5,7 @@ import byui.cit260.oregontrail.model.Character;
 import byui.cit260.oregontrail.model.Game;
 import byui.cit260.oregontrail.model.Map;
 import byui.cit260.oregontrail.model.Player;
+import byui.cit260.oregontrail.model.Wagon;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -12,38 +13,50 @@ import oregontrail.OregonTrail;
 
 
 public class GameControl {
+  
     public static void startNewGame() {
       int returnValue = GameControl.createNewGame(OregonTrail.getPlayer());
       if (returnValue <0){
         System.out.println("Error - Failed to create new game");
       }
     }
+    
+    
     public static int createNewGame(Player player){
       if (player == null){
         return -1;
       }
-      //      game = create a new Game object
+      // game = create a new Game object
       Game game = new Game();
       
-    //Save a reference to the Player object in the game
-     game.setPlayer(player);
+      //Save a reference to the game in the main class
+      OregonTrail.setCurrentGame(game);
       
-    //Save a reference to the game in the main class
-    OregonTrail.setCurrentGame(game);
-
-    game.setNoPeople(5);
+      //Save a reference to the Player object in the game
+      game.setPlayer(player);
       
-    Map map = MapControl.createMap();
+      //game starts with 5 people in the wagon
+      game.setNoPeople(5);
+      
+      //create map
+      Map map = MapControl.createMap();
       if (map == null){
         return -1;
       }
+      //set reference to map in the game
+      game.setMap(map);
     
-    game.setMap(map);
-    
-    // need to make the wagon
-    
-    return 1;
-
+      //create wagon
+      Wagon wagon = WagonControl.createWagon();
+       if (wagon == null){
+        return -1;
+      }
+       
+      //set reference to wagon in the game
+      game.setWagon(wagon);
+      
+      //if we made it this far everything was creted so return 1
+      return 1;
     }
 
 

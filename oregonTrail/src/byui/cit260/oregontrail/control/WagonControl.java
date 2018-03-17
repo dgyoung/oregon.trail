@@ -5,6 +5,8 @@
  */
 package byui.cit260.oregontrail.control;
 
+import byui.cit260.oregontrail.model.Wagon;
+
 /**
  *
  * @author David
@@ -39,5 +41,10 @@ public class WagonControl {
     }
     public static void findRationLossRate(){
         
+    }
+    public static Wagon createWagon() {
+      System.out.println("*** createWagon called ***");
+      Wagon wagon = new Wagon();
+      return wagon;
     }
 }
