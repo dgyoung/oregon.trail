@@ -26,25 +26,23 @@ public class GameControl {
       Game game = new Game();
       
     //Save a reference to the Player object in the game
-      game.setPlayer(player);
+     game.setPlayer(player);
       
     //Save a reference to the game in the main class
     OregonTrail.setCurrentGame(game);
-    
-    //actors = createActors()
-    //Save the list of actors in the Game object
+
     game.setNoPeople(5);
+      
+    Map map = MapControl.createMap();
+      if (map == null){
+        return -1;
+      }
     
-    //Assign an actor to the player
-   
-    //Save the list of items in the game
+    game.setMap(map);
     
-    //map = createMap(noOfRows, noOfColumns, items)
-    MapControl.createMap();
+    // need to make the wagon
+    
     return 1;
-    
-    //game.setMap(map); we can't do this yet
-    //items = createItems()
 
     }
 

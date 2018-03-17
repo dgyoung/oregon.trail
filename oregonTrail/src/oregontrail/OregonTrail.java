@@ -7,7 +7,7 @@ package oregontrail;
 
 import byui.cit260.oregontrail.model.Game;
 import byui.cit260.oregontrail.model.HuntingScene;
-import byui.cit260.oregontrail.model.RiverScene;
+import byui.cit260.oregontrail.model.River;
 import byui.cit260.oregontrail.model.SceneDescription;
 import byui.cit260.oregontrail.model.StoreScene;
 import byui.cit260.oregontrail.model.Character;

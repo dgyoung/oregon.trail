@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author team
  */
-public enum RiverScene implements Serializable{
+public enum River implements Serializable{
     
     
     SouthPlate(50, 3, 10, "South Plate River", 1),
@@ -28,19 +28,19 @@ public enum RiverScene implements Serializable{
     private ArrayList<SceneDescription> description = new ArrayList<SceneDescription>(1);
   
 
-    public static RiverScene getSouthPlate() {
+    public static River getSouthPlate() {
         return SouthPlate;
     }
 
-    public static RiverScene getSnake() {
+    public static River getSnake() {
         return Snake;
     }
 
-    public static RiverScene getColumbia() {
+    public static River getColumbia() {
         return Columbia;
     }
 
-    public static RiverScene getMissouri() {
+    public static River getMissouri() {
         return Missouri;
     }
 
@@ -69,7 +69,7 @@ public enum RiverScene implements Serializable{
         return name;
     }
 
-    private RiverScene(int ferryCost, int depth, int width, String name, int riverID) {
+    private River(int ferryCost, int depth, int width, String name, int riverID) {
         this.ferryCost = ferryCost;
         this.depth = depth;
         this.width = width;

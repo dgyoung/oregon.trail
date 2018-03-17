@@ -41,7 +41,6 @@ public class MapControl {
     public static Map createMap() {
       System.out.println("*** createMap called ***");
       Map map = new Map();
-      //retun map;
-      return null;
+      return map;
     }
 }
