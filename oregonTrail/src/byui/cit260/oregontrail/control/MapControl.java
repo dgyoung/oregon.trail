@@ -5,7 +5,9 @@
  */
 package byui.cit260.oregontrail.control;
 
+import byui.cit260.oregontrail.model.Location;
 import byui.cit260.oregontrail.model.Map;
+import byui.cit260.oregontrail.model.MapLocations;
 
 /**
  *
@@ -39,8 +41,21 @@ public class MapControl {
     
     
     public static Map createMap() {
-      System.out.println("*** createMap called ***");
       Map map = new Map();
+      
+      
+      Location locations = createLocations();
+      
       return map;
     }
+    
+    public static Location createLocations() {
+      MapLocations [] locations = MapLocations.values();
+      //now we need to loop through the array and assign scenes to it
+      
+      //then stick locations into an array and assign to the map
+      Location location = new Location();//this isn't right yet becuase we want all the locations not just one
+      return location;
+    }
+    
 }

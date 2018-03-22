@@ -38,7 +38,7 @@ public class GameControl {
       //game starts with 5 people in the wagon
       game.setNoPeople(5);
       
-      //create map
+      //call create map
       Map map = MapControl.createMap();
       if (map == null){
         return -1;

@@ -12,13 +12,12 @@ import java.util.ArrayList;
  * @author team
  */
 public enum River implements Serializable{
-    
-    
-    SouthPlate(50, 3, 10, "South Plate River", 1),
-    Snake(200, 82, 500, "Snake River", 2),
-    Columbia(200, 50, 30, "Columbia River", 3),
-    Missouri(50, 44, 18, "Missouri River", 4);    
-    
+    //if ferry cost is 0 then there is no ferry
+    kansasRiver(10,4,100),
+    bigBlueRiver(0,3,60),
+    greenRiver(15,6,100),
+    snakeRiver(10, 8, 200),
+    columbiaRiver(20, 5, 30);
     
     private int ferryCost;
     private int depth;
@@ -26,64 +25,20 @@ public enum River implements Serializable{
     private String name;  
     private int riverID;
     private ArrayList<SceneDescription> description = new ArrayList<SceneDescription>(1);
-  
-
-    public static River getSouthPlate() {
-        return SouthPlate;
-    }
-
-    public static River getSnake() {
-        return Snake;
-    }
-
-    public static River getColumbia() {
-        return Columbia;
-    }
-
-    public static River getMissouri() {
-        return Missouri;
-    }
-
-    public ArrayList<SceneDescription> getDescription() {
-        return description;
-    }
-
-    public int getRiverID() {
-        return riverID;
-    }
-    
-
-    public int getFerryCost() {
-        return ferryCost;
-    }
-
-    public int getDepth() {
-        return depth;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    private River(int ferryCost, int depth, int width, String name, int riverID) {
+      
+    private River(int ferryCost, int depth, int width) {
         this.ferryCost = ferryCost;
         this.depth = depth;
         this.width = width;
-        this.name = name;
-        this.riverID = riverID;
+    }
+    
+    public ArrayList<SceneDescription> getDescription() {
+        return description;
     }
 
     @Override
     public String toString() {
         return "RiverScene{" + "ferryCost=" + ferryCost + ", depth=" + depth + ", width=" + width + ", name=" + name + ", riverID=" + riverID + ", description=" + description + '}';
     }
-
-    
-
-    
     
 }
