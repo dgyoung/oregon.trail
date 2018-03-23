@@ -86,6 +86,8 @@ public class TestView extends View {
             case "14":
                 this.supplyView();
                 break;
+            case "15":
+                this.endGameView();
             default:
                 System.out.println("Enter a valid option");
 
@@ -160,6 +162,11 @@ public class TestView extends View {
     private void supplyView() {
         SupplyView supplyView = new SupplyView();
         supplyView.display();
+    }
+
+    private void endGameView() {
+        EndGameView endGameView = new EndGameView();
+        endGameView.display();
     }
     
 }

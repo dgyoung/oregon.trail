@@ -54,8 +54,13 @@ public class OregonTrail {
     
     public static void main(String[] args) {
         //System.out.println(getFinalScore(5000, 3, 6));
+        try{
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
+        } catch (Throwable e){
+            System.out.println("you did it wrong ---> " + e);
+            e.printStackTrace();
+        }
        
     }
   
