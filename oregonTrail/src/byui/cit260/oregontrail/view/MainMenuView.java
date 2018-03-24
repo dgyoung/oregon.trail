@@ -4,7 +4,11 @@ import byui.cit260.oregontrail.control.GameControl;
 import static byui.cit260.oregontrail.control.GameControl.restoreSavedGame;
 import static byui.cit260.oregontrail.control.GameControl.startNewGame;
 import byui.cit260.oregontrail.model.Player;
+import byui.cit260.orgontrail.exceptions.GameControlException;
+import byui.cit260.orgontrail.exceptions.MapControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -37,7 +41,12 @@ public class MainMenuView extends View {
         }
         switch (choice) {
             case "1":
-                GameControl.startNewGame();
+                {
+                  try {
+                    GameControl.startNewGame();
+                  } catch (GameControlException ex) {
+                  System.out.println(ex.getMessage());                  }
+                }
                 this.nameSelectView();
                 break;
             case "2":

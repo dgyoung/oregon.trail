@@ -7,6 +7,7 @@ import byui.cit260.oregontrail.model.Map;
 import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.orgontrail.exceptions.GameControlException;
+import byui.cit260.orgontrail.exceptions.MapControlException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -14,16 +15,14 @@ import oregontrail.OregonTrail;
 
 public class GameControl {
 
-    public static void startNewGame() {
-        int returnValue = GameControl.createNewGame(OregonTrail.getPlayer());
-        if (returnValue < 0) {
-            System.out.println("Error - Failed to create new game");
-        }
+    public static void startNewGame() throws GameControlException {
+      GameControl.createNewGame(OregonTrail.getPlayer());
+
     }
 
-    public static int createNewGame(Player player) {
+    public static void createNewGame(Player player) throws GameControlException {
         if (player == null) {
-            return -1;
+          throw new GameControlException("ERROR: Player Object Required");
         }
         // game = create a new Game object
         Game game = new Game();
@@ -39,23 +38,15 @@ public class GameControl {
 
         //call create map
         Map map = MapControl.createMap();
-        if (map == null) {
-            return -1;
-        }
+   
         //set reference to map in the game
         game.setMap(map);
 
         //create wagon
         Wagon wagon = WagonControl.createWagon();
-        if (wagon == null) {
-            return -1;
-        }
 
         //set reference to wagon in the game
         game.setWagon(wagon);
-
-        //if we made it this far everything was creted so return 1
-        return 1;
     }
 
     public static Player saveGame(String playersName) {

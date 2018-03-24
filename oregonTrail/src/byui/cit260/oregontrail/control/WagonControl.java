@@ -6,6 +6,7 @@
 package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.model.Wagon;
+import byui.cit260.orgontrail.exceptions.GameControlException;
 
 /**
  *
@@ -42,9 +43,18 @@ public class WagonControl {
     public static void findRationLossRate(){
         
     }
-    public static Wagon createWagon() {
+    public static Wagon createWagon() throws GameControlException {
       System.out.println("*** createWagon called ***");
       Wagon wagon = new Wagon();
+      if (wagon == null) {
+          throw new GameControlException("ERROR: Player Object Required");
+      }
+      try {
+        String stringNumber = "a";
+        int test = Integer.parseInt(stringNumber);
+      } catch (NumberFormatException ex) {
+          System.out.println(ex.getMessage() + " Please enter a whole number");
+      }
       return wagon;
     }
 }
