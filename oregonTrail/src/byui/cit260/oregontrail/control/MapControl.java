@@ -3,9 +3,8 @@ package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.model.Location;
 import byui.cit260.oregontrail.model.Map;
-import byui.cit260.oregontrail.model.MapLocations;
+import byui.cit260.oregontrail.model.Scene;
 import byui.cit260.orgontrail.exceptions.GameControlException;
-import byui.cit260.orgontrail.exceptions.MapControlException;
 
 public class MapControl {
   
@@ -27,6 +26,7 @@ public class MapControl {
       private static Location createLocations(int rows, int columns) throws GameControlException {
       throw new GameControlException("ERROR: Failed to create locations.");
       Location locations = createLocations(noOfRows, noOfColumns);
+        return null;
       }
       //if (locations == null) {
         //throw exception because locations failed to create;
@@ -54,17 +54,51 @@ public class MapControl {
             }
         }
     }
-      return map;
-    }
-    
+     
+   
+    public static Scene[] createScenes() {
+        Scene[] scenes = new Scene[SceneType.values().length];
 
-
-      //MapLocations [] locations = MapLocations.values();
-      //now do we need to loop through the array and assign scenes to it?
-      
-      //then stick locations into an array and assign to the map
-      //Location location = new Location();//this isn't right yet becuase we want all the locations not just one
-      //return location;
-    }
-    
+        Scene isStart = new Scene();
+        isStart.setDescription("This is the start of the game!");
+        isStart.setMapSymbol(" STRT ");
+        scenes[SceneType.isStart.ordinal()] = isStart;
+        
+        Scene end = new Scene();
+        end.setDescription("This is the end of the game!");
+        end.setMapSymbol(" END ");
+        scenes[SceneType.end.ordinal()] = end;
+        
+        Scene error = new Scene();
+        error.setDescription("There was an error generating this scene!");
+        error.setMapSymbol(" ER ");
+        scenes[SceneType.error.ordinal()] = error;
+        
+        Scene store = new Scene();
+        store.setDescription("This is a store!");
+        store.setMapSymbol(" END ");
+        scenes[SceneType.store.ordinal()] = store;
+        
+        Scene river = new Scene();
+        river.setDescription("This is a river!");
+        river.setMapSymbol(" RVR ");
+        scenes[SceneType.river.ordinal()] = end;
+        
+        Scene fort = new Scene();
+        fort.setDescription("This is a fort!");
+        fort.setMapSymbol(" FRT ");
+        scenes[SceneType.fort.ordinal()] = fort;
+        
+        Scene town = new Scene();
+        town.setDescription("This is a town!");
+        town.setMapSymbol(" TWN ");
+        scenes[SceneType.town.ordinal()] = town;
+        
+        Scene landmark = new Scene();
+        landmark.setDescription("This is a landmark!");
+        landmark.setMapSymbol(" LNDMRK ");
+        scenes[SceneType.landmark.ordinal()] = landmark;
+        
+        return scenes;
+}
 }
