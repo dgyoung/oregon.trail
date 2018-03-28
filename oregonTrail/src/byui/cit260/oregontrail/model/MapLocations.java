@@ -29,13 +29,16 @@ public enum MapLocations implements Serializable {
   columbiaRiver("The Columbia River","theDalles",30),
   willametteValley01("The Willamette Valley","theBarlowRoad", 25),
   willametteValley02("The Willamette Valley","columbiaRiver", 25);
-
   
   private String name;
   private String previousLocation;
   private int milesFromPrevious;
   private Scene scene;
   private boolean visited = false;
+  
+  //create size variable so we know how long to make the Locations array
+  private static final int size = MapLocations.values().length;
+
   //private String dateVisted;
 
   private MapLocations(String name, String previousLocation, int milesFromPrevious) {
@@ -51,7 +54,9 @@ public enum MapLocations implements Serializable {
   public void setScene(Scene scene) {
     this.scene = scene;
   }
-
+  public int getSize()
+    {return size;
+  }
   @Override
   public String toString() {
     return "MapLocations{" + "name=" + name + ", previousLocation=" + previousLocation + ", milesFromPrevious=" + milesFromPrevious + ", scene=" + scene + ", visited=" + visited + '}';
