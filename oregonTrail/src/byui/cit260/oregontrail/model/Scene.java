@@ -2,7 +2,6 @@
 package byui.cit260.oregontrail.model;
 
 import java.io.Serializable;
-import java.io.Serializable;
 import java.util.Objects;
 import java.util.logging.Logger;
 

@@ -2,7 +2,11 @@ package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.control.WagonControl;
+import byui.cit260.oregontrail.model.Game;
+import byui.cit260.oregontrail.model.Location;
+import byui.cit260.oregontrail.model.Map;
 import java.util.Scanner;
+import oregontrail.OregonTrail;
 /**
  *
  * @author Allie
@@ -92,8 +96,52 @@ public class GameMenuView extends View{
     }
     
     private void mapView(){
-        MapView mapView = new MapView();
-        mapView.display();
+
+        String leftIndicator;
+        String rightIndicator;
+
+        Game game = OregonTrail.getCurrentGame();
+        Map map = game.getMap();
+        Location[][] locations = map.getLocations();
+
+        System.out.print("  |");
+        for (int column = 0; column < locations[0].length; column++) {
+
+            System.out.print("   " + (column + 1) + "  |");
+        }
+
+        System.out.println();
+        for (int row = 0; row < locations.length; row++) {
+            System.out.print((row + 1) + " ");
+            for (int column = 0; column < locations[row].length; column++) {
+
+                leftIndicator = " ";
+                rightIndicator = " ";
+                if (locations[row][column] == map.getCurrentLocation()) {
+
+                    leftIndicator = "*";
+                    rightIndicator = "*";
+                } else if (locations[row][column].Visited()) {
+
+                    leftIndicator = ">";
+                    rightIndicator = "<";
+                } else if (locations[row][column].isStart()) {
+                    leftIndicator = ";";
+                    rightIndicator = ";";
+                }
+                System.out.print("|");
+                if (locations[row][column].getScene() == null) {
+
+                    System.out.print(leftIndicator + "??" + rightIndicator);
+                } else {
+                    System.out.print(leftIndicator
+                            + locations[row][column].getScene().getMapSymbol()
+                            + rightIndicator);
+                }
+            }
+            System.out.println("|");
+        }
+        OregonTrail.pressAnyKeyToContinue();
     }
     
     private void setPaceView(){
