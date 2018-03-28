@@ -10,33 +10,13 @@ import byui.cit260.orgontrail.exceptions.MapControlException;
 public class MapControl {
   
     public static void move(WagonControl wagon, int location){
-        
-    }
-    public static boolean validLocation(){
-        return true;
-    }
-    public static void visitRegularScene(){
-        
-    }
-    public static void visitStoreScene(){
-        
-    }
-    public static void visitRiverScene(){
-        
-    }
-    public static void visitHuntingScene(){
-        
-    }
     
-    public static int setDistanceTraveled(int currentLocation){
-        return 0;
-    }
-    public static int distacneToNextLocation(){
-        return 0;
-    }   
-    
-    public static Map createMap() throws GameControlException {
-      Map map = new Map();
+
+    public static Map createMap(int noOfRows, int noOfColumns) throws GameControlException {
+        if(numOfRows <0 || numOfColumns <0){
+            return null;
+        }
+     Map map = new Map();
       //force map to be null for testing
       map = null;
       if (map == null) {
@@ -44,16 +24,40 @@ public class MapControl {
         throw new GameControlException("ERROR: Failed to create map.");
       }
       //associate locations to map - still not sure how to do this!!!!!!!!!
-      Location locations = createLocations();
+      private static Location createLocations(int rows, int columns) throws GameControlException {
+      throw new GameControlException("ERROR: Failed to create locations.");
+      Location locations = createLocations(noOfRows, noOfColumns);
+      }
       //if (locations == null) {
         //throw exception because locations failed to create;
         //throw new MapControlException("Error creating locations.");
      // }
+     
+     public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[][] locations = map.getLocations();
+        int sceneLength = scenes.length;
+        int curScene = SceneType.isStart.ordinal();
+        int rows = locations[0].length;
+        int columns = locations[1].length;
+        for (int row = 0; row < rows; row++) {
+            for (int column = 0; column < columns; column++) {
+                if (curScene <= sceneLength) {
+                    locations[row][column].setScene(scenes[curScene]);
+                    locations[row][column].setLocationName(scenes[curScene].getMapSymbol());
+                    if (" HB ".equals(scenes[curScene].getMapSymbol())) {
+                        locations[row][column].setIsStart(true);
+                    }
+                    curScene++;
+                } else {
+                    locations[row][column].setScene(scenes[SceneType.error.ordinal()]);
+                }
+            }
+        }
+    }
       return map;
     }
     
-    public static Location createLocations() throws GameControlException {
-      throw new GameControlException("ERROR: Failed to create locations.");
+
 
       //MapLocations [] locations = MapLocations.values();
       //now do we need to loop through the array and assign scenes to it?
