@@ -14,7 +14,7 @@ import byui.cit260.oregontrail.control.GameControl;
  */
 public class Location implements Serializable{
     
-     private boolean isStart;
+    private boolean isStart;
     private String locationName; /**name of current location on map*/
     private int xPos;
     private int yPos;
