@@ -100,5 +100,5 @@ public class MapControl {
         scenes[SceneType.landmark.ordinal()] = landmark;
         
         return scenes;
-}
+    }
 }
