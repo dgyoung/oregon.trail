@@ -14,43 +14,75 @@ import byui.cit260.oregontrail.control.GameControl;
  */
 public class Location implements Serializable{
     
-    private String label; /**name of current location on map*/
-    private int next;  /**distance to next location on map*/
-    private int position; /**distance from start*/
-    private int end; /**distance to final location on map*/
+     private boolean isStart;
+    private String locationName; /**name of current location on map*/
+    private int xPos;
+    private int yPos;
+    private Scene scene;
+    private boolean Visited;
+    private boolean isStartLocation;
     private String weather;
     private Calendar calendar;
     
-    public String getLabel() {
-        return label;
+    public Location(String locationName, int xPos, int yPos){
+        this.locationName = locationName;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        if("Start".equals(locationName)){
+            isStart = true;
+        } 
     }
 
-    public void setLabel(String label) {
-        this.label = label;
+    Location() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public boolean isStartLocation(){
+        return isStartLocation;
+    }
+    
+    public void setStartLocation(){
+        this.isStartLocation = true;
+    }
+    
+    public boolean Visited() {
+        return Visited;
+    }
+    
+    public void setVisited(boolean Visited) {
+        this.Visited = Visited;
+    }
+    
+    public Scene getScene() {
+        return scene;
     }
 
-    public int getNext() {
-        return next;
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+    
+    public int getyPos() {
+        return yPos;
     }
 
-    public void setNext(int next) {
-        this.next = next;
+    public void setyPos(int yPos) {
+        this.yPos = yPos;
     }
 
-    public int getPosition() {
-        return position;
+    public int getxPos() {
+        return xPos;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public void setxPos(int xPos) {
+        this.xPos = xPos;
+    }
+    
+    public String getLocationName() {
+        return locationName;
     }
 
-    public int getEnd() {
-        return end;
-    }
-
-    public void setEnd(int end) {
-        this.end = end;
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
     }
 
     public String getWeather() {
@@ -69,21 +101,15 @@ public class Location implements Serializable{
         this.calendar = calendar;
     }
 
-
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.label);
-        hash = 67 * hash + this.next;
-        hash = 67 * hash + this.position;
-        hash = 67 * hash + this.end;
+        hash = 67 * hash + (this.isStart ? 1 : 0);
+        hash = 67 * hash + Objects.hashCode(this.locationName);
+        hash = 67 * hash + this.xPos;
+        hash = 67 * hash + this.yPos;
         hash = 67 * hash + Objects.hashCode(this.weather);
         return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" + "label=" + label + ", next=" + next + ", position=" + position + ", end=" + end + ", weather=" + weather + '}';
     }
 
     @Override
@@ -98,22 +124,24 @@ public class Location implements Serializable{
             return false;
         }
         final Location other = (Location) obj;
-        if (this.next != other.next) {
+        if (this.isStart != other.isStart) {
             return false;
         }
-        if (this.position != other.position) {
+        if (this.xPos != other.xPos) {
             return false;
         }
-        if (this.end != other.end) {
+        if (this.yPos != other.yPos) {
             return false;
         }
-        if (!Objects.equals(this.label, other.label)) {
+        if (!Objects.equals(this.locationName, other.locationName)) {
             return false;
         }
-        if (!Objects.equals(this.weather, other.weather)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.weather, other.weather);
+    }
+
+     @Override
+    public String toString() {
+        return "Location{" + "displaySymbol=" + ", isStart=" + isStart + ", locationName=" + locationName + ", xPos=" + xPos + ", yPos=" + yPos + '}';
     }
 
 }
