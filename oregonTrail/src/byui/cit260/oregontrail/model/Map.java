@@ -12,48 +12,108 @@ import java.util.Objects;
  * @author Lane
  */
 public class Map implements Serializable{
-    private String pathChoice;
-    private String checkpoint;
-    private ArrayList<Game> games = new ArrayList<Game>();
-
-    public String getPathChoice() {
-        return pathChoice;
-    }
-
-    public void setPathChoice(String pathChoice) {
-        this.pathChoice = pathChoice;
-    }
-
-    public String getCheckpoint() {
-        return checkpoint;
-    }
-
-    public void setCheckpoint(String checkpoint) {
-        this.checkpoint = checkpoint;
-    }
-
-    public ArrayList<Game> getGames() {
-        return games;
-    }
-
-    public void setGames(ArrayList<Game> games) {
-        this.games = games;
-    }
-
+    
     public Map() {
+    }
+    
+    public Map(int numOfRows, int numOfColumns) {
+        if(numOfRows <1 || numOfColumns <1){
+            return;
+        }
+        this.rowCount = numOfRows;
+        this.colCount = numOfColumns;
+        this.currentRow = 0;
+        this.currentColumn = 0;
+        
+        this.locations = new Location[numOfRows][numOfColumns];
+        
+        for(int row = 0; row<numOfRows; row++){
+            for(int column = 0; column<numOfColumns; column++){
+                Location location = new Location();
+                location.setxPos(column);
+                location.setyPos(row);
+                
+                locations[row][column] = location;
+            }
+        }
+    }
+    private Location[][] locations;      
+    private int rowCount;
+    private int colCount;
+    private int currentRow;
+    private int currentColumn;
+    private String currentScene;
+    private Scene scenes[];
+
+    public Scene[] getScenes() {
+        return scenes;
+    }
+
+    public void setScenes(Scene[] scenes) {
+        this.scenes = scenes;
+    }
+    
+    public Location getCurrentLocation(){
+        return locations[currentRow][currentColumn];
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+    
+    public String getCurrentScene() {
+        return currentScene;
+    }
+
+    public void setCurrentScene(String currentScene) {
+        this.currentScene = currentScene;
+    }
+
+    public int getCurrentColumn() {
+        return currentColumn;
+    }
+
+    public void setCurrentColumn(int currentColumn) {
+        this.currentColumn = currentColumn;
+    }
+
+    public int getCurrentRow() {
+        return currentRow;
+    }
+
+    public void setCurrentRow(int currentRow) {
+        this.currentRow = currentRow;
+    }
+
+    public int getColCount() {
+        return colCount;
+    }
+
+    public void setColCount(int colCount) {
+        this.colCount = colCount;
+    }
+
+    public int getRowCount() {
+        return rowCount;
+    }
+
+    public void setRowCount(int rowCount) {
+        this.rowCount = rowCount;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.pathChoice);
-        hash = 79 * hash + Objects.hashCode(this.checkpoint);
+        hash = 31 * hash + this.rowCount;
+        hash = 31 * hash + this.colCount;
+        hash = 31 * hash + this.currentRow;
+        hash = 31 * hash + this.currentColumn;
+        hash = 31 * hash + Objects.hashCode(this.currentScene);
         return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "Map{" + "pathChoice=" + pathChoice + ", checkpoint=" + checkpoint + '}';
     }
 
     @Override
@@ -68,14 +128,27 @@ public class Map implements Serializable{
             return false;
         }
         final Map other = (Map) obj;
-        if (!Objects.equals(this.pathChoice, other.pathChoice)) {
+        if (this.rowCount != other.rowCount) {
             return false;
         }
-        if (!Objects.equals(this.checkpoint, other.checkpoint)) {
+        if (this.colCount != other.colCount) {
+            return false;
+        }
+        if (this.currentRow != other.currentRow) {
+            return false;
+        }
+        if (this.currentColumn != other.currentColumn) {
+            return false;
+        }
+        if (!Objects.equals(this.currentScene, other.currentScene)) {
             return false;
         }
         return true;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Map{" + "rowCount=" + rowCount + ", colCount=" + colCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentScene=" + currentScene + '}';
+    }
+
 }
