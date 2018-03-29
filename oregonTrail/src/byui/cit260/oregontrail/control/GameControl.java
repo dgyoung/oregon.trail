@@ -37,7 +37,7 @@ public class GameControl {
         game.setNoPeople(5);
 
         //call create map
-        Map map = MapControl.createMap();
+        Map map = MapControl.createMap(10,20);
    
         //set reference to map in the game
         game.setMap(map);

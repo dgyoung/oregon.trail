@@ -8,52 +8,46 @@ import byui.cit260.orgontrail.exceptions.GameControlException;
 
 public class MapControl {
   
-    public static void move(WagonControl wagon, int location){
-    
-
-    public static Map createMap(int noOfRows, int noOfColumns) throws GameControlException {
-        if(numOfRows <0 || numOfColumns <0){
+  public static void move(WagonControl wagon, int location){
+  }
+    //public static Map createMap(int noOfRows, int noOfColumns)
+  public static Map createMap(int noOfRows, int noOfColumns) throws GameControlException {
+    if(noOfRows <0 || noOfColumns <0){
             return null;
-        }
-     Map map = new Map();
-      //force map to be null for testing
-      map = null;
-      if (map == null) {
-        //throw exception because map failed to load;
-        throw new GameControlException("ERROR: Failed to create map.");
-      }
-      //associate locations to map - still not sure how to do this!!!!!!!!!
-      private static Location createLocations(int rows, int columns) throws GameControlException {
-      throw new GameControlException("ERROR: Failed to create locations.");
-      Location locations = createLocations(noOfRows, noOfColumns);
-        return null;
-      }
-      //if (locations == null) {
-        //throw exception because locations failed to create;
-        //throw new MapControlException("Error creating locations.");
-     // }
+    }
+    
+    Map map = new Map();
+    //map = null; //force map to be null for testing
+
+    if (map == null) {
+      //throw exception because map failed to load;
+      throw new GameControlException("ERROR: Failed to create map.");
+    }
+    return map;
+  }
+
      
-     public static void assignScenesToLocations(Map map, Scene[] scenes) {
-        Location[][] locations = map.getLocations();
-        int sceneLength = scenes.length;
-        int curScene = SceneType.isStart.ordinal();
-        int rows = locations[0].length;
-        int columns = locations[1].length;
-        for (int row = 0; row < rows; row++) {
-            for (int column = 0; column < columns; column++) {
-                if (curScene <= sceneLength) {
-                    locations[row][column].setScene(scenes[curScene]);
-                    locations[row][column].setLocationName(scenes[curScene].getMapSymbol());
-                    if (" HB ".equals(scenes[curScene].getMapSymbol())) {
-                        locations[row][column].setIsStart(true);
-                    }
-                    curScene++;
-                } else {
-                    locations[row][column].setScene(scenes[SceneType.error.ordinal()]);
+  public static void assignScenesToLocations(Map map, Scene[] scenes) {
+    Location[][] locations = map.getLocations();
+    int sceneLength = scenes.length;
+    int curScene = SceneType.isStart.ordinal();
+    int rows = locations[0].length;
+    int columns = locations[1].length;
+    for (int row = 0; row < rows; row++) {
+        for (int column = 0; column < columns; column++) {
+            if (curScene <= sceneLength) {
+                locations[row][column].setScene(scenes[curScene]);
+                locations[row][column].setLocationName(scenes[curScene].getMapSymbol());
+                if (" HB ".equals(scenes[curScene].getMapSymbol())) {
+                    locations[row][column].setIsStart(true);
                 }
+                curScene++;
+            } else {
+                locations[row][column].setScene(scenes[SceneType.error.ordinal()]);
             }
         }
     }
+}
      
    
     public static Scene[] createScenes() {

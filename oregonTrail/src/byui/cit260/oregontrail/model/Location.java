@@ -101,6 +101,11 @@ public class Location implements Serializable{
         this.calendar = calendar;
     }
 
+    public void setIsStart(boolean isStart) {
+      this.isStart = isStart;
+    }
+    
+
     @Override
     public int hashCode() {
         int hash = 7;
