@@ -66,6 +66,10 @@ public class GameControl {
 
         return new Player();
     }
+    
+    public static void saveGameFile(Game game) {
+      
+    }
 
     public static void restoreSavedGame() {
         System.out.println("*** restoreSavedGame called ***");

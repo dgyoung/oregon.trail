@@ -58,7 +58,7 @@ class StoreView {
 
     }
 
-    @Override
+    //@Override
     public String[] getInputs() {
 
         String[] inputs = new String[1];
@@ -69,7 +69,7 @@ class StoreView {
         try{
             while (!valid) {
 
-              userInput = this.keyboard.readLine();
+              //userInput = this.keyboard.readLine();
               trimmedUserInput = userInput.trim();
 
               if (trimmedUserInput.length() < 1) {

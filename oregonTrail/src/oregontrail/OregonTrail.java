@@ -33,6 +33,8 @@ public class OregonTrail {
     
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
 
     public static Player getPlayer() {
         return player;
@@ -75,6 +77,14 @@ public class OregonTrail {
   public static void setInFile(BufferedReader inFile) {
     OregonTrail.inFile = inFile;
   }
+
+  public static PrintWriter getLogFile() {
+    return logFile;
+  }
+
+  public static void setLogFile(PrintWriter logFile) {
+    OregonTrail.logFile = logFile;
+  }
     
     
     public static void main(String[] args) throws IOException {
@@ -98,10 +108,7 @@ public class OregonTrail {
         }
         finally {
           try {
-            if (OregonTrail.inFile !=null)
             OregonTrail.inFile.close();
-            
-            if (OregonTrail.outFile !=null)
             OregonTrail.outFile.close();  
           } catch (IOException ex){
             Logger.getLogger(OregonTrail.class.getName()).log(Level.SEVERE, "Input or Output file failed to close");

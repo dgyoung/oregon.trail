@@ -22,8 +22,9 @@ public class MainMenuView extends View {
                 + "* 1. Start New Game *\n"
                 + "* 2. Resume Saved Game *\n"
                 + "* 3. Help *\n"
-                + "* 4. Test View *\n"
-                + "* 5. Exit *\n"
+                + "* 4. Save Game *\n"
+                + "* Q. Exit *\n"
+                + "* 6. Test View *\n"
                 + "\n***** What is your choice? *****\n");
     }
     @Override
@@ -35,8 +36,7 @@ public class MainMenuView extends View {
         Player player = GameControl.saveGame(choice);
         //IF player == null
         if (choice == null) {
-            System.out.println("Plese enter a valid option");
-
+            ErrorView.display(this.getClass().getName(), "Plese enter a valid option");
             return false;
         }
         switch (choice) {
@@ -45,7 +45,8 @@ public class MainMenuView extends View {
                   try {
                     GameControl.startNewGame();
                   } catch (GameControlException ex) {
-                  System.out.println(ex.getMessage());                  }
+                  ErrorView.display(this.getClass().getName(), ex.getMessage());
+                  }
                 }
                 this.nameSelectView();
                 break;
@@ -56,6 +57,9 @@ public class MainMenuView extends View {
                 this.helpMenuView();
                 break;
             case "4":
+                this.saveGame();
+                break;
+            case "6":
                 this.testView();
                 break;
             default:
@@ -84,5 +88,9 @@ public class MainMenuView extends View {
         TestView testView = new TestView();
         testView.display();
     }
+
+  private void saveGame() {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  }
     
 }
