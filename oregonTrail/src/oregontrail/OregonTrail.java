@@ -18,12 +18,21 @@ import byui.cit260.oregontrail.control.GameControl;
 import static byui.cit260.oregontrail.control.GameControl.getFinalScore;
 import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class OregonTrail {
 
     private static Player player = null;
     private static Game currentGame = null;
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
 
     public static Player getPlayer() {
         return player;
@@ -42,24 +51,61 @@ public class OregonTrail {
     }
     
     public static void pressAnyKeyToContinue()
- {      System.out.println("Press any key to continue...");
+    {      System.out.println("Press any key to continue...");
         try
         {
             System.in.read();
         }  
         catch(Exception e)
         {}  
- }
+    } 
 
+  public static PrintWriter getOutFile() {
+    return outFile;
+  }
+
+  public static void setOutFile(PrintWriter outFile) {
+    OregonTrail.outFile = outFile;
+  }
+
+  public static BufferedReader getInFile() {
+    return inFile;
+  }
+
+  public static void setInFile(BufferedReader inFile) {
+    OregonTrail.inFile = inFile;
+  }
     
-    public static void main(String[] args) {
+    
+    public static void main(String[] args) throws IOException {
         //System.out.println(getFinalScore(5000, 3, 6));
+        
         try{
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
-        } catch (Throwable e){
-            System.out.println("you did it wrong ---> " + e);
-            e.printStackTrace();
+          //open character stream files for end users input and output
+          OregonTrail.inFile = new BufferedReader(new InputStreamReader(System.in));          
+          OregonTrail.outFile = new PrintWriter(System.out, true);
+          
+          //create StartProgramView and start the program
+          StartProgramView startProgramView = new StartProgramView();
+          startProgramView.display();
+          return;
+          
+        } catch (Throwable ex){
+          System.out.println("Exception: " + ex.toString() +
+                             "\nCause: " + ex.getCause() +
+                             "\nMessage: " + ex.getMessage());
+          ex.printStackTrace();
+        }
+        finally {
+          try {
+            if (OregonTrail.inFile !=null)
+            OregonTrail.inFile.close();
+            
+            if (OregonTrail.outFile !=null)
+            OregonTrail.outFile.close();  
+          } catch (IOException ex){
+            Logger.getLogger(OregonTrail.class.getName()).log(Level.SEVERE, "Input or Output file failed to close");
+          }
         }
        
     }
