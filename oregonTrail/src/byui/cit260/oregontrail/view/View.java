@@ -2,7 +2,12 @@ package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.model.Player;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import oregontrail.OregonTrail;
 
 /**
  *
@@ -11,6 +16,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     protected String displayMessage;
+
+    protected final BufferedReader keyboard = OregonTrail.getInFile();
+    protected final PrintWriter console = OregonTrail.getOutFile();
 
     public View() {
     }
@@ -36,15 +44,16 @@ public abstract class View implements ViewInterface {
         } while (!endOfView); //WHILE endOfView != true ;
     }
 
-        @Override
-        public String getInput() {
+    @Override
+    public String getInput() {
         String[] inputs = new String[1];
-            boolean valid = false;
-            Scanner keyboard = new Scanner(System.in);
-            String input = null;
+        boolean valid = false;
+        String input = null;
+        try {
+            String keyboard = this.keyboard.readLine();
             while (!valid) {
                 System.out.print("\n" + this.displayMessage);
-                input = keyboard.nextLine().trim();
+                input = keyboard.trim();
                 if (input.length() < 1) {//blank value entered
                     System.out.print("You must enter a value.\n");
                 } else {
@@ -53,7 +62,10 @@ public abstract class View implements ViewInterface {
                 }
             }
             return inputs[0];
+        } catch (IOException ex) {
+            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return inputs[0];
+    }
 
-    
 }
