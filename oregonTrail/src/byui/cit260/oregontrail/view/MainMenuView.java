@@ -1,14 +1,8 @@
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.GameControl;
-import static byui.cit260.oregontrail.control.GameControl.restoreSavedGame;
-import static byui.cit260.oregontrail.control.GameControl.startNewGame;
 import byui.cit260.oregontrail.model.Player;
 import byui.cit260.orgontrail.exceptions.GameControlException;
-import byui.cit260.orgontrail.exceptions.MapControlException;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
