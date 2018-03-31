@@ -21,8 +21,8 @@ public abstract class View implements ViewInterface {
     protected final BufferedReader keyboard = OregonTrail.getInFile();
     protected final PrintWriter console = OregonTrail.getOutFile();
 
-    public View() {
-    }
+//    public View() {
+//    }
 
     public View(String message) {
         this.displayMessage = message;
@@ -52,9 +52,9 @@ public abstract class View implements ViewInterface {
         String input = null;
         try {
             while (!valid) {
+                System.out.print("\n" + this.displayMessage);
                 input = this.keyboard.readLine();
                 input = input.trim();
-                System.out.print("\n" + this.displayMessage);
                 if (input.length() < 1) {//blank value entered
                     System.out.print("You must enter a value.\n");
                 } else {
@@ -62,7 +62,7 @@ public abstract class View implements ViewInterface {
                     valid = true;
                 }
             }
-            return inputs[0];
+            //return inputs[0];
         } catch (IOException ex) {
             Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
         }

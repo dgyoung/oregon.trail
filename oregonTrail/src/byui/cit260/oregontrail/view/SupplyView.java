@@ -8,7 +8,7 @@ import oregontrail.OregonTrail;
 public class SupplyView extends View{
 
     public SupplyView() {
-        System.out.println("\n"
+        super("\n"
                 + "\n****************************************"
                 + "\n                 Inventory              "
                 + "\n  Name and Cost                         ");

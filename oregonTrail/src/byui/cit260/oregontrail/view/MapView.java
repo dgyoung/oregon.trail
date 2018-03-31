@@ -10,7 +10,7 @@ public class MapView extends View {
     
     public MapView() {
     
-        System.out.println("\n"+
+        super("\n"+
 "=============================================================================\n" +
 " |                                                                         |\n" +
 " |                         Map of the Oregon Trail                         |\n" +
