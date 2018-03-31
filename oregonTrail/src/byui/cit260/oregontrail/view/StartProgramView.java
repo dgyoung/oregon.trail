@@ -2,13 +2,16 @@ package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.model.Player;
-import java.util.Scanner;
+import java.io.PrintWriter;
+import oregontrail.OregonTrail;
 
 /**
  *
  * @author Alexandra
  */
 public class StartProgramView extends View {
+    
+    protected final PrintWriter console = OregonTrail.getOutFile();
 
     public StartProgramView() {
         super(
@@ -40,7 +43,7 @@ public class StartProgramView extends View {
         Player player = GameControl.saveGame(playersName);
         //IF player == null
         if (playersName == null) {
-            System.out.println("Could not create the player." + "\n"
+            this.console.println("Could not create the player." + "\n"
                     + "Enter a different name.");
 
             return false;

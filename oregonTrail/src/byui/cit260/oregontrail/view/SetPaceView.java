@@ -1,6 +1,5 @@
 package byui.cit260.oregontrail.view;
 
-import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.control.WagonControl;
 
 /**
@@ -32,8 +31,8 @@ public class SetPaceView extends View{
       choice = inputs;
       
       if (choice == null) {
-          System.out.println("Please enter a correct input");
-
+          ErrorView.display(this.getClass().getName(),
+                            "Please enter a correct input");
           return false;
       }
       
@@ -48,7 +47,7 @@ public class SetPaceView extends View{
                 WagonControl.changePace("Greuling");
                 return true;
             case "4":
-                System.out.println("\nSET PACE HELP MENU\n"
+                this.console.println("\nSET PACE HELP MENU\n"
                         + "Steady - You travel about 8 hours a day, taking\n"
                         + "frequent rests. You take care not to get too tired.\n"
                         + "\n"
@@ -63,8 +62,8 @@ public class SetPaceView extends View{
                 );
                 break;
             default:
-                System.out.println("Enter a valid option");
-
+                ErrorView.display(this.getClass().getName(),
+                                  "Enter a valid option");
       }
         return false;
     }

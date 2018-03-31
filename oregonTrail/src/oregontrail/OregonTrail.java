@@ -101,7 +101,7 @@ public class OregonTrail {
                     OregonTrail.logFile.close();
                 }
             } catch (IOException ex){
-                ErrorView.display("OregonTrail", "Error closing files");
+                System.console().printf("%s%s", "Error closing files");
                 return;
             }
             

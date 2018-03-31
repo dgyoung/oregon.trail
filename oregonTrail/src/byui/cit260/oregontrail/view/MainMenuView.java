@@ -4,10 +4,7 @@ import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.model.Player;
 import byui.cit260.orgontrail.exceptions.GameControlException;
 
-/**
- *
- * @author Alexandra
- */
+
 public class MainMenuView extends View {
 
     public MainMenuView() {
@@ -23,12 +20,9 @@ public class MainMenuView extends View {
     }
     @Override
     public boolean doAction(String inputs) {
-//playersName = get the first value in the inputs array
         String choice;
         choice = inputs;
-        //player = savePlayer(playersName)
         Player player = GameControl.saveGame(choice);
-        //IF player == null
         if (choice == null) {
             ErrorView.display(this.getClass().getName(), "Plese enter a valid option");
             return false;
@@ -57,7 +51,8 @@ public class MainMenuView extends View {
                 this.testView();
                 break;
             default:
-                System.out.println("Enter a valid option");
+                ErrorView.display(this.getClass().getName(),
+                                  "Enter a valid option");
 
         }
         return false;

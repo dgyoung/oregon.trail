@@ -2,10 +2,6 @@ package byui.cit260.oregontrail.view;
 
 import oregontrail.OregonTrail;
 
-/**
- *
- * @author Alexandra
- */
 public class MapView extends View {
     
     public MapView() {

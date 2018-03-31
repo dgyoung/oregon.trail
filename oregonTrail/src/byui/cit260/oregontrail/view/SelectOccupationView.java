@@ -28,15 +28,14 @@ public class SelectOccupationView extends View{
         }
     @Override
     public boolean doAction(String inputs) {
-//playersName = get the first value in the inputs array
         String choice;
         choice = inputs;
         
         Player player = GameControl.saveGame(choice);
         
         if (choice == null) {
-            System.out.println("Please enter a correct input");
-
+            ErrorView.display(this.getClass().getName(),
+                              "Please enter a correct input");
             return false;
         }
         StoreView PurchaseItemsView
@@ -59,7 +58,7 @@ public class SelectOccupationView extends View{
                 PurchaseItemsView.displayPurchaseItemsView();
                 return true;
             case "4":
-                System.out.println("\nTraveling to Oregon isnt' easy!\n"
+                this.console.println("\nTraveling to Oregon isnt' easy!\n"
                         + "But if you're a banker, you'll have more money for\n"
                         + "supplies and services than a carpenter or a farmer.\n"
                         + "\n"
@@ -67,8 +66,8 @@ public class SelectOccupationView extends View{
                         + "Therefore, the farmer earns the greatest number of poinst and the banker earns the least.");
                 break;
             default:
-                System.out.println("Enter a valid option");
-
+                ErrorView.display(this.getClass().getName(),
+                                  "Enter a valisd option");
         }
         return false;
     }

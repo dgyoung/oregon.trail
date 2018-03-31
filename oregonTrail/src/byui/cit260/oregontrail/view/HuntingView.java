@@ -9,10 +9,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Alexandra
- */
 public class HuntingView extends View {
 
        public HuntingView() {
@@ -26,12 +22,12 @@ public class HuntingView extends View {
     public boolean doAction(String inputs) {
         String choice;
         choice = inputs.toUpperCase();
-        //player = savePlayer(playersName)
+        
         Player player = GameControl.saveGame(choice);
-        //IF player == null
+       
         if (choice == null) {
-            System.out.println("Plese enter a character");
-
+            ErrorView.display(this.getClass().getName(),
+                              "Plese enter a character");
             return false;
         }
         switch (choice) {
@@ -44,14 +40,10 @@ public class HuntingView extends View {
             }
             break;
             default:
-                System.out.println("Enter a valid option");
-
+                ErrorView.display(this.getClass().getName(),
+                                  "Enter a valid option");
         }
         return false;
     }
-
-    
-
-    
     
 }

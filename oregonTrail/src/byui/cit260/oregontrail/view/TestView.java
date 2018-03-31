@@ -31,15 +31,12 @@ public class TestView extends View {
 
     @Override
     public boolean doAction(String inputs) {
-//playersName = get the first value in the inputs array
         String choice;
         choice = inputs;
-        //player = savePlayer(playersName)
         Player player = GameControl.saveGame(choice);
-        //IF player == null
         if (choice == null) {
-            System.out.println("Plese enter a character");
-
+            ErrorView.display(this.getClass().getName(),
+                              "Plese enter a character");
             return false;
         }
         switch (choice) {
@@ -84,12 +81,14 @@ public class TestView extends View {
                 this.storeView();
                 break;
             case "14":
-                this.supplyView();
+                //commented out until supplyView is fixed****
+                //this.supplyView();
                 break;
             case "15":
                 this.endGameView();
             default:
-                System.out.println("Enter a valid option");
+                ErrorView.display(this.getClass().getName(),
+                                  "Enter a valid option");
 
         }
         return false;
@@ -159,10 +158,12 @@ public class TestView extends View {
         storeView.displayPurchaseItemsView();
     }
     
-    private void supplyView() {
+    
+    //commented out until supplyView is fixed
+    /*private void supplyView() {
         SupplyView supplyView = new SupplyView();
         supplyView.display();
-    }
+    }*/
 
     private void endGameView() {
         EndGameView endGameView = new EndGameView();

@@ -1,16 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.model.Player;
-import java.util.Scanner;
 
-/**
- *
+/*\
  * @author David
  */
 public class HelpMenuView extends View{
@@ -27,8 +21,6 @@ public class HelpMenuView extends View{
                 + "Press C to continue");
         }
 
-    
-    
     @Override
     public boolean doAction(String inputs) {
         String[] help = new String[3];
@@ -51,13 +43,10 @@ public class HelpMenuView extends View{
                 + "Press C to continue";
         String choice;
         choice = inputs;
-        //player = savePlayer(playersName)
         Player player = GameControl.saveGame(choice);
-        //IF player == null
         int increment = 0;
         if (choice == null) {
-            System.out.println("Press C to continue");
-
+            this.console.println("Press C to continue");
             return false;
         }
         if (increment == 3) {
@@ -65,10 +54,10 @@ public class HelpMenuView extends View{
         }
         switch (choice) {
             case "C":
-                System.out.println(help[increment]);
+                this.console.println(help[increment]);
                 break;
             default:
-                System.out.println("Enter a valid option");
+                this.console.println("Enter a valid option");
 
         }
 
