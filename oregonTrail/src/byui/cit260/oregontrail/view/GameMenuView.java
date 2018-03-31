@@ -5,7 +5,6 @@ import byui.cit260.oregontrail.control.WagonControl;
 import byui.cit260.oregontrail.model.Game;
 import byui.cit260.oregontrail.model.Location;
 import byui.cit260.oregontrail.model.Map;
-import java.util.Scanner;
 import oregontrail.OregonTrail;
 /**
  *
