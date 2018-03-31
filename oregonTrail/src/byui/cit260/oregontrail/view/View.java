@@ -1,13 +1,8 @@
 package byui.cit260.oregontrail.view;
 
-import byui.cit260.oregontrail.control.GameControl;
-import byui.cit260.oregontrail.model.Player;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import oregontrail.OregonTrail;
 
 /**
@@ -30,12 +25,9 @@ public abstract class View implements ViewInterface {
 
     @Override
     public void display() {
-
-//playersName = get the first value in the inputs array
         boolean endOfView = false;
-
         do {
-
+            //prompt for input
             String inputs = this.getInput();
             if (inputs.toUpperCase().equals("Q")) {
                 return; //exits program
@@ -47,26 +39,26 @@ public abstract class View implements ViewInterface {
 
     @Override
     public String getInput() {
-        String[] inputs = new String[1];
+        
         boolean valid = false;
-        String input = null;
+        String selection = null;
+        
         try {
             while (!valid) {
-                input = this.keyboard.readLine();
-                input = input.trim();
-                System.out.print("\n" + this.displayMessage);
-                if (input.length() < 1) {//blank value entered
-                    System.out.print("You must enter a value.\n");
-                } else {
-                    inputs[0] = input;
-                    valid = true;
+                
+               this.console.println("\n" + this.displayMessage + "\n");
+               selection = this.keyboard.readLine();
+                if (selection.length() < 1) {//blank value entered
+                    this.console.println("You must enter a value.\n");
+                    continue;
                 }
+                break;
             }
-            return inputs[0];
         } catch (IOException ex) {
-            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            ErrorView.display(this.getClass().getName(),"Error reading input: " + ex.getMessage());
+            this.console.println("\n" + this.displayMessage + "\n");
         }
-        return inputs[0];
+        return selection;
     }
 
 }
