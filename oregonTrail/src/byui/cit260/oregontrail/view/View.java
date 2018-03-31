@@ -16,8 +16,8 @@ public abstract class View implements ViewInterface {
     protected final BufferedReader keyboard = OregonTrail.getInFile();
     protected final PrintWriter console = OregonTrail.getOutFile();
 
-    public View() {
-    }
+//    public View() {
+//    }
 
     public View(String message) {
         this.displayMessage = message;

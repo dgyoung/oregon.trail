@@ -12,6 +12,7 @@ package byui.cit260.oregontrail.view;
 public class StartExistingGameView extends View{
 
     public StartExistingGameView() {
+      super("**** The Oregon Trail – MAIN MENU *****\n");
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
