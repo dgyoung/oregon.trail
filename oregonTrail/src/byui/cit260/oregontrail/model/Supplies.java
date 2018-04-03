@@ -1,17 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.oregontrail.model;
-import java.io.Serializable;
-import java.io.Serializable;
 
-/**
- *
- * @author davey
- */
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Objects;
+
+
+
 public class Supplies implements Serializable{
+    
+    /*public Supplies() {
+        this.items = new ArrayList<>();
+    }
+    
+    private String supplyName;
+    
+    private ArrayList<Item> items;
+    
+    private int resource;
+    */
+    
     private int wagonWheel;
     private int wagonAxel;
     private int wagonTonuge;

@@ -34,8 +34,8 @@ public class StartingMonthView extends View{
             Calendar calendar = GameControl.setCalendar();
 
             if (month == null) {
-                System.out.println("Please enter a correct input");
-
+                ErrorView.display(this.getClass().getName(), 
+                                  "Please enter a correct input");
                 return false;
             }
             SelectOccupationView SelectOccupationView
@@ -46,34 +46,34 @@ public class StartingMonthView extends View{
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 02);
                     calendar.set(Calendar.DATE, 01);
-                    System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
+                    this.console.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
                     SelectOccupationView.display();
                 case "2":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 03);
                     calendar.set(Calendar.DATE, 01);
-                    System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
+                    this.console.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
                     SelectOccupationView.display();
                 case "3":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 04);
                     calendar.set(Calendar.DATE, 01);                    
-                    System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
+                    this.console.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
                     SelectOccupationView.display();
                 case "4":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 05);
                     calendar.set(Calendar.DATE, 01);
-                    System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
+                    this.console.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
                     SelectOccupationView.display();
                 case "5":
                     calendar.set(Calendar.YEAR, 1848);
                     calendar.set(Calendar.MONTH, 06);
                     calendar.set(Calendar.DATE, 01);
-                    System.out.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
+                    this.console.println("\nYou'll begin your journey on " + sdf.format(calendar.getTime())+ "\n");
                     SelectOccupationView.display();
                 case "6":
-                    System.out.println("\n"
+                    this.console.println("\n"
                             + "You attend a public meeting held for \n" 
                             + "folks with the California - Oregon fever. \n" 
                             + "\n" 
@@ -93,8 +93,8 @@ public class StartingMonthView extends View{
                             + "* 6.   When should I leave? *\n");
                                     break;
                 default:
-                    System.out.println("Enter a valid option");
-
+                    ErrorView.display(this.getClass().getName(),
+                                      "Enter a valid option.");
             }
             return false;
     }

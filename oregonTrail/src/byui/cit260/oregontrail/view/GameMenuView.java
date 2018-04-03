@@ -43,17 +43,18 @@ public class GameMenuView extends View{
         menuOption = inputs;
                 
         if (menuOption == null) {
-            System.out.println("Please enter a valid menu option");
-
+            ErrorView.display(this.getClass().getName(),
+                              "Please enter a valid menu option");
             return false;
         }    
         
         switch (menuOption) {
             case "1": //continue on trail
-                System.out.println("\n***** This should take you back to the game... *****\n");
+                this.console.println("\n***** This should take you back to the game... *****\n");
                 break;
             case "2": //check supplies
-                this.supplyView();
+                //commented out until supplyView is fixed****
+                //this.supplyView();
                 break;
             case "3": //display map
                 this.mapView();
@@ -65,7 +66,7 @@ public class GameMenuView extends View{
                 this.setRationsView();
                 break;
             case "6": //stop to rest
-                System.out.println("\n***** How many days would you like to rest? *****\n");
+                this.console.println("\n***** How many days would you like to rest? *****\n");
                 // TO INCREMENT THE DATE BY ONE DAY
                 // calendar.add(Calendar.DATE, 1);
                 // System.out.println("Date : " + sdf.format(calendar.getTime()));
@@ -84,16 +85,16 @@ public class GameMenuView extends View{
             case "9": //save game 
                 this.saveGame();
             default:
-                System.out.println("Enter a valid option");
-
+                ErrorView.display(this.getClass().getName(),
+                                  "Enter a valid option");
         }
         return false;
     }
              
-    private void supplyView(){
+    /*private void supplyView(){
         SupplyView supplyView = new SupplyView();
         supplyView.display();
-    }
+    }*/
     
     private void mapView(){
 
@@ -104,15 +105,15 @@ public class GameMenuView extends View{
         Map map = game.getMap();
         Location[][] locations = map.getLocations();
 
-        System.out.print("  |");
+        this.console.print("  |");
         for (int column = 0; column < locations[0].length; column++) {
 
-            System.out.print("   " + (column + 1) + "  |");
+            this.console.print("   " + (column + 1) + "  |");
         }
 
-        System.out.println();
+        this.console.println();
         for (int row = 0; row < locations.length; row++) {
-            System.out.print((row + 1) + " ");
+            this.console.print((row + 1) + " ");
             for (int column = 0; column < locations[row].length; column++) {
 
                 leftIndicator = " ";
@@ -129,17 +130,17 @@ public class GameMenuView extends View{
                     leftIndicator = ";";
                     rightIndicator = ";";
                 }
-                System.out.print("|");
+                this.console.print("|");
                 if (locations[row][column].getScene() == null) {
 
-                    System.out.print(leftIndicator + "??" + rightIndicator);
+                    this.console.print(leftIndicator + "??" + rightIndicator);
                 } else {
-                    System.out.print(leftIndicator
+                    this.console.print(leftIndicator
                             + locations[row][column].getScene().getMapSymbol()
                             + rightIndicator);
                 }
             }
-            System.out.println("|");
+            this.console.println("|");
         }
         OregonTrail.pressAnyKeyToContinue();
     }

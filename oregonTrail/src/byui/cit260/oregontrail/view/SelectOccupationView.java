@@ -54,7 +54,7 @@ public class SelectOccupationView extends View{
                 PurchaseItemsView.displayPurchaseItemsView();
                 return true;
             case "4":
-                System.out.println("\nTraveling to Oregon isnt' easy!\n"
+                this.console.println("\nTraveling to Oregon isnt' easy!\n"
                         + "But if you're a banker, you'll have more money for\n"
                         + "supplies and services than a carpenter or a farmer.\n"
                         + "\n"
@@ -62,8 +62,8 @@ public class SelectOccupationView extends View{
                         + "Therefore, the farmer earns the greatest number of poinst and the banker earns the least.");
                 break;
             default:
-                System.out.println("Enter a valid option");
-
+                ErrorView.display(this.getClass().getName(),
+                                  "Enter a valisd option");
         }
         return false;
     }

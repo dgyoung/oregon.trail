@@ -1,7 +1,6 @@
 package byui.cit260.orgontrail.exceptions;
 
-/**
- *
+/*
  * @author bradrallen
  */
 public class MapControlException extends Exception {
