@@ -49,12 +49,6 @@ public class WagonControl {
       if (wagon == null) {
           throw new GameControlException("ERROR: Player Object Required");
       }
-      try {
-        String stringNumber = "a";
-        int test = Integer.parseInt(stringNumber);
-      } catch (NumberFormatException ex) {
-          System.out.println(ex.getMessage() + " Please enter a whole number");
-      }
       return wagon;
     }
 }

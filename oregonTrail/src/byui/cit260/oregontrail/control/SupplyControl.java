@@ -86,4 +86,10 @@ public class SupplyControl {
     public static void calcSupplyCost(char location, char supplyItem, int quantity) {
 
     }
+
+  public static class initilizeSupplies {
+
+    public initilizeSupplies() {
+    }
+  }
 }

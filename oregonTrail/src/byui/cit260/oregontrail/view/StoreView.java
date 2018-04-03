@@ -58,29 +58,26 @@ class StoreView {
 
     }
 
-    //@Override
-    public String[] getInputs() {
+    private String[] getInputs() {
 
         String[] inputs = new String[1];
 
+        Scanner scanner = new Scanner(System.in);
         String userInput = null;
         String trimmedUserInput = null;
         boolean valid = false;
-        try{
-            while (!valid) {
+        while (!valid) {
 
-              //userInput = this.keyboard.readLine();
-              trimmedUserInput = userInput.trim();
+            userInput = scanner.nextLine();
+            trimmedUserInput = userInput.trim();
 
-              if (trimmedUserInput.length() < 1) {
+            if (trimmedUserInput.length() < 1) {
                 System.out.println("You must enter a non-blank value");
-              } else {
+            } else {
                 inputs[0] = trimmedUserInput;
                 valid = true;
-              }
             }
-        } catch (Exception ex) {
-            System.out.println("Error reading input: " + ex.getMessage());      }
+        }
         System.out.println("***** Choose an item to add to your order: *****");
 
         return inputs;

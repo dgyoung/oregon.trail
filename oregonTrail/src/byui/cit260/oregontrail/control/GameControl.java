@@ -8,6 +8,9 @@ import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.orgontrail.exceptions.GameControlException;
 import byui.cit260.orgontrail.exceptions.MapControlException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -67,8 +70,18 @@ public class GameControl {
         return new Player();
     }
     
-    public static void saveGameFile(Game game) {
+    public static void saveGameFile(Game game, String filePath) throws GameControlException, IOException {
+      if (game == null || filePath == null) {
+        throw new GameControlException("Invalid Game or File Path");
+      }
       
+      try (ObjectOutputStream out = new
+          ObjectOutputStream(new FileOutputStream(filePath))){
+          out.writeObject(game);
+      } catch (IOException ex) {
+        System.out.println("I/O Error: " + ex.getMessage());
+      }
+      System.out.println("saveGame() in GameControl class");
     }
 
     public static void restoreSavedGame() {
@@ -111,7 +124,8 @@ public class GameControl {
     }
 
     public static Game setCharacterChoice(String choice) {
-        Game game = new Game();
+        //Game game = new Game(); ? we don't want a new game, rather we need to attach the character to the current game
+        Game game = OregonTrail.getCurrentGame();
         game.setCharacterChoice(choice);
         return game;
 

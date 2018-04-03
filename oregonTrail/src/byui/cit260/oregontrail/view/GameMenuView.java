@@ -29,6 +29,7 @@ public class GameMenuView extends View{
                 + "* 6. Stop to rest *\n"
                 + "* 7. Hunt *\n"
                 + "* 8. Print Report *\n"
+                + "* 9. Save Game *\n"
                 +"\n"       
                 +"***** What is your choice? *****\n");
             
@@ -40,9 +41,7 @@ public class GameMenuView extends View{
 
         String menuOption;
         menuOption = inputs;
-        
-        //Player player = GameControl.saveGame(menuOption);
-        
+                
         if (menuOption == null) {
             System.out.println("Please enter a valid menu option");
 
@@ -74,7 +73,7 @@ public class GameMenuView extends View{
             case "7": //hunt
                 this.huntingView();
                 break;
-            case "8": //hunt
+            case "8": //print report
                 System.out.println("\n" +
                 "***** If the user chooses Print Report, they are taken to a new view that shows all of the available\n" +
                 "reports to print. After choosing a report type, they enter the file location to save the report,\n" +
@@ -82,6 +81,8 @@ public class GameMenuView extends View{
                 "been written (printed) to a file, the user has the option to enter ‘C’ to continue and go back to\n" +
                 "the Game Menu, or print another report. All valid inputs and error messages should be implemented. *****\n");
                 break;
+            case "9": //save game 
+                this.saveGame();
             default:
                 System.out.println("Enter a valid option");
 
@@ -156,6 +157,10 @@ public class GameMenuView extends View{
     private void huntingView(){
         HuntingView huntView = new HuntingView();
         huntView.display();
+    }
+    private void saveGame() {
+      SaveGameView saveGameView = new SaveGameView();
+      saveGameView.display();
     }
 
 }

@@ -29,7 +29,7 @@ public abstract class View implements ViewInterface {
         do {
             //prompt for input
             String inputs = this.getInput();
-            if (inputs.toUpperCase().equals("Q")) {
+            if (inputs.equals("Q") || inputs.equals("q")) {
                 return; //exits program
             }
             //ENDIF endOfView = doAction(inputs)

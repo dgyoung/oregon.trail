@@ -12,7 +12,6 @@ import java.util.Scanner;
 public class SelectOccupationView extends View{
 
     public SelectOccupationView() {
-
         super("********** The Oregon Trail **********\n"
                 + "\n"
                 + "     Many kinds of people made \n"
@@ -23,20 +22,17 @@ public class SelectOccupationView extends View{
                 + "* 2. Carpenter from Ohio *\n"
                 + "* 3. Farmer from Illinois *\n"
                 + "* 4. Which one should I choose? *\n"
-                + "\n***** What is your choice? *****\n"
-                + "\n");
+                + "\n***** What is your choice? *****\n");
         }
     @Override
     public boolean doAction(String inputs) {
-//playersName = get the first value in the inputs array
         String choice;
         choice = inputs;
         
         Player player = GameControl.saveGame(choice);
         
         if (choice == null) {
-            System.out.println("Please enter a correct input");
-
+            ErrorView.display(this.getClass().getName(), "Plese enter a valid option");
             return false;
         }
         StoreView PurchaseItemsView
@@ -46,7 +42,6 @@ public class SelectOccupationView extends View{
                 GameControl.setCharacterChoice("Banker");
                 SupplyControl.addToSupplies("money", 1600);
                 PurchaseItemsView.displayPurchaseItemsView();
-
                 return true;
             case "2":
                 GameControl.setCharacterChoice("Carpenter");

@@ -85,7 +85,7 @@ class NameSelectView {
         + "5.   " + character5.getName() + "\n");
         do {
             String[] inputs = this.getInputs();
-            if (inputs[0].toUpperCase().equals("Q")) {
+            if (inputs[0].equals("Q") || inputs[0].equals("q")) {
                 return; //exits program
             }
             //ENDIF endOfView = doAction(inputs)

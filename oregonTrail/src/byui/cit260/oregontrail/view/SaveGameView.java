@@ -1,6 +1,3 @@
-/*
- * created by Brad R. Allen
- */
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.GameControl;
@@ -12,14 +9,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import oregontrail.OregonTrail;
 
-/**
- *
- * @author bradrallen
- */
 public class SaveGameView extends View {
   
-public SaveGameView() {
-        super("TEMP Enter the file path where you want to save the game.");
+  public SaveGameView() {
+        super("**** The Oregon Trail – SAVE GAME MENU *****\n"
+                + "\nEnter a name for your game file:\n");
     }
 
   @Override
@@ -27,10 +21,15 @@ public SaveGameView() {
         String filePath;
         filePath = inputs;
         Game game = OregonTrail.getCurrentGame();
-        GameControl.saveGameFile(game);
+        try{
+          GameControl.saveGameFile(game,filePath);
+        }catch (GameControlException | IOException ex) {
+          System.out.println("Error Saving File:" + ex.getMessage());
           return false;
-        
-            }
+        }
+        System.out.println("File " + filePath + " was saved sucessfully");
+          return true;
+  }
 
   @Override
     public String getInput() {
@@ -39,9 +38,9 @@ public SaveGameView() {
         String input = null;
         try {
             while (!valid) {
+                this.console.println(this.displayMessage);
                 input = this.keyboard.readLine();
                 input = input.trim();
-                this.console.println(this.displayMessage);
                 if (input.length() < 1) {//blank value entered
                     System.out.print("You must enter a value.\n");
                 } else {
@@ -55,5 +54,6 @@ public SaveGameView() {
         }
         return inputs[0];
     }
+
     
 }

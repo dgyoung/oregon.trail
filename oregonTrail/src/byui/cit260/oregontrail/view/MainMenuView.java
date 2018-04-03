@@ -16,14 +16,12 @@ public class MainMenuView extends View {
                 + "* 1. Start New Game *\n"
                 + "* 2. Resume Saved Game *\n"
                 + "* 3. Help *\n"
-                + "* 4. Save Game *\n"
-                + "* Q. Exit *\n"
-                + "* 6. Test View *\n"
+                + "* Q Exit *\n"
+                + "* T Test View *\n"
                 + "\n***** What is your choice? *****\n");
     }
     @Override
     public boolean doAction(String inputs) {
-//playersName = get the first value in the inputs array
         String choice;
         choice = inputs;
         //player = savePlayer(playersName)
@@ -50,10 +48,7 @@ public class MainMenuView extends View {
             case "3":
                 this.helpMenuView();
                 break;
-            case "4":
-                this.saveGame();
-                break;
-            case "6":
+            case "T": case "t" :
                 this.testView();
                 break;
             default:
@@ -82,9 +77,5 @@ public class MainMenuView extends View {
         TestView testView = new TestView();
         testView.display();
     }
-
-  private void saveGame() {
-    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  }
     
 }
