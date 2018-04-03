@@ -8,8 +8,12 @@ import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.orgontrail.exceptions.GameControlException;
 import byui.cit260.orgontrail.exceptions.MapControlException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -141,6 +145,22 @@ public class GameControl {
 
     public static String getCalendar() {
         return "";
+    }
+    public static Game getGame(String filePath) throws GameControlException, IOException, ClassNotFoundException {
+      if (filePath == null || filePath.length()<1 ){
+        throw new GameControlException("Invalid File Path");
+      }
+      Game game = null;
+      try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath))){
+         game = (Game)in.readObject();
+         OregonTrail.setCurrentGame(game);
+         Player player = game.getPlayer();
+         OregonTrail.setPlayer(player);
+      } catch ( IOException | ClassNotFoundException ex){
+        System.out.println("Error Loading Saved File:" + ex.getMessage());
+      }
+      return game;
+
     }
 
 }

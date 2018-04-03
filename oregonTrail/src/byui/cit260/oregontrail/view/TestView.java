@@ -139,7 +139,7 @@ public class TestView extends View {
     }
     
     private void startExistingGameView() {
-        StartExistingGameView startExistingGameView = new StartExistingGameView();
+        StartSavedGameView startExistingGameView = new StartSavedGameView();
         startExistingGameView.display();
     }
     

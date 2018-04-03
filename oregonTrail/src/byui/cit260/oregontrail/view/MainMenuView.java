@@ -38,7 +38,7 @@ public class MainMenuView extends View {
                 this.nameSelectView();
                 break;
             case "2":
-                this.startExistingGameView();
+                this.startSavedGame();
                 break;
             case "3":
                 this.helpMenuView();
@@ -59,9 +59,9 @@ public class MainMenuView extends View {
         newgameMenuView.displayNameSelectView();   
     }
     
-    private void startExistingGameView() { 
-        StartExistingGameView startExistingGameView = new StartExistingGameView();
-        startExistingGameView.display();
+    private void startSavedGame() { 
+        StartSavedGameView startSavedGameView = new StartSavedGameView();
+        startSavedGameView.display();
     }
     
     private void helpMenuView() { 
