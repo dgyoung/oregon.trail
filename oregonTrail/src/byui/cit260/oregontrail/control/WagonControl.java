@@ -23,7 +23,6 @@ public class WagonControl {
         return "";
     }
     public static void changePace(String pace){
-      System.out.println("STUB - Will set Pace to " + pace);
     }
     public static void changeRations(){
         
@@ -44,10 +43,9 @@ public class WagonControl {
         
     }
     public static Wagon createWagon() throws GameControlException {
-      System.out.println("*** createWagon called ***");
       Wagon wagon = new Wagon();
       if (wagon == null) {
-          throw new GameControlException("ERROR: Player Object Required");
+          throw new GameControlException("ERROR: Create Wagon Failed");
       }
       return wagon;
     }

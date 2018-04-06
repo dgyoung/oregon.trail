@@ -3,7 +3,6 @@ package byui.cit260.oregontrail.view;
 import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.control.SupplyControl;
 import byui.cit260.oregontrail.model.Player;
-import java.util.Scanner;
 
 /**
  *

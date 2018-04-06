@@ -8,6 +8,8 @@ package byui.cit260.oregontrail.control;
 import byui.cit260.oregontrail.model.Game;
 import byui.cit260.oregontrail.model.Order;
 import byui.cit260.oregontrail.model.Supplies;
+import byui.cit260.oregontrail.view.ErrorView;
+import byui.cit260.orgontrail.exceptions.GameControlException;
 
 /**
  *
@@ -19,10 +21,10 @@ public class SupplyControl {
 
     }
 
-    public static void getSupplyList() {
+    public static void getSupplyList() throws GameControlException {
     }
 
-    public static void addToSupplies(String supplyItem, int quantity) {
+    public static void addToSupplies(String supplyItem, int quantity) throws GameControlException {
         if (supplyItem == "money") {
             Supplies supplies = new Supplies();
             supplies.setMoney(supplies.getMoney() + quantity);
@@ -48,12 +50,11 @@ public class SupplyControl {
             Supplies supplies = new Supplies();
             supplies.setFood(supplies.getFood() + quantity);
         } else {
-            System.out.println("addToSupplies error");
-            return;
+            throw new GameControlException("ERROR: addToSupplies");
         }
     }
 
-    public static void removeFromSupplies(String supplyItem, int quantity) {
+    public static void removeFromSupplies(String supplyItem, int quantity) throws GameControlException {
         if (supplyItem == "money") {
             Supplies supplies = new Supplies();
             supplies.setMoney(supplies.getMoney() - quantity);
@@ -79,7 +80,7 @@ public class SupplyControl {
             Supplies supplies = new Supplies();
             supplies.setFood(supplies.getFood() - quantity);
         } else {
-            System.out.println("removeToSupplies errorkjgh");
+            throw new GameControlException("ERROR: removeFromSupplies");
         }
     }
 

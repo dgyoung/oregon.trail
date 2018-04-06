@@ -42,7 +42,7 @@ public class Player implements Serializable{
         this.games = games;
     }
     
-    public ArrayList<Wagon> getWagonss() {
+    public ArrayList<Wagon> getWagons() {
         return wagons;
     }
 

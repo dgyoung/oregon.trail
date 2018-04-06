@@ -119,8 +119,8 @@ public class TestView extends View {
         mapView.display();
     }
     private void nameSelectView() {
-        NameSelectView nameSelectView = new NameSelectView();
-        nameSelectView.displayNameSelectView();
+        NameAssignView nameAssignView = new NameAssignView();
+        nameAssignView.display();
     }
 
     private void selectOccupationView() {

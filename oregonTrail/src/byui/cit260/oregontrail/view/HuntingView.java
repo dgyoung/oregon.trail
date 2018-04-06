@@ -3,11 +3,6 @@ package byui.cit260.oregontrail.view;
 import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.control.HuntControl;
 import byui.cit260.oregontrail.model.Player;
-import java.util.Scanner;
-import oregontrail.OregonTrail;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class HuntingView extends View {
 

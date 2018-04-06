@@ -69,13 +69,13 @@ public class GameMenuView extends View{
                 this.console.println("\n***** How many days would you like to rest? *****\n");
                 // TO INCREMENT THE DATE BY ONE DAY
                 // calendar.add(Calendar.DATE, 1);
-                // System.out.println("Date : " + sdf.format(calendar.getTime()));
+                // this.console.println("Date : " + sdf.format(calendar.getTime()));
                 break;
             case "7": //hunt
                 this.huntingView();
                 break;
             case "8": //print report
-                System.out.println("\n" +
+                this.console.println("\n" +
                 "***** If the user chooses Print Report, they are taken to a new view that shows all of the available\n" +
                 "reports to print. After choosing a report type, they enter the file location to save the report,\n" +
                 "and then are taken back to the menu showing all of the available reports. After a report has\n" +

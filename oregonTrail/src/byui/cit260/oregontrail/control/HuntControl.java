@@ -47,6 +47,7 @@ public class HuntControl {
         Scanner keyboard = new Scanner(System.in);
         String input = null;
         input = keyboard.nextLine().trim();
+        //input = this.keyboard.readLine();
         if (input.toUpperCase() == word && (time + delay) > System.currentTimeMillis()) {
             System.out.print("Hit\n");
             return 25;

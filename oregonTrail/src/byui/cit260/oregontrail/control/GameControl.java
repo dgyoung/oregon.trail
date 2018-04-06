@@ -41,7 +41,7 @@ public class GameControl {
         game.setPlayer(player);
 
         //game starts with 5 people in the wagon
-        game.setNoPeople(5);
+        //game.setNoPeople(5);these are now counted up as we add characters
 
         //call create map
         Map map = MapControl.createMap(10,20);
@@ -80,23 +80,18 @@ public class GameControl {
       }
       
       try (ObjectOutputStream out = new
-          ObjectOutputStream(new FileOutputStream(filePath))){
+          ObjectOutputStream(new FileOutputStream(filePath))) {
           out.writeObject(game);
       } catch (IOException ex) {
-        System.out.println("I/O Error: " + ex.getMessage());
+        throw ex;
       }
-      System.out.println("saveGame() in GameControl class");
     }
 
     public static void restoreSavedGame() {
-        System.out.println("*** restoreSavedGame called ***");
     }
-    //public static InventoryItem[] createItems(){
-    //       System.out.println("*** InventoryItem called ***");
 
-    // }
     public static int getFinalScore(int supply, int bonus, int character)
-            throws GameControlException {
+        throws GameControlException {
         int finalScore;
         int totalHealth = character;
         if (totalHealth <= 0 || totalHealth > 15) {
@@ -110,12 +105,6 @@ public class GameControl {
             throw new GameControlException("invalid bonus");
         }
         finalScore = ((totalHealth * 200) + supply) * bonus;
-
-        System.out.println("supply: " + supply
-                + "\nbonus: " + bonus
-                + "\ncharacter: " + character
-                + "\nfinalScore: " + finalScore
-                + "\ntotalHealth: " + totalHealth);
         return finalScore;
 
     }
@@ -157,7 +146,7 @@ public class GameControl {
          Player player = game.getPlayer();
          OregonTrail.setPlayer(player);
       } catch ( IOException | ClassNotFoundException ex){
-        System.out.println("Error Loading Saved File:" + ex.getMessage());
+        throw ex;
       }
       return game;
 

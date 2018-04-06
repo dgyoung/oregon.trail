@@ -24,10 +24,10 @@ public class SaveGameView extends View {
         try{
           GameControl.saveGameFile(game,filePath);
         }catch (GameControlException | IOException ex) {
-          System.out.println("Error Saving File:" + ex.getMessage());
+          this.console.println("Error Saving File:" + ex.getMessage());
           return false;
         }
-        System.out.println("File " + filePath + " was saved sucessfully");
+        this.console.println("File " + filePath + " was saved sucessfully");
           return true;
   }
 
@@ -42,7 +42,7 @@ public class SaveGameView extends View {
                 input = this.keyboard.readLine();
                 input = input.trim();
                 if (input.length() < 1) {//blank value entered
-                    System.out.print("You must enter a value.\n");
+                    this.console.println("You must enter a value.\n");
                 } else {
                     inputs[0] = input;
                     valid = true;

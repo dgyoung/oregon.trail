@@ -63,7 +63,7 @@ public class EndGameView extends View {
                 this.console.println("\n***** How many days would you like to rest? *****\n");
                 // TO INCREMENT THE DATE BY ONE DAY
                 // calendar.add(Calendar.DATE, 1);
-                // System.out.println("Date : " + sdf.format(calendar.getTime()));
+                // this.console.println("Date : " + sdf.format(calendar.getTime()));
                 break;
             case "7": //hunt
                 break;

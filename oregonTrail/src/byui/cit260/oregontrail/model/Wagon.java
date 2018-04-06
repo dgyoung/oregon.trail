@@ -4,19 +4,21 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.model;
+import byui.cit260.orgontrail.exceptions.GameControlException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
  *
  * @author Allie
  */
-public class Wagon implements Serializable{
+public class Wagon implements Serializable {
     
     private int pace;
     private String rations;
-    private Wagon wagon;
-
+    private ArrayList<Character> characters = new ArrayList<>();
+    
     public Wagon() {
     }
     
@@ -36,13 +38,21 @@ public class Wagon implements Serializable{
         this.rations = rations;
     }
 
-    public Wagon getWagon() {
-        return wagon;
+    public ArrayList<Character> getCharacters() {
+    return characters;
     }
 
-    public void setWagon(Wagon wagon) {
-        this.wagon = wagon;
+    public void setCharacters(ArrayList<Character> characters) {
+      this.characters = characters;
     }
+    
+//    public void createCharacters ()throws GameControlException{
+//      Character character1 = new Character();
+//      Character character2 = new Character();
+//      Character character3 = new Character();
+//      Character character4 = new Character();
+//      Character character5 = new Character();
+//    }
 
     @Override
     public int hashCode() {

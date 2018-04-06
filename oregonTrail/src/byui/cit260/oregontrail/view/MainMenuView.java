@@ -15,13 +15,12 @@ public class MainMenuView extends View {
                 + "* 3. Help *\n"
                 + "* Q Exit *\n"
                 + "* T Test View *\n"
-                + "\n***** What is your choice? *****\n");
+                + "\n***** What is your choice? *****");
     }
     @Override
     public boolean doAction(String inputs) {
         String choice;
         choice = inputs;
-        Player player = GameControl.saveGame(choice);
         if (choice == null) {
             ErrorView.display(this.getClass().getName(), "Plese enter a valid option");
             return false;
@@ -35,6 +34,7 @@ public class MainMenuView extends View {
                   ErrorView.display(this.getClass().getName(), ex.getMessage());
                   }
                 }
+                this.console.println("\nWe need to record the members of your party.");
                 this.nameSelectView();
                 break;
             case "2":
@@ -55,8 +55,8 @@ public class MainMenuView extends View {
     }
     
     private void nameSelectView() {
-        NameSelectView newgameMenuView = new NameSelectView();
-        newgameMenuView.displayNameSelectView();   
+        NameAssignView assignNameView = new NameAssignView();
+        assignNameView.display();
     }
     
     private void startSavedGame() { 

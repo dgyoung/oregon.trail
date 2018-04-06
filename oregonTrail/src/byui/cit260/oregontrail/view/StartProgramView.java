@@ -48,7 +48,7 @@ public class StartProgramView extends View {
 
             return false;
         } else {
-            System.out.println("\n"
+            this.console.println("\n"
                     + "=================================================\n"
                     + "      Welcome to the game " + playersName
                     + "\n      We hope you have a lot of fun!\n"
