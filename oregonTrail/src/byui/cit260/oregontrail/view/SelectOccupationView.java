@@ -3,6 +3,9 @@ package byui.cit260.oregontrail.view;
 import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.control.SupplyControl;
 import byui.cit260.oregontrail.model.Player;
+import byui.cit260.orgontrail.exceptions.GameControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -39,17 +42,35 @@ public class SelectOccupationView extends View{
         switch (choice) {
             case "1":
                 GameControl.setCharacterChoice("Banker");
+        {
+            try {
                 SupplyControl.addToSupplies("money", 1600);
+            } catch (GameControlException ex) {
+                Logger.getLogger(SelectOccupationView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 PurchaseItemsView.displayPurchaseItemsView();
                 return true;
             case "2":
                 GameControl.setCharacterChoice("Carpenter");
+        {
+            try {
                 SupplyControl.addToSupplies("money", 800);
+            } catch (GameControlException ex) {
+                Logger.getLogger(SelectOccupationView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 PurchaseItemsView.displayPurchaseItemsView();
                 return true;
             case "3":
                 GameControl.setCharacterChoice("farmer");
+        {
+            try {
                 SupplyControl.addToSupplies("money", 400);
+            } catch (GameControlException ex) {
+                Logger.getLogger(SelectOccupationView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 PurchaseItemsView.displayPurchaseItemsView();
                 return true;
             case "4":

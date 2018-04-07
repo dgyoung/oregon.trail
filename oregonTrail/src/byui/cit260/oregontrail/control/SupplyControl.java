@@ -7,6 +7,7 @@ package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.model.Game;
 import byui.cit260.oregontrail.model.Order;
+import static byui.cit260.oregontrail.model.StoreScene.store1;
 import byui.cit260.oregontrail.model.Supplies;
 import byui.cit260.oregontrail.view.ErrorView;
 import byui.cit260.orgontrail.exceptions.GameControlException;
@@ -25,62 +26,101 @@ public class SupplyControl {
     }
 
     public static void addToSupplies(String supplyItem, int quantity) throws GameControlException {
-        if (supplyItem == "money") {
-            Supplies supplies = new Supplies();
-            supplies.setMoney(supplies.getMoney() + quantity);
-        } else if (supplyItem == "wagonWheel") {
-            Supplies supplies = new Supplies();
-            supplies.setWagonWheel(supplies.getWagonWheel() + quantity);
-        } else if (supplyItem == "wagonAxel") {
-            Supplies supplies = new Supplies();
-            supplies.setWagonAxel(supplies.getWagonAxel() + quantity);
-        } else if (supplyItem == "wagonTonuge") {
-            Supplies supplies = new Supplies();
-            supplies.setWagonTonuge(supplies.getWagonTonuge() + quantity);
-        } else if (supplyItem == "ammunition") {
-            Supplies supplies = new Supplies();
-            supplies.setAmmunition(supplies.getAmmunition() + quantity);
-        } else if (supplyItem == "clothing") {
-            Supplies supplies = new Supplies();
-            supplies.setClothing(supplies.getClothing() + quantity);
-        } else if (supplyItem == "oxen") {
-            Supplies supplies = new Supplies();
-            supplies.setOxen(supplies.getOxen() + quantity);
-        } else if (supplyItem == "food") {
-            Supplies supplies = new Supplies();
-            supplies.setFood(supplies.getFood() + quantity);
-        } else {
-            throw new GameControlException("ERROR: addToSupplies");
+        switch (supplyItem) {
+            case "money":
+                {
+                    
+                    Supplies.setMoney(Supplies.getMoney() + quantity);
+                    break;
+                }
+            case "wagonWheel":
+                {
+                    Supplies.setWagonWheel(Supplies.getWagonWheel() + quantity);
+                    break;
+                }
+            case "wagonAxel":
+                {
+                    Supplies.setWagonAxel(Supplies.getWagonAxel() + quantity);
+                    break;
+                }
+            case "wagonTonuge":
+                {
+                    Supplies.setWagonTonuge(Supplies.getWagonTonuge() + quantity);
+                    break;
+                }
+            case "ammunition":
+                {
+                    Supplies.setAmmunition(Supplies.getAmmunition() + quantity);
+                    break;
+                }
+            case "clothing":
+                {
+                    Supplies.setClothing(Supplies.getClothing() + quantity);
+                    break;
+                }
+            case "oxen":
+                {
+                    Supplies.setOxen(Supplies.getOxen() + quantity);
+                    break;
+                }
+            case "food":
+                {
+                    Supplies.setFood(Supplies.getFood() + quantity);
+                    break;
+                }
+            default:
+                throw new GameControlException("ERROR: addToSupplies");
         }
     }
 
     public static void removeFromSupplies(String supplyItem, int quantity) throws GameControlException {
-        if (supplyItem == "money") {
-            Supplies supplies = new Supplies();
-            supplies.setMoney(supplies.getMoney() - quantity);
-        } else if (supplyItem == "wagonWheel") {
-            Supplies supplies = new Supplies();
-            supplies.setWagonWheel(supplies.getWagonWheel() - quantity);
-        } else if (supplyItem == "wagonAxel") {
-            Supplies supplies = new Supplies();
-            supplies.setWagonAxel(supplies.getWagonAxel() - quantity);
-        } else if (supplyItem == "wagonTonuge") {
-            Supplies supplies = new Supplies();
-            supplies.setWagonTonuge(supplies.getWagonTonuge() - quantity);
-        } else if (supplyItem == "ammunition") {
-            Supplies supplies = new Supplies();
-            supplies.setAmmunition(supplies.getAmmunition() - quantity);
-        } else if (supplyItem == "clothing") {
-            Supplies supplies = new Supplies();
-            supplies.setClothing(supplies.getClothing() - quantity);
-        } else if (supplyItem == "oxen") {
-            Supplies supplies = new Supplies();
-            supplies.setOxen(supplies.getOxen() - quantity);
-        } else if (supplyItem == "food") {
-            Supplies supplies = new Supplies();
-            supplies.setFood(supplies.getFood() - quantity);
-        } else {
-            throw new GameControlException("ERROR: removeFromSupplies");
+        switch (supplyItem) {
+            case "money":
+                {
+                    if(Supplies.money < quantity){
+                        throw new GameControlException("Not Enough Money");
+                    }
+                    Supplies.setMoney(Supplies.getMoney() - quantity);
+                    store1.setSpent(store1.getSpent() + quantity);
+                    break;
+                }
+            case "wagonWheel":
+                {
+                    Supplies.setWagonWheel(Supplies.getWagonWheel() - quantity);
+                    break;
+                }
+            case "wagonAxel":
+                {
+                    Supplies.setWagonAxel(Supplies.getWagonAxel() - quantity);
+                    break;
+                }
+            case "wagonTonuge":
+                {
+                    Supplies.setWagonTonuge(Supplies.getWagonTonuge() - quantity);
+                    break;
+                }
+            case "ammunition":
+                {
+                    Supplies.setAmmunition(Supplies.getAmmunition() - quantity);
+                    break;
+                }
+            case "clothing":
+                {
+                    Supplies.setClothing(Supplies.getClothing() - quantity);
+                    break;
+                }
+            case "oxen":
+                {
+                    Supplies.setOxen(Supplies.getOxen() - quantity);
+                    break;
+                }
+            case "food":
+                {
+                    Supplies.setFood(Supplies.getFood() - quantity);
+                    break;
+                }
+            default:
+                throw new GameControlException("ERROR: removeFromSupplies");
         }
     }
 

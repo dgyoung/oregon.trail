@@ -27,6 +27,7 @@ public enum StoreScene implements Serializable{
     private int oxenCost;
     private int foodCost;
     private String storeName;
+    private int spent = 0;
     private ArrayList<Supplies> currentSupply = new ArrayList<Supplies>(1);
     private ArrayList<SceneDescription> description = new ArrayList<SceneDescription>(1);
     
@@ -100,6 +101,14 @@ public enum StoreScene implements Serializable{
 
     public ArrayList<SceneDescription> getDescription() {
         return description;
+    }
+
+    public int getSpent() {
+        return spent;
+    }
+
+    public void setSpent(int spent) {
+        this.spent = spent;
     }
 
     @Override
