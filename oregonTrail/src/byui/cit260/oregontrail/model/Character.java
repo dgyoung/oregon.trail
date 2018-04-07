@@ -16,6 +16,7 @@ public class Character implements Serializable{
     
     private String name = "";
     private String affliction;
+    private int health;
 
     public String getName() {
         return name;
@@ -33,7 +34,17 @@ public class Character implements Serializable{
         this.affliction = affliction;
     }
 
+  public int getHealth() {
+    return health;
+  }
+
+  public void setHealth(int health) {
+    this.health = health;
+  }
+    
+
     public Character() {
+      this.health = 10; //set inital health to 10
     }
 
     @Override

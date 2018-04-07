@@ -75,12 +75,7 @@ public class GameMenuView extends View{
                 this.huntingView();
                 break;
             case "8": //print report
-                this.console.println("\n" +
-                "***** If the user chooses Print Report, they are taken to a new view that shows all of the available\n" +
-                "reports to print. After choosing a report type, they enter the file location to save the report,\n" +
-                "and then are taken back to the menu showing all of the available reports. After a report has\n" +
-                "been written (printed) to a file, the user has the option to enter ‘C’ to continue and go back to\n" +
-                "the Game Menu, or print another report. All valid inputs and error messages should be implemented. *****\n");
+                this.reportView();
                 break;
             case "9": //save game 
                 this.saveGame();
@@ -164,4 +159,8 @@ public class GameMenuView extends View{
       saveGameView.display();
     }
 
+  private void reportView() {
+    ReportView reportView = new ReportView();
+    reportView.display();
+  }
 }
