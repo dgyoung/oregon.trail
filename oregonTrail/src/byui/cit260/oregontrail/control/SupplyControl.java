@@ -29,7 +29,6 @@ public class SupplyControl {
         switch (supplyItem) {
             case "money":
                 {
-                    
                     Supplies.setMoney(Supplies.getMoney() + quantity);
                     break;
                 }

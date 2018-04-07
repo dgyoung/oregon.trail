@@ -12,7 +12,7 @@ public class HuntControl {
         int count = 0;
         int meat = 0;
         do {
-            long delay = (long) Math.random() * 50000111;
+            int delay = (int) (Math.random() * 5000);
             int selecter = (int) Math.ceil(Math.random() * 3);
             String word = null;
             long time = 0;
@@ -46,9 +46,8 @@ public class HuntControl {
     public static int getInput(String word, long time, long delay) {
         Scanner keyboard = new Scanner(System.in);
         String input = null;
-        input = keyboard.nextLine().trim();
-        //input = this.keyboard.readLine();
-        if (input.toUpperCase() == word && (time + delay) > System.currentTimeMillis()) {
+        input = keyboard.nextLine().trim().toUpperCase();
+        if (input.equals(word) && (time + delay) > System.currentTimeMillis()) {
             System.out.print("Hit\n");
             return 25;
         } else {
