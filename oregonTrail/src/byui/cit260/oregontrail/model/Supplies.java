@@ -19,78 +19,80 @@ public class Supplies implements Serializable{
     private int resource;
     */
     
-    private int wagonWheel;
-    private int wagonAxel;
-    private int wagonTonuge;
-    private int ammunition;
-    private int clothing;
-    private int oxen;
-    private int food;
-    private int money;
+    public static int wagonWheel = 0;
+    public static int wagonAxel = 0;
+    public static int wagonTonuge = 0;
+    public static int ammunition = 0;
+    public static int clothing = 0;
+    public static int oxen = 0;
+    public static int food = 0;
+    public static int money = 0;
 
-    public int getWagonWheel() {
+    public static int getWagonWheel() {
         return wagonWheel;
     }
 
-    public void setWagonWheel(int wagonWheel) {
-        this.wagonWheel = wagonWheel;
+    public static void setWagonWheel(int wagonWheel) {
+        Supplies.wagonWheel = wagonWheel;
     }
 
-    public int getWagonAxel() {
+    public static int getWagonAxel() {
         return wagonAxel;
     }
 
-    public void setWagonAxel(int wagonAxel) {
-        this.wagonAxel = wagonAxel;
+    public static void setWagonAxel(int wagonAxel) {
+        Supplies.wagonAxel = wagonAxel;
     }
 
-    public int getWagonTonuge() {
+    public static int getWagonTonuge() {
         return wagonTonuge;
     }
 
-    public void setWagonTonuge(int wagonTonuge) {
-        this.wagonTonuge = wagonTonuge;
+    public static void setWagonTonuge(int wagonTonuge) {
+        Supplies.wagonTonuge = wagonTonuge;
     }
 
-    public int getAmmunition() {
+    public static int getAmmunition() {
         return ammunition;
     }
 
-    public void setAmmunition(int ammunition) {
-        this.ammunition = ammunition;
+    public static void setAmmunition(int ammunition) {
+        Supplies.ammunition = ammunition;
     }
 
-    public int getClothing() {
+    public static int getClothing() {
         return clothing;
     }
 
-    public void setClothing(int clothing) {
-        this.clothing = clothing;
+    public static void setClothing(int clothing) {
+        Supplies.clothing = clothing;
     }
 
-    public int getOxen() {
+    public static int getOxen() {
         return oxen;
     }
 
-    public void setOxen(int oxen) {
-        this.oxen = oxen;
+    public static void setOxen(int oxen) {
+        Supplies.oxen = oxen;
     }
 
-    public int getFood() {
+    public static int getFood() {
         return food;
     }
 
-    public void setFood(int food) {
-        this.food = food;
+    public static void setFood(int food) {
+        Supplies.food = food;
     }
 
-    public int getMoney() {
+    public static int getMoney() {
         return money;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
+    public static void setMoney(int money) {
+        Supplies.money = money;
     }
+
+    
 
     public Supplies() {
     }

@@ -13,7 +13,8 @@ public class SaveGameView extends View {
   
   public SaveGameView() {
         super("**** The Oregon Trail – SAVE GAME MENU *****\n"
-                + "\nEnter a name for your game file:\n");
+                + "\nEnter a name for your game file:\n"
+              );
     }
 
   @Override
@@ -31,29 +32,6 @@ public class SaveGameView extends View {
           return true;
   }
 
-  @Override
-    public String getInput() {
-        String[] inputs = new String[1];
-        boolean valid = false;
-        String input = null;
-        try {
-            while (!valid) {
-                this.console.println(this.displayMessage);
-                input = this.keyboard.readLine();
-                input = input.trim();
-                if (input.length() < 1) {//blank value entered
-                    this.console.println("You must enter a value.\n");
-                } else {
-                    inputs[0] = input;
-                    valid = true;
-                }
-            }
-            return inputs[0];
-        } catch (IOException ex) {
-            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return inputs[0];
-    }
 
     
 }

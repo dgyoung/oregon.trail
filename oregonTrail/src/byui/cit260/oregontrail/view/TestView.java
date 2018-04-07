@@ -26,6 +26,7 @@ public class TestView extends View {
                 + " 12)  Starting Month View \n"
                 + " 13)  Store View \n"
                 + " 14)  Supply View \n"
+                + " P)   Print View \n"
                 + "\n***** What is your choice? *****\n");
     }
 
@@ -86,6 +87,8 @@ public class TestView extends View {
                 break;
             case "15":
                 this.endGameView();
+            case "P":
+                this.reportView();
             default:
                 ErrorView.display(this.getClass().getName(),
                                   "Enter a valid option");
@@ -168,6 +171,10 @@ public class TestView extends View {
     private void endGameView() {
         EndGameView endGameView = new EndGameView();
         endGameView.display();
+    }
+    private void reportView() {
+        ReportView reportView = new ReportView();
+        reportView.display();
     }
     
 }

@@ -23,7 +23,6 @@ public class SelectOccupationView extends View{
                 + "* 1. Banker from Boston *\n"
                 + "* 2. Carpenter from Ohio *\n"
                 + "* 3. Farmer from Illinois *\n"
-                + "* T. TEST MENU *\n"
                 + "* 4. Which one should I choose? *\n"
                 + "\n***** What is your choice? *****\n");
         }
@@ -43,35 +42,35 @@ public class SelectOccupationView extends View{
         switch (choice) {
             case "1":
                 GameControl.setCharacterChoice("Banker");
-                {
-                  try {
-                    SupplyControl.addToSupplies("money", 1600);
-                  } catch (GameControlException ex) {
-                    Logger.getLogger(SelectOccupationView.class.getName()).log(Level.SEVERE, null, ex);
-                  }
-                }
+        {
+            try {
+                SupplyControl.addToSupplies("money", 1600);
+            } catch (GameControlException ex) {
+                Logger.getLogger(SelectOccupationView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 PurchaseItemsView.displayPurchaseItemsView();
                 return true;
             case "2":
                 GameControl.setCharacterChoice("Carpenter");
-                {
-                  try {
-                    SupplyControl.addToSupplies("money", 800);
-                  } catch (GameControlException ex) {
-                    Logger.getLogger(SelectOccupationView.class.getName()).log(Level.SEVERE, null, ex);
-                  }
-                }
+        {
+            try {
+                SupplyControl.addToSupplies("money", 800);
+            } catch (GameControlException ex) {
+                Logger.getLogger(SelectOccupationView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 PurchaseItemsView.displayPurchaseItemsView();
                 return true;
             case "3":
                 GameControl.setCharacterChoice("farmer");
-                {
-                  try {
-                    SupplyControl.addToSupplies("money", 400);
-                  } catch (GameControlException ex) {
-                    Logger.getLogger(SelectOccupationView.class.getName()).log(Level.SEVERE, null, ex);
-                  }
-                }
+        {
+            try {
+                SupplyControl.addToSupplies("money", 400);
+            } catch (GameControlException ex) {
+                Logger.getLogger(SelectOccupationView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 PurchaseItemsView.displayPurchaseItemsView();
                 return true;
             case "4":
@@ -82,9 +81,6 @@ public class SelectOccupationView extends View{
                         + "However, the harder you have to try the more points you deserve! \n"
                         + "Therefore, the farmer earns the greatest number of poinst and the banker earns the least.");
                 break;
-            case "T":
-                TestView testView = new TestView();
-                testView.display();
             default:
                 ErrorView.display(this.getClass().getName(),
                                   "Enter a valisd option");
